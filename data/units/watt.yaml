@@ -1,0 +1,21 @@
+id: watt
+name: Watt
+symbols: [W]
+system: SI-derived
+domain: mechanics
+dimension: { length: 2, mass: 1, time: -3, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: joule, power: 1 }
+  - { id: second, power: -1 }
+equation: "W = J/s"
+definitions:
+  - era: "1946–present"
+    value: "The power which gives rise to the production of energy at the rate of one joule per second."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after James Watt, for his improvements to the steam engine."
+  cursedness: "kg·m²·s⁻³ is the joule's parent unit divided by time again — this exact chain (kg·m/s² → kg·m²/s² → kg·m²/s³) is the whole reason products like the kilowatt-hour feel so unintuitive: they multiply back by time instead of dividing, undoing part of this chain."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

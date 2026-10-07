@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metrology.local/schema/relationship.schema.json",
+  "title": "Relationship",
+  "description": "A note connecting two or more units that doesn't belong to any single unit's own file.",
+  "type": "object",
+  "required": ["id", "units", "kind", "note", "source"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "units": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 2
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "dimensional-coincidence",
+        "historical-connection",
+        "context-differentiated",
+        "commonly-confused",
+        "derivation-story"
+      ]
+    },
+    "note": { "type": "string", "minLength": 1 },
+    "source": { "type": "string", "minLength": 1 }
+  }
+}

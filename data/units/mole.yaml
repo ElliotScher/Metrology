@@ -1,0 +1,24 @@
+id: mole
+name: Mole
+symbols: [mol]
+system: SI-base
+domain: amount-of-substance
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 1, luminous_intensity: 0 }
+derived_from: []
+equation: null
+definitions:
+  - era: "1971–2019"
+    value: "The amount of substance of a system which contains as many elementary entities as there are atoms in 0.012 kilogram of carbon-12."
+    basis: reference-sample
+    current: false
+    source: "14th CGPM (1971), Resolution 3."
+  - era: "2019–present"
+    value: "Defined by fixing the numerical value of the Avogadro constant N_A to 6.02214076×10²³ per mole."
+    basis: physical-constant
+    current: true
+    source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.5."
+notes:
+  etymology: "From German 'Molekül', coined by Wilhelm Ostwald around 1900 as a short form of 'gram-molecule'."
+  cursedness: "Despite being clearly dimensionless (it's just Avogadro's number of something), the mole is counted as its own SI base unit rather than a bare number — a quirk chemistry insisted on."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

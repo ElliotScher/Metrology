@@ -1,0 +1,20 @@
+id: celsius
+name: Degree Celsius
+symbols: ["°C"]
+system: SI-derived
+domain: thermodynamic-temperature
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 1, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: kelvin, power: 1 }
+equation: "°C = K − 273.15"
+definitions:
+  - era: "1948–present"
+    value: "A unit of thermodynamic temperature equal in magnitude to the kelvin, with its zero point set at 273.15 K (the ice point of water) instead of absolute zero."
+    basis: offset-scale
+    current: true
+    source: "9th CGPM (1948); BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."
+notes:
+  etymology: "Named after Anders Celsius, who proposed a related centigrade scale in 1742 (originally with the scale inverted — 0 at boiling, 100 at freezing)."
+  cursedness: "Same-sized degree as the kelvin, different zero — see the kelvin-celsius relationship for why they were historically conflated. Celsius's own original 1742 scale ran backwards from today's."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

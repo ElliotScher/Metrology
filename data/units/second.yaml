@@ -1,0 +1,29 @@
+id: second
+name: Second
+symbols: [s]
+system: SI-base
+domain: time
+dimension: { length: 0, mass: 0, time: 1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from: []
+equation: null
+definitions:
+  - era: "pre-1960"
+    value: "1/86,400 of a mean solar day."
+    basis: earth-measurement
+    current: false
+    source: "Historical astronomical convention."
+  - era: "1960–1967"
+    value: "1/31,556,925.9747 of the tropical year for 1900 January 0 at 12h ephemeris time (the 'ephemeris second')."
+    basis: earth-measurement
+    current: false
+    source: "11th CGPM (1960), Resolution 9."
+  - era: "1967–present"
+    value: "Duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom."
+    basis: atomic-spectral-line
+    current: true
+    source: "13th CGPM (1967/68), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
+notes:
+  etymology: "From Latin 'secunda pars minuta', 'second small part' (of an hour), following 'prima pars minuta', the minute."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

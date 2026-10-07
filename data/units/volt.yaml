@@ -1,0 +1,21 @@
+id: volt
+name: Volt
+symbols: [V]
+system: SI-derived
+domain: electromagnetism
+dimension: { length: 2, mass: 1, time: -3, current: -1, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: watt, power: 1 }
+  - { id: ampere, power: -1 }
+equation: "V = W/A"
+definitions:
+  - era: "1946–present"
+    value: "The difference of electric potential between two points of a conducting wire carrying a constant current of one ampere, when the power dissipated between these points is one watt."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Alessandro Volta, inventor of the first chemical battery."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

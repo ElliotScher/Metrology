@@ -1,0 +1,21 @@
+id: joule
+name: Joule
+symbols: [J]
+system: SI-derived
+domain: mechanics
+dimension: { length: 2, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: newton, power: 1 }
+  - { id: metre, power: 1 }
+equation: "J = N·m"
+definitions:
+  - era: "1946–present"
+    value: "The work done when the point of application of a force of one newton is displaced a distance of one metre in the direction of the force."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after James Prescott Joule, for his work on the mechanical equivalent of heat."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

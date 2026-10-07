@@ -1,0 +1,21 @@
+id: lumen
+name: Lumen
+symbols: [lm]
+system: SI-derived
+domain: photometry
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 1 }
+derived_from:
+  - { id: candela, power: 1 }
+  - { id: steradian, power: 1 }
+equation: "lm = cd·sr"
+definitions:
+  - era: "1946–present"
+    value: "The luminous flux emitted into a solid angle of one steradian by a point source with a uniform intensity of one candela."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "From Latin 'lumen', meaning light."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

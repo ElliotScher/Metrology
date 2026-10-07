@@ -1,0 +1,34 @@
+id: metre
+name: Metre
+symbols: [m]
+system: SI-base
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from: []
+equation: null
+definitions:
+  - era: "1793–1889"
+    value: "One ten-millionth of the distance from the equator to the North Pole along the Paris meridian."
+    basis: earth-measurement
+    current: false
+    source: "Alder, K. (2002). The Measure of All Things."
+  - era: "1889–1960"
+    value: "Length of the International Prototype Metre, a platinum-iridium bar held at the BIPM."
+    basis: physical-artifact
+    current: false
+    source: "1st CGPM (1889), Resolution."
+  - era: "1960–1983"
+    value: "1,650,763.73 wavelengths in vacuum of the radiation corresponding to a specified transition of krypton-86."
+    basis: atomic-spectral-line
+    current: false
+    source: "11th CGPM (1960), Resolution 6."
+  - era: "1983–present"
+    value: "Length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second."
+    basis: physical-constant
+    current: true
+    source: "17th CGPM (1983), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
+notes:
+  etymology: "From Greek 'metron', meaning measure."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

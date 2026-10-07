@@ -1,0 +1,21 @@
+id: siemens
+name: Siemens
+symbols: [S]
+system: SI-derived
+domain: electromagnetism
+dimension: { length: -2, mass: -1, time: 3, current: 2, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: ampere, power: 1 }
+  - { id: volt, power: -1 }
+equation: "S = A/V"
+definitions:
+  - era: "1971–present"
+    value: "The electrical conductance of a conductor in which a current of one ampere flows when a potential difference of one volt is applied — the reciprocal of the ohm."
+    basis: coherent-derived
+    current: true
+    source: "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Ernst Werner von Siemens, industrialist and founder of the Siemens company."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

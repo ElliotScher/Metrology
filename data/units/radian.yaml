@@ -1,0 +1,19 @@
+id: radian
+name: Radian
+symbols: [rad]
+system: SI-derived
+domain: angle
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from: []
+equation: "rad = m/m"
+definitions:
+  - era: "1960–present"
+    value: "The plane angle between two radii of a circle which cut off on the circumference an arc equal in length to the radius — an arc-length-over-radius ratio, treated as dimensionless."
+    basis: coherent-derived
+    current: true
+    source: "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
+notes:
+  etymology: "From Latin 'radius'."
+  cursedness: "The radian is a metre-per-metre ratio, so SI treats it as dimensionless and usually drops it from equations entirely — but this is a choice, not a necessity. There's a competing, equally valid convention where the number 1 means one full revolution (used for rpm etc.), off from the radian convention by a factor of 2π. Angular momentum and torque only end up sharing units with energy because SI's convention quietly discards the radian."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

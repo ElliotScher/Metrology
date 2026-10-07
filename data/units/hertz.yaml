@@ -1,0 +1,20 @@
+id: hertz
+name: Hertz
+symbols: [Hz]
+system: SI-derived
+domain: mechanics
+dimension: { length: 0, mass: 0, time: -1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: second, power: -1 }
+equation: "Hz = 1/s"
+definitions:
+  - era: "1960–present"
+    value: "The frequency of a periodic phenomenon of which the period is one second."
+    basis: coherent-derived
+    current: true
+    source: "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Heinrich Hertz, who first conclusively demonstrated the existence of electromagnetic waves."
+  cursedness: "Dimensionally identical to the becquerel (also inverse seconds), but the two are never interchanged — see the kelvin-celsius relationship note for the pattern; a hertz-becquerel relationship entry covering this is queued in PROGRESS.md."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

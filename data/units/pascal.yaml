@@ -1,0 +1,21 @@
+id: pascal
+name: Pascal
+symbols: [Pa]
+system: SI-derived
+domain: mechanics
+dimension: { length: -1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: newton, power: 1 }
+  - { id: metre, power: -2 }
+equation: "Pa = N/m²"
+definitions:
+  - era: "1971–present"
+    value: "The pressure produced by a force of one newton applied uniformly over an area of one square metre."
+    basis: coherent-derived
+    current: true
+    source: "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Blaise Pascal, for his work on fluids and pressure."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

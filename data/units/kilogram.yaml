@@ -1,0 +1,29 @@
+id: kilogram
+name: Kilogram
+symbols: [kg]
+system: SI-base
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from: []
+equation: null
+definitions:
+  - era: "1799–1889"
+    value: "Mass of the Kilogramme des Archives, a platinum artifact intended to equal the mass of one litre of water at its temperature of maximum density."
+    basis: physical-artifact
+    current: false
+    source: "Alder, K. (2002). The Measure of All Things."
+  - era: "1889–2019"
+    value: "Mass of the International Prototype of the Kilogram (IPK), a platinum-iridium cylinder held at the BIPM."
+    basis: physical-artifact
+    current: false
+    source: "1st CGPM (1889), Resolution."
+  - era: "2019–present"
+    value: "Defined by fixing the numerical value of the Planck constant h to 6.62607015×10⁻³⁴ J·s, which is kg·m²·s⁻¹."
+    basis: physical-constant
+    current: true
+    source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.2."
+notes:
+  etymology: "From French 'kilogramme', from Greek 'khilioi' (thousand) + 'gramma' (small weight)."
+  cursedness: "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

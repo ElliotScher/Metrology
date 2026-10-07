@@ -1,0 +1,22 @@
+id: newton
+name: Newton
+symbols: [N]
+system: SI-derived
+domain: mechanics
+dimension: { length: 1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: kilogram, power: 1 }
+  - { id: metre, power: 1 }
+  - { id: second, power: -2 }
+equation: "N = kg·m/s²"
+definitions:
+  - era: "1946–present"
+    value: "The force which gives a mass of one kilogram an acceleration of one metre per second squared."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Isaac Newton, in recognition of his work on classical mechanics."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

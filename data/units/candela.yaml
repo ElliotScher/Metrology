@@ -1,0 +1,24 @@
+id: candela
+name: Candela
+symbols: [cd]
+system: SI-base
+domain: luminous-intensity
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 1 }
+derived_from: []
+equation: null
+definitions:
+  - era: "1946–1979"
+    value: "Luminous intensity of a specified 'Planckian radiator' (blackbody) at the freezing temperature of platinum, per unit area, in a given direction (the 'new candle')."
+    basis: physical-artifact
+    current: false
+    source: "CIPM (1946), Resolution 2."
+  - era: "1979–present"
+    value: "The luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency 540×10¹² Hz and has a radiant intensity in that direction of 1/683 watt per steradian."
+    basis: physical-constant
+    current: true
+    source: "16th CGPM (1979), Resolution 3; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.7."
+notes:
+  etymology: "From Latin 'candela', meaning candle."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

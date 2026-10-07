@@ -1,0 +1,15 @@
+id: kelvin-celsius
+units: [kelvin, celsius]
+kind: historical-connection
+note: |
+  The kelvin and the degree Celsius are the same size — a change of 1 K equals
+  a change of 1 °C — they only differ in where zero sits: 0 K is absolute
+  zero, while 0 °C is set at 273.15 K (the ice point of water). Historically,
+  temperature and heat were conflated for a long time, and Anders Celsius's
+  original 1742 proposal even ran the scale backwards from today's (0 at the
+  boiling point of water, 100 at freezing) before it was inverted shortly
+  after his death. The 2019 redefinition of the kelvin via the Boltzmann
+  constant left the Celsius scale's offset definition untouched, so Celsius
+  is now formally defined as an offset SI-derived unit built directly on the
+  kelvin rather than as its own independent base quantity.
+source: "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."

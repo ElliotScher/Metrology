@@ -1,0 +1,21 @@
+id: ohm
+name: Ohm
+symbols: ["Ω"]
+system: SI-derived
+domain: electromagnetism
+dimension: { length: 2, mass: 1, time: -3, current: -2, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: volt, power: 1 }
+  - { id: ampere, power: -1 }
+equation: "Ω = V/A"
+definitions:
+  - era: "1946–present"
+    value: "The electric resistance between two points of a conductor when a constant potential difference of one volt, applied between these two points, produces a current of one ampere."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Georg Simon Ohm, for his law relating voltage, current, and resistance."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

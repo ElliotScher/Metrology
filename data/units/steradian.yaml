@@ -1,0 +1,19 @@
+id: steradian
+name: Steradian
+symbols: [sr]
+system: SI-derived
+domain: solid-angle
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from: []
+equation: "sr = m²/m²"
+definitions:
+  - era: "1960–present"
+    value: "The solid angle which, having its vertex at the centre of a sphere, cuts off an area on the surface of the sphere equal to that of a square with sides of length equal to the radius of the sphere — an area-over-radius-squared ratio, treated as dimensionless."
+    basis: coherent-derived
+    current: true
+    source: "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
+notes:
+  etymology: "From Greek 'stereos' (solid) + 'radian'."
+  cursedness: "The 3D counterpart to the radian's cursedness: a genuinely dimensionless area-over-length-squared ratio that SI nonetheless gives its own named unit, feeding directly into the lumen (candela × steradian) as if it carried real dimension."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

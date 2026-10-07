@@ -1,0 +1,21 @@
+id: henry
+name: Henry
+symbols: [H]
+system: SI-derived
+domain: electromagnetism
+dimension: { length: 2, mass: 1, time: -2, current: -2, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: weber, power: 1 }
+  - { id: ampere, power: -1 }
+equation: "H = Wb/A"
+definitions:
+  - era: "1946–present"
+    value: "The inductance of a closed circuit in which an electromotive force of one volt is produced when the electric current in the circuit varies uniformly at a rate of one ampere per second."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "Named after Joseph Henry, who discovered electromagnetic self-inductance independently of Faraday."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

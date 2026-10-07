@@ -1,0 +1,21 @@
+id: lux
+name: Lux
+symbols: [lx]
+system: SI-derived
+domain: photometry
+dimension: { length: -2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 1 }
+derived_from:
+  - { id: lumen, power: 1 }
+  - { id: metre, power: -2 }
+equation: "lx = lm/m²"
+definitions:
+  - era: "1946–present"
+    value: "The illuminance produced by a luminous flux of one lumen uniformly distributed over a surface of one square metre."
+    basis: coherent-derived
+    current: true
+    source: "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+notes:
+  etymology: "From Latin 'lux', meaning light."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

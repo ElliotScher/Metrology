@@ -1,0 +1,24 @@
+id: ampere
+name: Ampere
+symbols: [A]
+system: SI-base
+domain: electric-current
+dimension: { length: 0, mass: 0, time: 0, current: 1, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from: []
+equation: null
+definitions:
+  - era: "1946–2019"
+    value: "That constant current which, if maintained in two straight parallel conductors of infinite length and negligible cross-section, placed 1 metre apart in vacuum, would produce a force of 2×10⁻⁷ newtons per metre of length between them."
+    basis: force-law
+    current: false
+    source: "CIPM (1946), Resolution 2; confirmed by 9th CGPM (1948)."
+  - era: "2019–present"
+    value: "Defined by fixing the numerical value of the elementary charge e to 1.602176634×10⁻¹⁹ coulombs, where the coulomb is ampere-seconds."
+    basis: physical-constant
+    current: true
+    source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
+notes:
+  etymology: "Named after André-Marie Ampère, French physicist and a founder of electromagnetism."
+  cursedness: null
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

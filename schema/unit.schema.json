@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://metrology.local/schema/unit.schema.json",
+  "title": "Unit",
+  "type": "object",
+  "required": [
+    "id", "name", "symbols", "system", "domain", "dimension",
+    "derived_from", "equation", "definitions", "notes", "status", "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "symbols": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "system": {
+      "type": "string",
+      "enum": [
+        "SI-base", "SI-derived", "SI-accepted", "CGS",
+        "imperial", "us-customary", "natural-planck", "domain-specific"
+      ]
+    },
+    "domain": { "type": "string", "minLength": 1 },
+    "dimension": {
+      "type": "object",
+      "required": [
+        "length", "mass", "time", "current",
+        "temperature", "amount", "luminous_intensity"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "length": { "type": "integer" },
+        "mass": { "type": "integer" },
+        "time": { "type": "integer" },
+        "current": { "type": "integer" },
+        "temperature": { "type": "integer" },
+        "amount": { "type": "integer" },
+        "luminous_intensity": { "type": "integer" }
+      }
+    },
+    "derived_from": {
+      "description": "Component units this unit is built from. Empty only for genuine SI-base units. power lets validate.py check dimensional arithmetic.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "power"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "power": { "type": "integer" }
+        }
+      }
+    },
+    "equation": { "type": ["string", "null"] },
+    "definitions": {
+      "description": "Chronological list of this unit's formal definitions. Exactly one entry must have current: true.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["era", "value", "basis", "current", "source"],
+        "additionalProperties": false,
+        "properties": {
+          "era": { "type": "string", "minLength": 1 },
+          "value": { "type": "string", "minLength": 1 },
+          "basis": { "type": "string", "minLength": 1 },
+          "current": { "type": "boolean" },
+          "source": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "notes": {
+      "type": "object",
+      "required": ["etymology", "cursedness"],
+      "additionalProperties": false,
+      "properties": {
+        "etymology": { "type": ["string", "null"] },
+        "cursedness": { "type": ["string", "null"] }
+      }
+    },
+    "status": { "type": "string", "enum": ["draft", "verified"] },
+    "sources": { "type": "array", "items": { "type": "string" } }
+  }
+}
