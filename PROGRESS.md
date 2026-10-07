@@ -1,6 +1,6 @@
 # Progress
 
-## 2026-09-23 — Session 1: pipeline proof
+## 2026-09-23
 
 Seeded the initial 26 units to prove the full pipeline end-to-end
 (data entry → validation → graph build → SVG/D3 output):
