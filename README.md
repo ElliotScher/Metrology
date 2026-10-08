@@ -124,6 +124,14 @@ sources: ["BIPM SI Brochure, 9th ed. (2019)"]
   graph's edges. A component may repeat, as in the radian's `metre^1` and
   `metre^-1`, and the build merges repeats into one edge. Leave it empty only
   for units defined directly from physical constants.
+- **`defined_via`** (optional, constant-defined units only) — the other units
+  that the defining constant's value is stated in. The metre fixes *c* in m/s,
+  so it has `defined_via: [second]`. The kelvin fixes *k* in J/K, so it has
+  `defined_via: [joule]`. If a named unit is itself built from the unit being
+  defined, list that unit's components instead. For example, the kilogram
+  fixes *h* in J·s, but the joule is built from the kilogram, so the kilogram
+  has `defined_via: [metre, second]`. These links aren't dimensional, so they
+  aren't checked for dimensions, but they do count toward levels.
 - **`definitions`** — the unit's formal definitions in chronological order.
   Exactly one must have `current: true`.
 
@@ -150,7 +158,8 @@ source: "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."
 `validate.py` goes beyond JSON Schema and checks:
 
 - every file's `id` matches its filename
-- every `derived_from` and relationship reference points to an existing unit
+- every `derived_from`, `defined_via` and relationship reference points to an
+  existing unit, and only constant-defined units use `defined_via`
 - SI base units have no `derived_from`, and every other unit has one. The only
   exceptions are units defined directly from physical constants (`SI-base`,
   `natural-planck`). Dimensionless ratios like the radian still list their
@@ -158,22 +167,28 @@ source: "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."
 - each unit has exactly one current definition, and every definition has a source
 - **dimensional arithmetic**: the sum of each component's dimension times its
   power equals the unit's stated `dimension`
-- the `derived_from` graph contains no cycles
+- the dependency graph, `derived_from` and `defined_via` together, contains no
+  cycles
 
 ## Output
 
-`build_graph.py` arranges units in **levels**. Level 0 holds the units with
-no components, which are defined directly from physical constants. Every other
-unit sits one level below the deepest unit it's built from. For example, the
-watt is built from the joule (level 2) and the second (level 0), so it's on
-level 3. Each unit is therefore as high as it can be while every unit it
-depends on stays above it. The SVG and the web viewer use the same levels.
+`build_graph.py` arranges units in **levels**. Every unit sits one level
+below the deepest unit it depends on, counting both `derived_from` and
+`defined_via`. Each unit is therefore as high as it can be while every unit it
+depends on stays above it.
+
+Level 0 holds only the units that depend on nothing: the second, which fixes
+the caesium frequency in Hz (s⁻¹), and the mole, which fixes the Avogadro
+constant in mol⁻¹. The other SI base units sit below whatever their constants
+are stated in. The metre is on level 1, below the second, and the kelvin is
+below the joule. The SVG and the web viewer use the same levels.
 
 `build_graph.py` writes:
 
 - `output/graph.dot` / `output/graph.svg`: a top-down Graphviz diagram, one row per level, with
   nodes colored by system. Solid edges are derivations, labeled with their
-  power. Dashed edges are relationships.
+  power. Dotted purple edges are `defined_via` links. Dashed edges are
+  relationships.
 - `output/graph.json`: a `{nodes, links}` graph, with each unit's `level`, for viewers
   such as the one in `site/`
 

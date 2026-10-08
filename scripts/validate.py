@@ -68,6 +68,18 @@ def check_units(units, errors):
                 f"component units"
             )
 
+        defined_via = data.get("defined_via", [])
+        if defined_via and data.get("system") not in CONSTANT_DEFINED_SYSTEMS:
+            errors.append(
+                f"unit {path.name}: defined_via is only for units defined from physical constants "
+                f"({', '.join(sorted(CONSTANT_DEFINED_SYSTEMS))}); use derived_from instead"
+            )
+        for via_id in defined_via:
+            if via_id == stem:
+                errors.append(f"unit {path.name}: defined_via must not reference the unit itself")
+            elif via_id not in ids:
+                errors.append(f"unit {path.name}: defined_via references unknown unit '{via_id}'")
+
         definitions = data.get("definitions", [])
         current_count = sum(1 for d in definitions if d.get("current"))
         if current_count != 1:
@@ -100,13 +112,13 @@ def check_units(units, errors):
 
 
 def check_cycles(units, errors):
-    # component -> [units derived from it]
+    # dependency -> [units that depend on it], through derived_from or defined_via
     graph = {stem: [] for stem in units}
     for stem, (_, data) in units.items():
-        for comp in data.get("derived_from", []):
-            comp_id = comp.get("id")
-            if comp_id in graph:
-                graph[comp_id].append(stem)
+        deps = [comp.get("id") for comp in data.get("derived_from", [])] + data.get("defined_via", [])
+        for dep_id in deps:
+            if dep_id in graph and dep_id != stem:
+                graph[dep_id].append(stem)
 
     WHITE, GRAY, BLACK = 0, 1, 2
     color = {stem: WHITE for stem in units}
@@ -118,7 +130,7 @@ def check_cycles(units, errors):
             if color[neighbor] == GRAY:
                 cycle_start = stack.index(neighbor)
                 cycle = stack[cycle_start:] + [neighbor]
-                errors.append("cycle detected in derived_from graph: " + " -> ".join(cycle))
+                errors.append("cycle detected in derived_from/defined_via graph: " + " -> ".join(cycle))
                 return True
             if color[neighbor] == WHITE and dfs(neighbor, stack):
                 return True

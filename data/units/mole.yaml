@@ -19,6 +19,6 @@ definitions:
     source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.5."
 notes:
   etymology: "From German 'Molekül', coined by Wilhelm Ostwald around 1900 as a short form of 'gram-molecule'."
-  cursedness: "Despite being clearly dimensionless (it's just Avogadro's number of something), the mole is counted as its own SI base unit rather than a bare number — a quirk chemistry insisted on."
+  cursedness: "Whether the mole should be a unit at all is a matter of convention. Its defining constant, the Avogadro constant N_A = 6.02214076×10²³ mol⁻¹, is a quantity with a unit: entities per mole. Fixing it gives 1 mol = 6.02214076×10²³ / N_A, so the only unit involved is the mole itself, and like the second it depends on no other unit. Drop the unit and N_A becomes the Avogadro number, a plain count, and the mole becomes a counting word like 'dozen'. On that view, amount of substance is not a dimension at all. The SI keeps it as a separate base dimension so that chemistry stays dimensionally consistent, for example molar mass in kg/mol rather than just kg. This is the same kind of choice the SI makes in treating the radian as dimensionless. The mole also depended on the kilogram until 2019 (0.012 kg of carbon-12), so a change in the kilogram changed the mole. The 2019 redefinition removed that link."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]

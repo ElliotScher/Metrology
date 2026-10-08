@@ -7,7 +7,7 @@
         "A"
       ],
       "system": "SI-base",
-      "level": 0,
+      "level": 1,
       "domain": "electric-current",
       "dimension": {
         "length": 0,
@@ -39,7 +39,7 @@
         }
       ],
       "etymology": "Named after Andr\u00e9-Marie Amp\u00e8re, French physicist and a founder of electromagnetism.",
-      "cursedness": null
+      "cursedness": "The 2019 definition fixes the elementary charge e, which is a charge, not a current, in coulombs (ampere-seconds). Solving for the ampere gives 1 A = e / (1.602176634\u00d710\u207b\u00b9\u2079 s), so this 'base' unit actually rests on the second. The elementary charge would most naturally define the coulomb, with no second needed (1 C = e / 1.602176634\u00d710\u207b\u00b9\u2079), and the ampere would then be the derived unit, C/s. The SI kept the ampere as the base unit for historical reasons: its 1946\u20132019 definition used the force between two current-carrying wires, which made current the quantity labs could measure directly. When the 2019 redefinition switched to fixing e, the ampere stayed the base unit and the coulomb stayed derived."
     },
     {
       "id": "candela",
@@ -48,7 +48,7 @@
         "cd"
       ],
       "system": "SI-base",
-      "level": 0,
+      "level": 6,
       "domain": "luminous-intensity",
       "dimension": {
         "length": 0,
@@ -80,7 +80,7 @@
         }
       ],
       "etymology": "From Latin 'candela', meaning candle.",
-      "cursedness": null
+      "cursedness": "The only SI base unit defined partly by human biology. Its constant, the luminous efficacy K_cd = 683 lm/W at 540 THz, comes from the peak sensitivity of the average human eye, not from physics. Its definition also uses the hertz, the steradian and the watt, so this 'base' unit actually depends on the kilogram, metre and second (the steradian is dimensionless). It is in effect a derived unit: radiant power per solid angle, weighted by a standardised eye."
     },
     {
       "id": "celsius",
@@ -89,7 +89,7 @@
         "\u00b0C"
       ],
       "system": "SI-derived",
-      "level": 1,
+      "level": 6,
       "domain": "thermodynamic-temperature",
       "dimension": {
         "length": 0,
@@ -123,7 +123,7 @@
         "C"
       ],
       "system": "SI-derived",
-      "level": 1,
+      "level": 2,
       "domain": "electromagnetism",
       "dimension": {
         "length": 0,
@@ -157,7 +157,7 @@
         "F"
       ],
       "system": "SI-derived",
-      "level": 5,
+      "level": 7,
       "domain": "electromagnetism",
       "dimension": {
         "length": -2,
@@ -191,7 +191,7 @@
         "H"
       ],
       "system": "SI-derived",
-      "level": 6,
+      "level": 8,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -259,7 +259,7 @@
         "J"
       ],
       "system": "SI-derived",
-      "level": 2,
+      "level": 4,
       "domain": "mechanics",
       "dimension": {
         "length": 2,
@@ -327,7 +327,7 @@
         "K"
       ],
       "system": "SI-base",
-      "level": 0,
+      "level": 5,
       "domain": "thermodynamic-temperature",
       "dimension": {
         "length": 0,
@@ -359,7 +359,7 @@
         }
       ],
       "etymology": "Named after William Thomson, 1st Baron Kelvin, who proposed an absolute temperature scale in 1848.",
-      "cursedness": null
+      "cursedness": "The 2019 definition fixes the Boltzmann constant k in joules per kelvin, so temperature now rests on energy: 1 K is the temperature change that changes kT by 1.380649\u00d710\u207b\u00b2\u00b3 J. Because the joule is kg\u00b7m\u00b2\u00b7s\u207b\u00b2, this 'base' unit actually depends on the kilogram, metre and second. Temperature is in effect an energy per degree of freedom that the SI measures in a separate unit for historical reasons."
     },
     {
       "id": "kilogram",
@@ -368,7 +368,7 @@
         "kg"
       ],
       "system": "SI-base",
-      "level": 0,
+      "level": 2,
       "domain": "mass",
       "dimension": {
         "length": 0,
@@ -407,7 +407,7 @@
         }
       ],
       "etymology": "From French 'kilogramme', from Greek 'khilioi' (thousand) + 'gramma' (small weight).",
-      "cursedness": "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit."
+      "cursedness": "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit. Since 2019, the definition fixes the Planck constant h in joule-seconds (kg\u00b7m\u00b2\u00b7s\u207b\u00b9), so the kilogram actually depends on the metre and second: 1 kg = h / (6.62607015\u00d710\u207b\u00b3\u2074 m\u00b2\u00b7s\u207b\u00b9). Before 2019, the dependency ran the other way. The joule, newton and every other mechanical unit were tied to a metal cylinder in a vault in S\u00e8vres, which slowly drifted in mass compared with its official copies."
     },
     {
       "id": "lumen",
@@ -416,7 +416,7 @@
         "lm"
       ],
       "system": "SI-derived",
-      "level": 2,
+      "level": 7,
       "domain": "photometry",
       "dimension": {
         "length": 0,
@@ -450,7 +450,7 @@
         "lx"
       ],
       "system": "SI-derived",
-      "level": 3,
+      "level": 8,
       "domain": "photometry",
       "dimension": {
         "length": -2,
@@ -484,7 +484,7 @@
         "m"
       ],
       "system": "SI-base",
-      "level": 0,
+      "level": 1,
       "domain": "length",
       "dimension": {
         "length": 1,
@@ -530,7 +530,7 @@
         }
       ],
       "etymology": "From Greek 'metron', meaning measure.",
-      "cursedness": null
+      "cursedness": "The metre's definition fixes the speed of light c in metres per second, so this base unit actually rests on the second: 1 m is the distance light travels in 1/299,792,458 s. Since 1983, length has had no standard of its own. It is measured as time multiplied by an exact constant."
     },
     {
       "id": "mole",
@@ -571,7 +571,7 @@
         }
       ],
       "etymology": "From German 'Molek\u00fcl', coined by Wilhelm Ostwald around 1900 as a short form of 'gram-molecule'.",
-      "cursedness": "Despite being clearly dimensionless (it's just Avogadro's number of something), the mole is counted as its own SI base unit rather than a bare number \u2014 a quirk chemistry insisted on."
+      "cursedness": "Whether the mole should be a unit at all is a matter of convention. Its defining constant, the Avogadro constant N_A = 6.02214076\u00d710\u00b2\u00b3 mol\u207b\u00b9, is a quantity with a unit: entities per mole. Fixing it gives 1 mol = 6.02214076\u00d710\u00b2\u00b3 / N_A, so the only unit involved is the mole itself, and like the second it depends on no other unit. Drop the unit and N_A becomes the Avogadro number, a plain count, and the mole becomes a counting word like 'dozen'. On that view, amount of substance is not a dimension at all. The SI keeps it as a separate base dimension so that chemistry stays dimensionally consistent, for example molar mass in kg/mol rather than just kg. This is the same kind of choice the SI makes in treating the radian as dimensionless. The mole also depended on the kilogram until 2019 (0.012 kg of carbon-12), so a change in the kilogram changed the mole. The 2019 redefinition removed that link."
     },
     {
       "id": "newton",
@@ -580,7 +580,7 @@
         "N"
       ],
       "system": "SI-derived",
-      "level": 1,
+      "level": 3,
       "domain": "mechanics",
       "dimension": {
         "length": 1,
@@ -614,7 +614,7 @@
         "\u03a9"
       ],
       "system": "SI-derived",
-      "level": 5,
+      "level": 7,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -648,7 +648,7 @@
         "Pa"
       ],
       "system": "SI-derived",
-      "level": 2,
+      "level": 4,
       "domain": "mechanics",
       "dimension": {
         "length": -1,
@@ -682,7 +682,7 @@
         "rad"
       ],
       "system": "SI-derived",
-      "level": 1,
+      "level": 2,
       "domain": "angle",
       "dimension": {
         "length": 0,
@@ -764,7 +764,7 @@
         "S"
       ],
       "system": "SI-derived",
-      "level": 5,
+      "level": 7,
       "domain": "electromagnetism",
       "dimension": {
         "length": -2,
@@ -798,7 +798,7 @@
         "sr"
       ],
       "system": "SI-derived",
-      "level": 1,
+      "level": 2,
       "domain": "solid-angle",
       "dimension": {
         "length": 0,
@@ -832,7 +832,7 @@
         "T"
       ],
       "system": "SI-derived",
-      "level": 6,
+      "level": 8,
       "domain": "electromagnetism",
       "dimension": {
         "length": 0,
@@ -866,7 +866,7 @@
         "V"
       ],
       "system": "SI-derived",
-      "level": 4,
+      "level": 6,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -900,7 +900,7 @@
         "W"
       ],
       "system": "SI-derived",
-      "level": 3,
+      "level": 5,
       "domain": "mechanics",
       "dimension": {
         "length": 2,
@@ -934,7 +934,7 @@
         "Wb"
       ],
       "system": "SI-derived",
-      "level": 5,
+      "level": 7,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -963,6 +963,26 @@
     }
   ],
   "links": [
+    {
+      "source": "second",
+      "target": "ampere",
+      "type": "definition"
+    },
+    {
+      "source": "hertz",
+      "target": "candela",
+      "type": "definition"
+    },
+    {
+      "source": "watt",
+      "target": "candela",
+      "type": "definition"
+    },
+    {
+      "source": "steradian",
+      "target": "candela",
+      "type": "definition"
+    },
     {
       "source": "kelvin",
       "target": "celsius",
@@ -1072,6 +1092,21 @@
       ]
     },
     {
+      "source": "joule",
+      "target": "kelvin",
+      "type": "definition"
+    },
+    {
+      "source": "metre",
+      "target": "kilogram",
+      "type": "definition"
+    },
+    {
+      "source": "second",
+      "target": "kilogram",
+      "type": "definition"
+    },
+    {
       "source": "candela",
       "target": "lumen",
       "type": "derivation",
@@ -1106,6 +1141,11 @@
       "powers": [
         -2
       ]
+    },
+    {
+      "source": "second",
+      "target": "metre",
+      "type": "definition"
     },
     {
       "source": "kilogram",

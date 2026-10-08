@@ -5,6 +5,7 @@ system: SI-base
 domain: electric-current
 dimension: { length: 0, mass: 0, time: 0, current: 1, temperature: 0, amount: 0, luminous_intensity: 0 }
 derived_from: []
+defined_via: [second]
 equation: null
 definitions:
   - era: "1946–2019"
@@ -19,6 +20,6 @@ definitions:
     source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
 notes:
   etymology: "Named after André-Marie Ampère, French physicist and a founder of electromagnetism."
-  cursedness: null
+  cursedness: "The 2019 definition fixes the elementary charge e, which is a charge, not a current, in coulombs (ampere-seconds). Solving for the ampere gives 1 A = e / (1.602176634×10⁻¹⁹ s), so this 'base' unit actually rests on the second. The elementary charge would most naturally define the coulomb, with no second needed (1 C = e / 1.602176634×10⁻¹⁹), and the ampere would then be the derived unit, C/s. The SI kept the ampere as the base unit for historical reasons: its 1946–2019 definition used the force between two current-carrying wires, which made current the quantity labs could measure directly. When the 2019 redefinition switched to fixing e, the ampere stayed the base unit and the coulomb stayed derived."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]

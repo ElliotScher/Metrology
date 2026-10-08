@@ -5,6 +5,7 @@ system: SI-base
 domain: mass
 dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
 derived_from: []
+defined_via: [metre, second]
 equation: null
 definitions:
   - era: "1799–1889"
@@ -24,6 +25,6 @@ definitions:
     source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.2."
 notes:
   etymology: "From French 'kilogramme', from Greek 'khilioi' (thousand) + 'gramma' (small weight)."
-  cursedness: "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit."
+  cursedness: "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit. Since 2019, the definition fixes the Planck constant h in joule-seconds (kg·m²·s⁻¹), so the kilogram actually depends on the metre and second: 1 kg = h / (6.62607015×10⁻³⁴ m²·s⁻¹). Before 2019, the dependency ran the other way. The joule, newton and every other mechanical unit were tied to a metal cylinder in a vault in Sèvres, which slowly drifted in mass compared with its official copies."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]

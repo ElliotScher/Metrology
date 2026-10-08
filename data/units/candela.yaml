@@ -5,6 +5,7 @@ system: SI-base
 domain: luminous-intensity
 dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 1 }
 derived_from: []
+defined_via: [hertz, watt, steradian]
 equation: null
 definitions:
   - era: "1946–1979"
@@ -19,6 +20,6 @@ definitions:
     source: "16th CGPM (1979), Resolution 3; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.7."
 notes:
   etymology: "From Latin 'candela', meaning candle."
-  cursedness: null
+  cursedness: "The only SI base unit defined partly by human biology. Its constant, the luminous efficacy K_cd = 683 lm/W at 540 THz, comes from the peak sensitivity of the average human eye, not from physics. Its definition also uses the hertz, the steradian and the watt, so this 'base' unit actually depends on the kilogram, metre and second (the steradian is dimensionless). It is in effect a derived unit: radiant power per solid angle, weighted by a standardised eye."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]

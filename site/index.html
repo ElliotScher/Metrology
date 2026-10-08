@@ -177,6 +177,8 @@
 
   .edge-deriv { stroke: var(--edge-deriv); stroke-width: 1.4px; fill: none; opacity: 0.55; }
   .edge-deriv.dimmed { opacity: 0.08; }
+  .edge-def { stroke: var(--slot-7); stroke-width: 1.5px; fill: none; stroke-dasharray: 1.5 3.5; stroke-linecap: round; opacity: 0.8; }
+  .edge-def.dimmed { opacity: 0.08; }
   .edge-rel { stroke: var(--edge-rel); stroke-width: 1.6px; fill: none; stroke-dasharray: 5 4; cursor: pointer; }
   .edge-rel:hover, .edge-rel.selected { stroke: var(--accent); }
   .edge-hit { stroke: transparent; stroke-width: 14px; fill: none; cursor: pointer; }
@@ -199,6 +201,7 @@
   #legend .swatch { width: 10px; height: 10px; border-radius: 3px; flex: none; }
   #legend .line-swatch { width: 18px; height: 0; border-top: 2px solid var(--edge-deriv); flex: none; }
   #legend .line-swatch.dashed { border-top-style: dashed; border-color: var(--edge-rel); }
+  #legend .line-swatch.dotted { border-top-style: dotted; border-color: var(--slot-7); }
   #legend hr { border: none; border-top: 1px solid var(--border); margin: 7px 0; }
 
   #tooltip {
@@ -364,10 +367,13 @@
         This project aims to untangle all of it, one unit at a time. For each
         unit it records what the unit is built from, every formal definition it
         has had, and how it relates to other units. The graph is arranged in
-        <strong>levels</strong>. Level 0 holds the units defined directly
-        from constants of nature. Every other unit sits one level below the
-        deepest unit it's built from, so you can trace any unit upward to the
-        constants it ultimately rests on. Click a unit to see its full history.
+        <strong>levels</strong>. Level 0 holds the units that depend on
+        nothing else: the second and the mole, whose constants are stated only
+        in terms of themselves. Every other unit sits one level below the
+        deepest unit it depends on. That includes the SI's other "base"
+        units, whose constants are stated in other units. The metre, for
+        example, fixes the speed of light in metres per second, so it sits
+        below the second. Click a unit to see its full history.
       </p>
     </div>
   </section>
@@ -465,6 +471,17 @@
     .append("path")
     .attr("d", "M0,0 L10,5 L0,10 z")
     .attr("fill", "var(--edge-deriv)");
+  svg.select("defs").append("marker")
+    .attr("id", "arrow-def")
+    .attr("viewBox", "0 0 10 10")
+    .attr("refX", 9)
+    .attr("refY", 5)
+    .attr("markerWidth", 7)
+    .attr("markerHeight", 7)
+    .attr("orient", "auto-start-reverse")
+    .append("path")
+    .attr("d", "M0,0 L10,5 L0,10 z")
+    .attr("fill", "var(--slot-7)");
 
   var zoomLayer = svg.append("g");
   var levelLayer = zoomLayer.append("g");
@@ -571,20 +588,30 @@
       return Object.assign({}, l, { source: byId[l.source], target: byId[l.target] });
     });
     var derivLinks = links.filter(function (l) { return l.type === "derivation"; });
+    var defLinks = links.filter(function (l) { return l.type === "definition"; });
     var relLinks = links.filter(function (l) { return l.type === "relationship"; });
 
-    var componentsOf = {};
-    var dependentsOf = {};
-    nodes.forEach(function (n) { componentsOf[n.id] = []; dependentsOf[n.id] = []; });
+    // componentsOf: derivation components (with powers), for the panel.
+    // definedViaOf: units a constant-defined unit's constant is stated in.
+    // dependsOn / dependentsOf: both kinds together, for levels and layout.
+    var componentsOf = {}, definedViaOf = {}, dependsOn = {}, dependentsOf = {};
+    nodes.forEach(function (n) {
+      componentsOf[n.id] = []; definedViaOf[n.id] = []; dependsOn[n.id] = []; dependentsOf[n.id] = [];
+    });
     derivLinks.forEach(function (l) {
       componentsOf[l.target.id].push({ id: l.source.id, powers: l.powers || [l.power] });
+    });
+    defLinks.forEach(function (l) { definedViaOf[l.target.id].push(l.source.id); });
+    derivLinks.concat(defLinks).forEach(function (l) {
+      dependsOn[l.target.id].push({ id: l.source.id });
       dependentsOf[l.source.id].push(l.target.id);
     });
 
-    var rows = layout(nodes, componentsOf, dependentsOf, byId);
+    var rows = layout(nodes, dependsOn, dependentsOf, byId);
 
     subtitleEl.textContent = nodes.length + " units · " + rows.length + " levels · " + derivLinks.length +
-      " derivations · " + relLinks.length + " relationship" + (relLinks.length === 1 ? "" : "s");
+      " derivations · " + defLinks.length + " definitional links · " + relLinks.length +
+      " relationship" + (relLinks.length === 1 ? "" : "s");
 
     // Level bands and labels.
     var minX = d3.min(nodes, function (n) { return n.x - n.w / 2; });
@@ -612,7 +639,7 @@
       .attr("class", "level-caption")
       .attr("x", bandLeft + 14)
       .attr("y", 12)
-      .text(function (d) { return d.level === 0 ? "from constants" : d.count + " unit" + (d.count === 1 ? "" : "s"); });
+      .text(function (d) { return d.level === 0 ? "depends on nothing" : d.count + " unit" + (d.count === 1 ? "" : "s"); });
 
     function curve(l) {
       var s = l.source, t = l.target;
@@ -624,6 +651,13 @@
       var y1 = top.y + top.h / 2, y2 = bottom.y - bottom.h / 2, my = (y1 + y2) / 2;
       return "M" + top.x + "," + y1 + "C" + top.x + "," + my + " " + bottom.x + "," + my + " " + bottom.x + "," + y2;
     }
+
+    var linkDef = linkLayer.selectAll(".edge-def")
+      .data(defLinks)
+      .enter().append("path")
+      .attr("class", "edge-def")
+      .attr("marker-end", "url(#arrow-def)")
+      .attr("d", curve);
 
     var linkDeriv = linkLayer.selectAll(".edge-deriv")
       .data(derivLinks)
@@ -753,7 +787,9 @@
         matched[n.id] = !q || hay.indexOf(q) !== -1;
       });
       nodeSel.classed("dimmed", function (d) { return !matched[d.id]; });
-      linkDeriv.classed("dimmed", function (l) { return !matched[l.source.id] || !matched[l.target.id]; });
+      [linkDeriv, linkDef].forEach(function (sel) {
+        sel.classed("dimmed", function (l) { return !matched[l.source.id] || !matched[l.target.id]; });
+      });
     });
 
     // A chip linking to a unit, labelled with its symbol raised to each power,
@@ -776,13 +812,19 @@
       html += '<div class="field-label">Dimension</div><div class="dimension">' + esc(formatDimension(d.dimension)) + "</div>";
 
       var comps = componentsOf[d.id];
-      html += '<div class="field-label">Derived from</div>';
+      var via = definedViaOf[d.id];
       if (comps.length) {
-        html += '<div class="unit-chips">';
+        html += '<div class="field-label">Derived from</div><div class="unit-chips">';
         comps.forEach(function (c) { html += unitChip(c.id, c.powers); });
         html += "</div>";
+      } else if (via.length) {
+        html += '<div class="field-label">Defined via</div><div class="unit-chips">';
+        via.forEach(function (id) { html += unitChip(id); });
+        html += '</div><p style="color:var(--text-muted);font-size:12px;margin-top:6px">' +
+          "Its definition fixes a physical constant, and that constant's value is stated in these units.</p>";
       } else {
-        html += '<p style="color:var(--text-muted)">Nothing. It is defined directly from a physical constant.</p>';
+        html += '<div class="field-label">Depends on</div><p style="color:var(--text-muted)">' +
+          "Nothing. Its definition fixes a physical constant stated only in terms of this unit itself.</p>";
       }
 
       var deps = dependentsOf[d.id];
@@ -832,6 +874,7 @@
     });
     html += "<hr>";
     html += '<div class="legend-row"><span class="line-swatch"></span>derived from</div>';
+    html += '<div class="legend-row"><span class="line-swatch dotted"></span>defined via constant</div>';
     html += '<div class="legend-row"><span class="line-swatch dashed"></span>related note</div>';
     legendEl.innerHTML = html;
   }

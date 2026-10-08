@@ -50,6 +50,12 @@
         }
       }
     },
+    "defined_via": {
+      "description": "For units defined by fixing a physical constant: the other units that constant's value is stated in, e.g. the metre fixes c in m/s, so it is defined via the second. A named unit that is itself built from this unit (the joule, for the kilogram) is replaced by its own components. Not a dimensional relation, so validate.py does not check dimensions on it, but it does count towards levels.",
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
     "equation": { "type": ["string", "null"] },
     "definitions": {
       "description": "Chronological list of this unit's formal definitions. Exactly one entry must have current: true.",

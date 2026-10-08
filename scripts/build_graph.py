@@ -55,18 +55,24 @@ def grouped_components(unit):
     return groups
 
 
+def dependencies(unit):
+    """Every unit this one depends on: its components plus, for units defined
+    from physical constants, the units that constant is stated in."""
+    return list(grouped_components(unit)) + unit.get("defined_via", [])
+
+
 def compute_levels(units):
     """Each unit's level is one more than the highest level among its
-    components, so it sits as close to the base as it can while every unit it
-    depends on is on a level above it. Units with no components (defined from
-    physical constants) are level 0. validate.py guarantees there are no
-    cycles."""
+    dependencies, so it sits as close to the root as it can while every unit
+    it depends on is on a level above it. Level 0 holds the units that depend
+    on nothing: the second and the mole, whose constants are stated only in
+    terms of themselves. validate.py guarantees there are no cycles."""
     levels = {}
 
     def level_of(uid):
         if uid not in levels:
-            comps = grouped_components(units[uid])
-            levels[uid] = 1 + max(map(level_of, comps)) if comps else 0
+            deps = dependencies(units[uid])
+            levels[uid] = 1 + max(map(level_of, deps)) if deps else 0
         return levels[uid]
 
     for uid in units:
@@ -108,6 +114,8 @@ def build_dot(units, relationships, levels):
         for comp_id, powers in grouped_components(unit).items():
             edge_label = "" if powers == [1] else ", ".join(f"^{p}" for p in powers)
             lines.append(f'  "{comp_id}" -> "{uid}" [label="{edge_label}"];')
+        for via_id in unit.get("defined_via", []):
+            lines.append(f'  "{via_id}" -> "{uid}" [style=dotted, color="#6a1b9a", penwidth=1.4];')
 
     for _, rel in relationships.items():
         rel_units = rel.get("units", [])
@@ -156,6 +164,8 @@ def build_json(units, relationships, levels):
                     "powers": powers,
                 }
             )
+        for via_id in unit.get("defined_via", []):
+            links.append({"source": via_id, "target": uid, "type": "definition"})
 
     for rid, rel in relationships.items():
         rel_units = rel.get("units", [])

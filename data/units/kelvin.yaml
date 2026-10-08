@@ -5,6 +5,7 @@ system: SI-base
 domain: thermodynamic-temperature
 dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 1, amount: 0, luminous_intensity: 0 }
 derived_from: []
+defined_via: [joule]
 equation: null
 definitions:
   - era: "1954–2019"
@@ -19,6 +20,6 @@ definitions:
     source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."
 notes:
   etymology: "Named after William Thomson, 1st Baron Kelvin, who proposed an absolute temperature scale in 1848."
-  cursedness: null
+  cursedness: "The 2019 definition fixes the Boltzmann constant k in joules per kelvin, so temperature now rests on energy: 1 K is the temperature change that changes kT by 1.380649×10⁻²³ J. Because the joule is kg·m²·s⁻², this 'base' unit actually depends on the kilogram, metre and second. Temperature is in effect an energy per degree of freedom that the SI measures in a separate unit for historical reasons."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]

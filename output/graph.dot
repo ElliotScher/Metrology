@@ -9,12 +9,16 @@ digraph metrology {
   "level-4" [label="Level 4", shape=plaintext, style="", fontcolor="#616161"];
   "level-5" [label="Level 5", shape=plaintext, style="", fontcolor="#616161"];
   "level-6" [label="Level 6", shape=plaintext, style="", fontcolor="#616161"];
+  "level-7" [label="Level 7", shape=plaintext, style="", fontcolor="#616161"];
+  "level-8" [label="Level 8", shape=plaintext, style="", fontcolor="#616161"];
   "level-0" -> "level-1" [style=invis, weight=100];
   "level-1" -> "level-2" [style=invis, weight=100];
   "level-2" -> "level-3" [style=invis, weight=100];
   "level-3" -> "level-4" [style=invis, weight=100];
   "level-4" -> "level-5" [style=invis, weight=100];
   "level-5" -> "level-6" [style=invis, weight=100];
+  "level-6" -> "level-7" [style=invis, weight=100];
+  "level-7" -> "level-8" [style=invis, weight=100];
   "ampere" [label="Ampere\n(A)", fillcolor="#1b5e20", fontcolor="white"];
   "candela" [label="Candela\n(cd)", fillcolor="#1b5e20", fontcolor="white"];
   "celsius" [label="Degree Celsius\n(°C)", fillcolor="#1565c0", fontcolor="white"];
@@ -41,13 +45,19 @@ digraph metrology {
   "volt" [label="Volt\n(V)", fillcolor="#1565c0", fontcolor="white"];
   "watt" [label="Watt\n(W)", fillcolor="#1565c0", fontcolor="white"];
   "weber" [label="Weber\n(Wb)", fillcolor="#1565c0", fontcolor="white"];
-  { rank=same; "level-0"; "ampere"; "candela"; "kelvin"; "second"; "kilogram"; "metre"; "mole"; }
-  { rank=same; "level-1"; "celsius"; "coulomb"; "newton"; "hertz"; "katal"; "steradian"; "radian"; }
-  { rank=same; "level-2"; "joule"; "lumen"; "pascal"; }
-  { rank=same; "level-3"; "watt"; "lux"; }
-  { rank=same; "level-4"; "volt"; }
-  { rank=same; "level-5"; "farad"; "weber"; "ohm"; "siemens"; }
-  { rank=same; "level-6"; "henry"; "tesla"; }
+  { rank=same; "level-0"; "second"; "mole"; }
+  { rank=same; "level-1"; "ampere"; "hertz"; "metre"; "katal"; }
+  { rank=same; "level-2"; "kilogram"; "steradian"; "coulomb"; "radian"; }
+  { rank=same; "level-3"; "newton"; }
+  { rank=same; "level-4"; "joule"; "pascal"; }
+  { rank=same; "level-5"; "watt"; "kelvin"; }
+  { rank=same; "level-6"; "candela"; "celsius"; "volt"; }
+  { rank=same; "level-7"; "farad"; "weber"; "lumen"; "ohm"; "siemens"; }
+  { rank=same; "level-8"; "henry"; "lux"; "tesla"; }
+  "second" -> "ampere" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "hertz" -> "candela" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "watt" -> "candela" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "steradian" -> "candela" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "kelvin" -> "celsius" [label=""];
   "ampere" -> "coulomb" [label=""];
   "second" -> "coulomb" [label=""];
@@ -60,10 +70,14 @@ digraph metrology {
   "metre" -> "joule" [label=""];
   "mole" -> "katal" [label=""];
   "second" -> "katal" [label="^-1"];
+  "joule" -> "kelvin" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "metre" -> "kilogram" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "second" -> "kilogram" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "candela" -> "lumen" [label=""];
   "steradian" -> "lumen" [label=""];
   "lumen" -> "lux" [label=""];
   "metre" -> "lux" [label="^-2"];
+  "second" -> "metre" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "kilogram" -> "newton" [label=""];
   "metre" -> "newton" [label=""];
   "second" -> "newton" [label="^-2"];
