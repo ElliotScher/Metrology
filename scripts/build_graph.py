@@ -61,6 +61,26 @@ def dependencies(unit):
     return list(grouped_components(unit)) + unit.get("defined_via", [])
 
 
+def circular_path(units, start, end):
+    """Shortest derivation chain from start down to end, e.g. kilogram ->
+    newton -> joule: the units that close a circular definition."""
+    dependents = {uid: [] for uid in units}
+    for uid, unit in units.items():
+        for comp_id in grouped_components(unit):
+            dependents[comp_id].append(uid)
+    paths = {start: [start]}
+    queue = [start]
+    while queue:
+        current = queue.pop(0)
+        if current == end:
+            return paths[current]
+        for nxt in dependents[current]:
+            if nxt not in paths:
+                paths[nxt] = paths[current] + [nxt]
+                queue.append(nxt)
+    raise ValueError(f"{end} is not built from {start}; run validate.py")
+
+
 def compute_levels(units):
     """Each unit's level is one more than the highest level among its
     dependencies, so it sits as close to the root as it can while every unit
@@ -116,6 +136,11 @@ def build_dot(units, relationships, levels):
             lines.append(f'  "{comp_id}" -> "{uid}" [label="{edge_label}"];')
         for via_id in unit.get("defined_via", []):
             lines.append(f'  "{via_id}" -> "{uid}" [style=dotted, color="#6a1b9a", penwidth=1.4];')
+        for circ_id in unit.get("circular_via", []):
+            lines.append(
+                f'  "{circ_id}" -> "{uid}" [constraint=false, style=dashed, color="#c62828", '
+                f'fontcolor="#c62828", penwidth=1.6, label="circular"];'
+            )
 
     for _, rel in relationships.items():
         rel_units = rel.get("units", [])
@@ -166,6 +191,17 @@ def build_json(units, relationships, levels):
             )
         for via_id in unit.get("defined_via", []):
             links.append({"source": via_id, "target": uid, "type": "definition"})
+        # A circular definition: uid's constant is stated in circ_id, which is
+        # built from uid. "loop" is the derivation chain from uid to circ_id.
+        for circ_id in unit.get("circular_via", []):
+            links.append(
+                {
+                    "source": circ_id,
+                    "target": uid,
+                    "type": "circular",
+                    "loop": circular_path(units, uid, circ_id),
+                }
+            )
 
     for rid, rel in relationships.items():
         rel_units = rel.get("units", [])

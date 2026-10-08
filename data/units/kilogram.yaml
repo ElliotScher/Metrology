@@ -6,6 +6,7 @@ domain: mass
 dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
 derived_from: []
 defined_via: [metre, second]
+circular_via: [joule]
 equation: null
 definitions:
   - era: "1799–1889"

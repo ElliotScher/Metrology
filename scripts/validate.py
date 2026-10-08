@@ -46,6 +46,23 @@ def validate_schema(entries, schema, label, errors):
             errors.append(f"{label} {path.name}: {loc}: {err.message}")
 
 
+def derives_from(units, unit_id, ancestor_id):
+    """True if unit_id is built from ancestor_id, directly or transitively,
+    through derived_from."""
+    seen = set()
+    stack = [unit_id]
+    while stack:
+        current = stack.pop()
+        for comp in units.get(current, (None, {}))[1].get("derived_from", []):
+            comp_id = comp.get("id")
+            if comp_id == ancestor_id:
+                return True
+            if comp_id not in seen:
+                seen.add(comp_id)
+                stack.append(comp_id)
+    return False
+
+
 def check_units(units, errors):
     ids = set(units.keys())
 
@@ -79,6 +96,21 @@ def check_units(units, errors):
                 errors.append(f"unit {path.name}: defined_via must not reference the unit itself")
             elif via_id not in ids:
                 errors.append(f"unit {path.name}: defined_via references unknown unit '{via_id}'")
+
+        circular_via = data.get("circular_via", [])
+        if circular_via and data.get("system") not in CONSTANT_DEFINED_SYSTEMS:
+            errors.append(
+                f"unit {path.name}: circular_via is only for units defined from physical constants "
+                f"({', '.join(sorted(CONSTANT_DEFINED_SYSTEMS))})"
+            )
+        for circ_id in circular_via:
+            if circ_id not in ids:
+                errors.append(f"unit {path.name}: circular_via references unknown unit '{circ_id}'")
+            elif not derives_from(units, circ_id, stem):
+                errors.append(
+                    f"unit {path.name}: circular_via lists '{circ_id}', but '{circ_id}' is not built "
+                    f"from '{stem}' through derived_from, so the definition is not circular"
+                )
 
         definitions = data.get("definitions", [])
         current_count = sum(1 for d in definitions if d.get("current"))

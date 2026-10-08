@@ -55,9 +55,11 @@ digraph metrology {
   { rank=same; "level-7"; "farad"; "weber"; "lumen"; "ohm"; "siemens"; }
   { rank=same; "level-8"; "henry"; "lux"; "tesla"; }
   "second" -> "ampere" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "coulomb" -> "ampere" [constraint=false, style=dashed, color="#c62828", fontcolor="#c62828", penwidth=1.6, label="circular"];
   "hertz" -> "candela" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "watt" -> "candela" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "steradian" -> "candela" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "lumen" -> "candela" [constraint=false, style=dashed, color="#c62828", fontcolor="#c62828", penwidth=1.6, label="circular"];
   "kelvin" -> "celsius" [label=""];
   "ampere" -> "coulomb" [label=""];
   "second" -> "coulomb" [label=""];
@@ -73,6 +75,7 @@ digraph metrology {
   "joule" -> "kelvin" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "metre" -> "kilogram" [style=dotted, color="#6a1b9a", penwidth=1.4];
   "second" -> "kilogram" [style=dotted, color="#6a1b9a", penwidth=1.4];
+  "joule" -> "kilogram" [constraint=false, style=dashed, color="#c62828", fontcolor="#c62828", penwidth=1.6, label="circular"];
   "candela" -> "lumen" [label=""];
   "steradian" -> "lumen" [label=""];
   "lumen" -> "lux" [label=""];

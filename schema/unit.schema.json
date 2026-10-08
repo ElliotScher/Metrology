@@ -56,6 +56,12 @@
       "items": { "type": "string" },
       "uniqueItems": true
     },
+    "circular_via": {
+      "description": "Units named in the defining constant's value that are themselves built from this unit, making the definition circular, e.g. the ampere fixes e in coulombs, and the coulomb is A·s. validate.py checks that each one really does lead back to this unit through derived_from. Drawn as a loop; excluded from levels and the cycle check.",
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
     "equation": { "type": ["string", "null"] },
     "definitions": {
       "description": "Chronological list of this unit's formal definitions. Exactly one entry must have current: true.",

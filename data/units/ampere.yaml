@@ -6,6 +6,7 @@ domain: electric-current
 dimension: { length: 0, mass: 0, time: 0, current: 1, temperature: 0, amount: 0, luminous_intensity: 0 }
 derived_from: []
 defined_via: [second]
+circular_via: [coulomb]
 equation: null
 definitions:
   - era: "1946–2019"

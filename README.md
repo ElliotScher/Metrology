@@ -132,6 +132,13 @@ sources: ["BIPM SI Brochure, 9th ed. (2019)"]
   fixes *h* in J·s, but the joule is built from the kilogram, so the kilogram
   has `defined_via: [metre, second]`. These links aren't dimensional, so they
   aren't checked for dimensions, but they do count toward levels.
+- **`circular_via`** (optional, constant-defined units only) — the units a
+  definition is stated in that are themselves built from the unit being
+  defined. Three SI base units have one: the ampere fixes *e* in coulombs
+  (C = A·s), the kilogram fixes *h* in joule-seconds (J = N·m and
+  N = kg·m/s²), and the candela fixes K_cd in lumens per watt (lm = cd·sr).
+  These links are drawn as loops and are left out of the level and cycle
+  calculations.
 - **`definitions`** — the unit's formal definitions in chronological order.
   Exactly one must have `current: true`.
 
@@ -159,7 +166,10 @@ source: "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."
 
 - every file's `id` matches its filename
 - every `derived_from`, `defined_via` and relationship reference points to an
-  existing unit, and only constant-defined units use `defined_via`
+  existing unit, and only constant-defined units use `defined_via` or
+  `circular_via`
+- every `circular_via` entry really is built from the unit that lists it,
+  directly or through other units, so each recorded loop actually closes
 - SI base units have no `derived_from`, and every other unit has one. The only
   exceptions are units defined directly from physical constants (`SI-base`,
   `natural-planck`). Dimensionless ratios like the radian still list their
@@ -187,8 +197,8 @@ below the joule. The SVG and the web viewer use the same levels.
 
 - `output/graph.dot` / `output/graph.svg`: a top-down Graphviz diagram, one row per level, with
   nodes colored by system. Solid edges are derivations, labeled with their
-  power. Dotted purple edges are `defined_via` links. Dashed edges are
-  relationships.
+  power. Dotted purple edges are `defined_via` links. Red dashed edges marked
+  "circular" close circular definitions. Grey dashed edges are relationships.
 - `output/graph.json`: a `{nodes, links}` graph, with each unit's `level`, for viewers
   such as the one in `site/`
 
@@ -196,7 +206,9 @@ below the joule. The SVG and the web viewer use the same levels.
 
 `site/index.html` is an interactive D3 viewer for `graph.json`. Click a unit
 to see its equation, dimension, components, dependents and full definition
-history.
+history. Circular definitions are drawn as animated red loops. The
+**Circular definitions** button highlights all of them, and a unit that's part
+of a loop shows it as a ring diagram in its panel.
 
 Build and preview it locally:
 

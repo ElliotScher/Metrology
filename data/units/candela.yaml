@@ -6,6 +6,7 @@ domain: luminous-intensity
 dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 1 }
 derived_from: []
 defined_via: [hertz, watt, steradian]
+circular_via: [lumen]
 equation: null
 definitions:
   - era: "1946–1979"
@@ -13,13 +14,18 @@ definitions:
     basis: physical-artifact
     current: false
     source: "CIPM (1946), Resolution 2."
-  - era: "1979–present"
+  - era: "1979–2019"
     value: "The luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency 540×10¹² Hz and has a radiant intensity in that direction of 1/683 watt per steradian."
     basis: physical-constant
+    current: false
+    source: "16th CGPM (1979), Resolution 3."
+  - era: "2019–present"
+    value: "Defined by fixing the numerical value of the luminous efficacy of monochromatic radiation of frequency 540×10¹² Hz, K_cd, to 683 lumens per watt, where the lumen is cd·sr."
+    basis: physical-constant
     current: true
-    source: "16th CGPM (1979), Resolution 3; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.7."
+    source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
 notes:
   etymology: "From Latin 'candela', meaning candle."
-  cursedness: "The only SI base unit defined partly by human biology. Its constant, the luminous efficacy K_cd = 683 lm/W at 540 THz, comes from the peak sensitivity of the average human eye, not from physics. Its definition also uses the hertz, the steradian and the watt, so this 'base' unit actually depends on the kilogram, metre and second (the steradian is dimensionless). It is in effect a derived unit: radiant power per solid angle, weighted by a standardised eye."
+  cursedness: "The only SI base unit defined partly by human biology. Its constant, the luminous efficacy K_cd = 683 lm/W at 540 THz, comes from the peak sensitivity of the average human eye, not from physics. The definition is also circular. It fixes K_cd in lumens per watt, but the lumen is cd·sr, so the candela is defined in terms of a unit built from itself. Once that loop is unpacked, the definition rests on the hertz, the steradian and the watt, so this 'base' unit actually depends on the kilogram, metre and second (the steradian is dimensionless). It is in effect a derived unit: radiant power per solid angle, weighted by a standardised eye."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]
