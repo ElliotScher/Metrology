@@ -46,6 +46,15 @@ def current_definition(unit):
     return definitions[0] if definitions else {}
 
 
+def grouped_components(unit):
+    """Map component id -> list of powers, so a unit like the radian (m¹·m⁻¹)
+    gets one edge from the metre rather than two parallel ones."""
+    groups = {}
+    for comp in unit.get("derived_from", []):
+        groups.setdefault(comp["id"], []).append(comp.get("power", 1))
+    return groups
+
+
 def build_dot(units, relationships):
     lines = [
         "digraph metrology {",
@@ -61,10 +70,9 @@ def build_dot(units, relationships):
         lines.append(f'  "{uid}" [label="{label}", fillcolor="{color}", fontcolor="white"];')
 
     for uid, unit in units.items():
-        for comp in unit.get("derived_from", []):
-            power = comp.get("power", 1)
-            edge_label = f"^{power}" if power != 1 else ""
-            lines.append(f'  "{comp["id"]}" -> "{uid}" [label="{edge_label}"];')
+        for comp_id, powers in grouped_components(unit).items():
+            edge_label = "" if powers == [1] else ", ".join(f"^{p}" for p in powers)
+            lines.append(f'  "{comp_id}" -> "{uid}" [label="{edge_label}"];')
 
     for _, rel in relationships.items():
         rel_units = rel.get("units", [])
@@ -94,6 +102,7 @@ def build_json(units, relationships):
                 "currentDefinition": cur.get("value"),
                 "currentSource": cur.get("source"),
                 "definitionCount": len(unit.get("definitions", [])),
+                "definitions": unit.get("definitions", []),
                 "etymology": unit.get("notes", {}).get("etymology"),
                 "cursedness": unit.get("notes", {}).get("cursedness"),
             }
@@ -101,13 +110,14 @@ def build_json(units, relationships):
 
     links = []
     for uid, unit in units.items():
-        for comp in unit.get("derived_from", []):
+        for comp_id, powers in grouped_components(unit).items():
             links.append(
                 {
-                    "source": comp["id"],
+                    "source": comp_id,
                     "target": uid,
                     "type": "derivation",
-                    "power": comp.get("power", 1),
+                    "power": sum(powers),
+                    "powers": powers,
                 }
             )
 

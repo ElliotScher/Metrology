@@ -4,7 +4,9 @@ symbols: [sr]
 system: SI-derived
 domain: solid-angle
 dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
-derived_from: []
+derived_from:
+  - { id: metre, power: 2 }
+  - { id: metre, power: -2 }
 equation: "sr = m²/m²"
 definitions:
   - era: "1960–present"

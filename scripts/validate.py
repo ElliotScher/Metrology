@@ -15,6 +15,10 @@ UNITS_DIR = ROOT / "data" / "units"
 RELATIONSHIPS_DIR = ROOT / "data" / "relationships"
 SCHEMA_DIR = ROOT / "schema"
 
+# Systems whose units are defined by fixing physical constants rather than
+# from other units — the only ones allowed an empty derived_from.
+CONSTANT_DEFINED_SYSTEMS = {"SI-base", "natural-planck"}
+
 DIM_KEYS = ["length", "mass", "time", "current", "temperature", "amount", "luminous_intensity"]
 
 
@@ -57,6 +61,12 @@ def check_units(units, errors):
 
         if data.get("system") == "SI-base" and derived_from:
             errors.append(f"unit {path.name}: SI-base unit must have empty derived_from")
+        if data.get("system") not in CONSTANT_DEFINED_SYSTEMS and not derived_from:
+            errors.append(
+                f"unit {path.name}: derived_from is empty, but only units defined directly from "
+                f"physical constants ({', '.join(sorted(CONSTANT_DEFINED_SYSTEMS))}) may have no "
+                f"component units"
+            )
 
         definitions = data.get("definitions", [])
         current_count = sum(1 for d in definitions if d.get("current"))

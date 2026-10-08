@@ -51,8 +51,10 @@ digraph metrology {
   "ampere" -> "ohm" [label="^-1"];
   "newton" -> "pascal" [label=""];
   "metre" -> "pascal" [label="^-2"];
+  "metre" -> "radian" [label="^1, ^-1"];
   "ampere" -> "siemens" [label=""];
   "volt" -> "siemens" [label="^-1"];
+  "metre" -> "steradian" [label="^2, ^-2"];
   "weber" -> "tesla" [label=""];
   "metre" -> "tesla" [label="^-2"];
   "watt" -> "volt" [label=""];

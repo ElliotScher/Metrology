@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Metrology Graph</title>
+<meta name="description" content="An interactive graph of units of measurement: what each is derived from, how its definition has changed, and how units relate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"
+        integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i"
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --bg-page:      #eef1f5;
+    --bg-surface:   #fbfcfd;
+    --bg-raised:    #ffffff;
+    --grid-line:    rgba(20, 45, 70, 0.07);
+    --text-primary: #0e1b26;
+    --text-secondary: #46586a;
+    --text-muted:   #7f93a5;
+    --border:       rgba(14, 27, 38, 0.14);
+    --accent:       #2a78d6;
+    --accent-soft:  rgba(42, 120, 214, 0.12);
+    --edge-deriv:   #46586a;
+    --edge-rel:     #9aa8b6;
+
+    --slot-1: #2a78d6; /* SI-base */
+    --slot-2: #eb6834; /* SI-derived */
+    --slot-3: #1baf7a; /* SI-accepted */
+    --slot-4: #eda100; /* CGS */
+    --slot-5: #e87ba4; /* imperial */
+    --slot-6: #008300; /* us-customary */
+    --slot-7: #4a3aa7; /* natural-planck */
+    --slot-8: #e34948; /* domain-specific */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg-page:      #0c1b2e;
+      --bg-surface:   #10233a;
+      --bg-raised:    #142a44;
+      --grid-line:    rgba(190, 220, 255, 0.08);
+      --text-primary: #eef4fb;
+      --text-secondary: #a9c0d6;
+      --text-muted:   #7590a8;
+      --border:       rgba(190, 220, 255, 0.16);
+      --accent:       #3987e5;
+      --accent-soft:  rgba(57, 135, 229, 0.18);
+      --edge-deriv:   #a9c0d6;
+      --edge-rel:     #5b7288;
+
+      --slot-1: #3987e5;
+      --slot-2: #d95926;
+      --slot-3: #199e70;
+      --slot-4: #c98500;
+      --slot-5: #d55181;
+      --slot-6: #2fae2f;
+      --slot-7: #9085e9;
+      --slot-8: #e66767;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-page:      #0c1b2e;
+    --bg-surface:   #10233a;
+    --bg-raised:    #142a44;
+    --grid-line:    rgba(190, 220, 255, 0.08);
+    --text-primary: #eef4fb;
+    --text-secondary: #a9c0d6;
+    --text-muted:   #7590a8;
+    --border:       rgba(190, 220, 255, 0.16);
+    --accent:       #3987e5;
+    --accent-soft:  rgba(57, 135, 229, 0.18);
+    --edge-deriv:   #a9c0d6;
+    --edge-rel:     #5b7288;
+
+    --slot-1: #3987e5;
+    --slot-2: #d95926;
+    --slot-3: #199e70;
+    --slot-4: #c98500;
+    --slot-5: #d55181;
+    --slot-6: #2fae2f;
+    --slot-7: #9085e9;
+    --slot-8: #e66767;
+  }
+
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    background: var(--bg-page);
+    color: var(--text-primary);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  a { color: var(--accent); }
+  code { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-block: env(safe-area-inset-top, 0px) env(safe-area-inset-bottom, 0px);
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg-surface) 88%, transparent);
+    backdrop-filter: blur(6px);
+    z-index: 5;
+  }
+  header h1 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+  header .subtitle {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+  header .spacer { flex: 1; }
+  header input[type="search"] {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 7px 11px;
+    font-size: 13px;
+    color: var(--text-primary);
+    width: 200px;
+    max-width: 42vw;
+    font-family: inherit;
+  }
+  header input[type="search"]::placeholder { color: var(--text-muted); }
+  header input[type="search"]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  main {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    display: flex;
+  }
+
+  #canvas-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+  svg#graph { width: 100%; height: 100%; display: block; cursor: grab; }
+  svg#graph:active { cursor: grabbing; }
+
+  .node rect { stroke: rgba(0,0,0,0.18); stroke-width: 1px; }
+  :root:not([data-theme="light"]) .node rect { stroke: rgba(0,0,0,0.35); }
+  :root[data-theme="dark"] .node rect { stroke: rgba(0,0,0,0.35); }
+
+  .node text { fill: #fff; pointer-events: none; }
+  .node .symbol-text { font-weight: 700; font-size: 12px; }
+  .node .name-text { font-size: 8.5px; opacity: 0.92; }
+  .node { cursor: pointer; }
+  .node.dimmed { opacity: 0.18; }
+  .node.selected rect { stroke: var(--text-primary); stroke-width: 2.5px; }
+
+  .edge-deriv { stroke: var(--edge-deriv); stroke-width: 1.4px; fill: none; opacity: 0.55; }
+  .edge-deriv.dimmed { opacity: 0.08; }
+  .edge-rel { stroke: var(--edge-rel); stroke-width: 1.6px; fill: none; stroke-dasharray: 5 4; cursor: pointer; }
+  .edge-rel:hover, .edge-rel.selected { stroke: var(--accent); }
+  .edge-hit { stroke: transparent; stroke-width: 14px; fill: none; cursor: pointer; }
+
+  #legend {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 11.5px;
+    color: var(--text-secondary);
+    max-width: 220px;
+    backdrop-filter: blur(4px);
+  }
+  #legend .legend-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 6px; }
+  #legend .legend-row { display: flex; align-items: center; gap: 7px; padding: 2px 0; }
+  #legend .swatch { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+  #legend .line-swatch { width: 18px; height: 0; border-top: 2px solid var(--edge-deriv); flex: none; }
+  #legend .line-swatch.dashed { border-top-style: dashed; border-color: var(--edge-rel); }
+  #legend hr { border: none; border-top: 1px solid var(--border); margin: 7px 0; }
+
+  #tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: var(--text-primary);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    transform: translate(-50%, -110%);
+    white-space: nowrap;
+    z-index: 20;
+  }
+  #tooltip[hidden] { display: none; }
+  #tooltip .tt-name { font-weight: 600; }
+  #tooltip .tt-meta { color: var(--text-muted); font-size: 10.5px; }
+
+  #panel {
+    width: 360px;
+    flex: none;
+    border-left: 1px solid var(--border);
+    background: var(--bg-surface);
+    overflow-y: auto;
+    padding: 18px;
+  }
+  #panel[hidden] { display: none; }
+  #panel .panel-close {
+    float: right;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 2px 4px;
+  }
+  #panel .panel-close:hover { color: var(--text-primary); }
+  #panel h2 { font-family: "Newsreader", Georgia, serif; font-size: 21px; margin: 0 0 2px; }
+  #panel .panel-symbols { font-family: "JetBrains Mono", monospace; color: var(--text-secondary); font-size: 13px; margin-bottom: 10px; }
+  #panel .badge {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 7px;
+    border-radius: 4px;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  #panel .field-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin: 14px 0 4px; }
+  #panel .equation { font-family: "JetBrains Mono", monospace; font-size: 14px; background: var(--accent-soft); color: var(--text-primary); padding: 6px 9px; border-radius: 6px; display: inline-block; }
+  #panel .dimension { font-family: "JetBrains Mono", monospace; font-size: 13px; }
+  #panel p { font-size: 13px; line-height: 1.55; color: var(--text-primary); margin: 4px 0; }
+  #panel .unit-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  #panel .unit-chip {
+    font: 12px "JetBrains Mono", monospace;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 3px 7px;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+  #panel .unit-chip:hover { border-color: var(--accent); }
+  #panel .def-entry { border-left: 2px solid var(--border); padding: 6px 0 6px 10px; margin-bottom: 8px; }
+  #panel .def-entry.current { border-left-color: var(--accent); }
+  #panel .def-era { font-family: "JetBrains Mono", monospace; font-size: 11px; color: var(--text-secondary); display: flex; gap: 6px; align-items: center; }
+  #panel .def-era .now { background: var(--accent); color: #fff; font-size: 9px; padding: 1px 5px; border-radius: 3px; text-transform: uppercase; }
+  #panel .def-value { font-size: 12.5px; margin: 3px 0; }
+  #panel .def-source { font-size: 11px; color: var(--text-muted); font-style: italic; }
+  #panel .cursed { background: var(--accent-soft); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; }
+
+  #footer-note {
+    padding: 6px 20px 10px;
+    font-size: 10.5px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+    background: var(--bg-surface);
+  }
+
+  @media (max-width: 720px) {
+    header { padding: 12px 16px; }
+    #panel {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      width: auto;
+      max-height: 62vh;
+      border-left: none;
+      border-top: 1px solid var(--border);
+      border-radius: 14px 14px 0 0;
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.25);
+      padding: 18px 16px calc(18px + env(safe-area-inset-bottom, 0px));
+      z-index: 30;
+    }
+    #legend { left: 16px; max-width: 46vw; padding: 8px 10px; font-size: 10.5px; }
+    #footer-note { padding: 6px 16px 10px; }
+    header input[type="search"] { width: 130px; }
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>Metrology</h1>
+    <div class="subtitle" id="subtitle">loading…</div>
+    <div class="spacer"></div>
+    <input type="search" id="search" placeholder="Search units…" autocomplete="off" aria-label="Search units">
+  </header>
+  <main>
+    <div id="canvas-wrap">
+      <svg id="graph" role="img" aria-label="Graph of units of measurement and their derivations"></svg>
+      <div id="legend"></div>
+      <div id="tooltip" hidden></div>
+    </div>
+    <aside id="panel" hidden>
+      <button class="panel-close" id="panel-close" aria-label="Close">&times;</button>
+      <div id="panel-body"></div>
+    </aside>
+  </main>
+  <div id="footer-note">
+    An ongoing effort to untangle every unit of measurement. Generated from
+    <a href="https://github.com/ElliotScher/Metrology">the YAML data on GitHub</a>;
+    also available as a static <a href="graph.svg">Graphviz diagram</a>.
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var SYSTEM_ORDER = ["SI-base", "SI-derived", "SI-accepted", "CGS", "imperial", "us-customary", "natural-planck", "domain-specific"];
+  var DIM_SYMBOLS = { length: "L", mass: "M", time: "T", current: "I", temperature: "Θ", amount: "N", luminous_intensity: "J" };
+  var DIM_ORDER = ["length", "mass", "time", "current", "temperature", "amount", "luminous_intensity"];
+  var SUPERSCRIPT = { "-": "⁻", "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹" };
+
+  function superscript(n) {
+    return String(n).split("").map(function (ch) { return SUPERSCRIPT[ch] || ch; }).join("");
+  }
+
+  function formatDimension(dim) {
+    var parts = [];
+    DIM_ORDER.forEach(function (key) {
+      var v = dim[key] || 0;
+      if (v !== 0) parts.push(DIM_SYMBOLS[key] + superscript(v));
+    });
+    return parts.length ? parts.join("·") : "dimensionless";
+  }
+
+  function systemColorVar(system) {
+    var idx = SYSTEM_ORDER.indexOf(system);
+    return "var(--slot-" + (idx >= 0 ? idx + 1 : 8) + ")";
+  }
+
+  function esc(s) {
+    var div = document.createElement("div");
+    div.textContent = s == null ? "" : s;
+    return div.innerHTML;
+  }
+
+  var svg = d3.select("#graph");
+  var wrap = document.getElementById("canvas-wrap");
+  var tooltip = document.getElementById("tooltip");
+  var panel = document.getElementById("panel");
+  var panelBody = document.getElementById("panel-body");
+  var legendEl = document.getElementById("legend");
+  var subtitleEl = document.getElementById("subtitle");
+  var searchInput = document.getElementById("search");
+
+  svg.append("defs").append("marker")
+    .attr("id", "arrow")
+    .attr("viewBox", "0 0 10 10")
+    .attr("refX", 9)
+    .attr("refY", 5)
+    .attr("markerWidth", 7)
+    .attr("markerHeight", 7)
+    .attr("orient", "auto-start-reverse")
+    .append("path")
+    .attr("d", "M0,0 L10,5 L0,10 z")
+    .attr("fill", "var(--edge-deriv)");
+
+  var zoomLayer = svg.append("g");
+  var linkLayer = zoomLayer.append("g");
+  var nodeLayer = zoomLayer.append("g");
+
+  var zoom = d3.zoom().scaleExtent([0.2, 3]).on("zoom", function (ev) {
+    zoomLayer.attr("transform", ev.transform);
+  });
+  svg.call(zoom);
+
+  fetch("graph.json")
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(init)
+    .catch(function (err) {
+      subtitleEl.textContent = "failed to load graph.json";
+      console.error(err);
+    });
+
+  function init(data) {
+    var nodes = data.nodes.map(function (d) { return Object.assign({}, d); });
+    var derivLinks = data.links.filter(function (l) { return l.type === "derivation"; });
+    var relLinks = data.links.filter(function (l) { return l.type === "relationship"; });
+
+    subtitleEl.textContent = nodes.length + " units · " + derivLinks.length + " derivations · " +
+      relLinks.length + " relationship" + (relLinks.length === 1 ? "" : "s");
+
+    var byId = {};
+    nodes.forEach(function (n) {
+      var sym = n.symbols.join(", ");
+      n.w = Math.min(150, Math.max(66, Math.max(n.name.length * 6.2, sym.length * 8) + 20));
+      n.h = 38;
+      byId[n.id] = n;
+    });
+
+    // Component units (with powers) and dependents, for the detail panel.
+    var componentsOf = {};
+    var dependentsOf = {};
+    nodes.forEach(function (n) { componentsOf[n.id] = []; dependentsOf[n.id] = []; });
+    derivLinks.forEach(function (l) {
+      componentsOf[l.target].push({ id: l.source, powers: l.powers || [l.power] });
+      dependentsOf[l.source].push(l.target);
+    });
+
+    // Topological depth from derivation edges, for a layered layout.
+    var depthCache = {};
+    function depthOf(id) {
+      if (depthCache[id] !== undefined) return depthCache[id];
+      var parents = componentsOf[id];
+      var d = parents.length === 0 ? 0 : 1 + Math.max.apply(null, parents.map(function (c) { return depthOf(c.id); }));
+      depthCache[id] = d;
+      return d;
+    }
+    nodes.forEach(function (n) { n.depth = depthOf(n.id); });
+    var maxDepth = Math.max.apply(null, nodes.map(function (n) { return n.depth; }));
+
+    // allLinks must share object references with derivLinks/relLinks:
+    // d3.forceLink replaces each link's source/target id with the node
+    // object in place, and the <path> elements are bound to those arrays.
+    var allLinks = derivLinks.concat(relLinks);
+
+    var rect = wrap.getBoundingClientRect();
+    var width = rect.width || 900;
+    var height = rect.height || 600;
+    svg.attr("viewBox", [0, 0, width, height]);
+
+    var ySpacing = Math.max(70, (height - 120) / Math.max(1, maxDepth));
+
+    var simulation = d3.forceSimulation(nodes)
+      .force("link", d3.forceLink(allLinks).id(function (d) { return d.id; })
+        .distance(function (l) { return l.type === "relationship" ? 90 : 130; })
+        .strength(function (l) { return l.type === "relationship" ? 0.25 : 0.5; }))
+      .force("charge", d3.forceManyBody().strength(-260))
+      .force("x", d3.forceX(width / 2).strength(0.05))
+      .force("y", d3.forceY(function (d) { return 70 + d.depth * ySpacing; }).strength(0.35))
+      .force("collide", d3.forceCollide().radius(function (d) { return Math.max(d.w, d.h) / 1.5; }));
+
+    var linkDeriv = linkLayer.selectAll(".edge-deriv")
+      .data(derivLinks)
+      .enter().append("path")
+      .attr("class", "edge-deriv")
+      .attr("marker-end", "url(#arrow)");
+
+    var linkRelGroup = linkLayer.selectAll(".rel-group")
+      .data(relLinks)
+      .enter().append("g")
+      .attr("class", "rel-group");
+
+    linkRelGroup.append("path").attr("class", "edge-rel");
+    linkRelGroup.append("path").attr("class", "edge-hit")
+      .on("mouseenter", function (ev, d) { showTooltip(ev, d.kind.replace(/-/g, " ")); })
+      .on("mousemove", moveTooltip)
+      .on("mouseleave", hideTooltip)
+      .on("click", function (ev, d) {
+        ev.stopPropagation();
+        selectRelationship(d);
+      });
+
+    var nodeSel = nodeLayer.selectAll(".node")
+      .data(nodes, function (d) { return d.id; })
+      .enter().append("g")
+      .attr("class", "node")
+      .call(d3.drag()
+        .on("start", dragStarted)
+        .on("drag", dragged)
+        .on("end", dragEnded))
+      .on("mouseenter", function (ev, d) { showTooltip(ev, d.name, d.symbols.join(", ")); })
+      .on("mousemove", moveTooltip)
+      .on("mouseleave", hideTooltip)
+      .on("click", function (ev, d) {
+        ev.stopPropagation();
+        selectNode(d);
+      });
+
+    nodeSel.append("rect")
+      .attr("width", function (d) { return d.w; })
+      .attr("height", function (d) { return d.h; })
+      .attr("x", function (d) { return -d.w / 2; })
+      .attr("y", function (d) { return -d.h / 2; })
+      .attr("rx", 7)
+      .attr("fill", function (d) { return systemColorVar(d.system); });
+
+    nodeSel.append("text")
+      .attr("class", "symbol-text")
+      .attr("text-anchor", "middle")
+      .attr("y", -3)
+      .text(function (d) { return d.symbols.join(", "); });
+
+    nodeSel.append("text")
+      .attr("class", "name-text")
+      .attr("text-anchor", "middle")
+      .attr("y", 11)
+      .text(function (d) { return d.name.length > 16 ? d.name.slice(0, 15) + "…" : d.name; });
+
+    svg.on("click", closePanel);
+
+    simulation.on("tick", function () {
+      linkDeriv.attr("d", linePath);
+      linkRelGroup.selectAll(".edge-rel,.edge-hit").attr("d", linePath);
+      nodeSel.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
+    });
+
+    simulation.on("end", fitToView);
+    window.addEventListener("resize", function () {
+      var r = wrap.getBoundingClientRect();
+      svg.attr("viewBox", [0, 0, r.width, r.height]);
+    });
+
+    function linePath(d) {
+      return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
+    }
+
+    function fitToView() {
+      var r = wrap.getBoundingClientRect();
+      var xs = nodes.map(function (d) { return d.x; });
+      var ys = nodes.map(function (d) { return d.y; });
+      var minX = Math.min.apply(null, xs) - 80, maxX = Math.max.apply(null, xs) + 80;
+      var minY = Math.min.apply(null, ys) - 60, maxY = Math.max.apply(null, ys) + 60;
+      var bw = maxX - minX, bh = maxY - minY;
+      var scale = Math.min(1.15, r.width / bw, r.height / bh);
+      var tx = r.width / 2 - scale * (minX + bw / 2);
+      var ty = r.height / 2 - scale * (minY + bh / 2);
+      svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+    }
+
+    function dragStarted(ev, d) {
+      if (!ev.active) simulation.alphaTarget(0.2).restart();
+      d.fx = d.x; d.fy = d.y;
+    }
+    function dragged(ev, d) { d.fx = ev.x; d.fy = ev.y; }
+    function dragEnded(ev, d) {
+      if (!ev.active) simulation.alphaTarget(0);
+      d.fx = null; d.fy = null;
+    }
+
+    function showTooltip(ev, name, meta) {
+      tooltip.hidden = false;
+      tooltip.innerHTML = '<div class="tt-name"></div>' + (meta ? '<div class="tt-meta"></div>' : "");
+      tooltip.querySelector(".tt-name").textContent = name;
+      if (meta) tooltip.querySelector(".tt-meta").textContent = meta;
+      moveTooltip(ev);
+    }
+    function moveTooltip(ev) {
+      var r = wrap.getBoundingClientRect();
+      tooltip.style.left = (ev.clientX - r.left) + "px";
+      tooltip.style.top = (ev.clientY - r.top - 10) + "px";
+    }
+    function hideTooltip() { tooltip.hidden = true; }
+
+    function selectNode(d) {
+      nodeSel.classed("selected", function (n) { return n.id === d.id; });
+      linkRelGroup.selectAll(".edge-rel").classed("selected", false);
+      panelBody.innerHTML = renderUnitPanel(d);
+      panelBody.querySelectorAll(".unit-chip").forEach(function (chip) {
+        chip.addEventListener("click", function () { selectNode(byId[chip.dataset.id]); });
+      });
+      panel.hidden = false;
+    }
+
+    function selectRelationship(d) {
+      nodeSel.classed("selected", false);
+      linkRelGroup.selectAll(".edge-rel").classed("selected", function (l) { return l === d; });
+      panelBody.innerHTML = renderRelationshipPanel(d);
+      panel.hidden = false;
+    }
+
+    function closePanel() {
+      panel.hidden = true;
+      nodeSel.classed("selected", false);
+      linkRelGroup.selectAll(".edge-rel").classed("selected", false);
+    }
+    document.getElementById("panel-close").addEventListener("click", closePanel);
+    panel.addEventListener("click", function (ev) { ev.stopPropagation(); });
+
+    searchInput.addEventListener("input", function () {
+      var q = searchInput.value.trim().toLowerCase();
+      var matched = {};
+      nodes.forEach(function (n) {
+        var hay = (n.name + " " + n.symbols.join(" ") + " " + n.id + " " + n.domain).toLowerCase();
+        matched[n.id] = !q || hay.indexOf(q) !== -1;
+      });
+      nodeSel.classed("dimmed", function (d) { return !matched[d.id]; });
+      linkDeriv.classed("dimmed", function (l) { return !matched[l.source.id] || !matched[l.target.id]; });
+    });
+
+    // A chip linking to a unit, labelled with its symbol raised to each power,
+    // e.g. "m·m⁻¹" for the radian's repeated metre component.
+    function unitChip(id, powers) {
+      var sym = byId[id].symbols[0];
+      var label = (powers || [1]).map(function (p) { return sym + (p === 1 ? "" : superscript(p)); }).join("·");
+      return '<button class="unit-chip" data-id="' + esc(id) + '">' + esc(label) + "</button>";
+    }
+
+    function renderUnitPanel(d) {
+      var html = "";
+      html += '<span class="badge" style="background:' + systemColorVar(d.system) + '">' + esc(d.system) + "</span>";
+      html += "<h2>" + esc(d.name) + "</h2>";
+      html += '<div class="panel-symbols">' + esc(d.symbols.join(", ")) + " · " + esc(d.domain) + "</div>";
+
+      if (d.equation) {
+        html += '<div class="field-label">Equation</div><div class="equation">' + esc(d.equation) + "</div>";
+      }
+      html += '<div class="field-label">Dimension</div><div class="dimension">' + esc(formatDimension(d.dimension)) + "</div>";
+
+      var comps = componentsOf[d.id];
+      if (comps.length) {
+        html += '<div class="field-label">Derived from</div><div class="unit-chips">';
+        comps.forEach(function (c) { html += unitChip(c.id, c.powers); });
+        html += "</div>";
+      } else {
+        html += '<div class="field-label">Derived from</div><p style="color:var(--text-muted)">Nothing — defined directly from a physical constant.</p>';
+      }
+
+      var deps = dependentsOf[d.id];
+      if (deps.length) {
+        html += '<div class="field-label">Used by</div><div class="unit-chips">';
+        deps.forEach(function (id) { html += unitChip(id); });
+        html += "</div>";
+      }
+
+      var defs = d.definitions || [];
+      html += '<div class="field-label">Definitions (' + defs.length + ")</div>";
+      defs.slice().reverse().forEach(function (def) {
+        html += '<div class="def-entry' + (def.current ? " current" : "") + '">';
+        html += '<div class="def-era">' + (def.current ? '<span class="now">current</span>' : "") + esc(def.era) + "</div>";
+        html += '<p class="def-value">' + esc(def.value) + "</p>";
+        html += '<div class="def-source">' + esc(def.source) + "</div></div>";
+      });
+
+      if (d.etymology) {
+        html += '<div class="field-label">Etymology</div><p>' + esc(d.etymology) + "</p>";
+      }
+      if (d.cursedness) {
+        html += '<div class="field-label">Cursedness</div><div class="cursed">' + esc(d.cursedness) + "</div>";
+      }
+      return html;
+    }
+
+    function renderRelationshipPanel(d) {
+      var a = byId[d.source.id || d.source];
+      var b = byId[d.target.id || d.target];
+      var html = "";
+      html += '<span class="badge" style="background:var(--edge-rel)">' + esc((d.kind || "").replace(/-/g, " ")) + "</span>";
+      html += "<h2>" + esc(a.name) + " ↔ " + esc(b.name) + "</h2>";
+      html += '<div class="panel-symbols">' + esc(a.symbols.join(", ")) + " — " + esc(b.symbols.join(", ")) + "</div>";
+      html += '<div class="field-label">Note</div><p>' + esc(d.note).replace(/\n/g, "<br>") + "</p>";
+      html += '<div class="field-label">Source</div><p style="color:var(--text-muted);font-size:11.5px">' + esc(d.sourceRef) + "</p>";
+      return html;
+    }
+
+    buildLegend(nodes);
+  }
+
+  function buildLegend(nodes) {
+    var html = '<div class="legend-title">System</div>';
+    SYSTEM_ORDER.forEach(function (s) {
+      if (!nodes.some(function (n) { return n.system === s; })) return;
+      html += '<div class="legend-row"><span class="swatch" style="background:' + systemColorVar(s) + '"></span>' + esc(s) + "</div>";
+    });
+    html += "<hr>";
+    html += '<div class="legend-row"><span class="line-swatch"></span>derived from</div>';
+    html += '<div class="legend-row"><span class="line-swatch dashed"></span>related note</div>';
+    legendEl.innerHTML = html;
+  }
+})();
+</script>
+</body>
+</html>

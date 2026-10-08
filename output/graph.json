@@ -21,6 +21,22 @@
       "currentDefinition": "Defined by fixing the numerical value of the elementary charge e to 1.602176634\u00d710\u207b\u00b9\u2079 coulombs, where the coulomb is ampere-seconds.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3.",
       "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1946\u20132019",
+          "value": "That constant current which, if maintained in two straight parallel conductors of infinite length and negligible cross-section, placed 1 metre apart in vacuum, would produce a force of 2\u00d710\u207b\u2077 newtons per metre of length between them.",
+          "basis": "force-law",
+          "current": false,
+          "source": "CIPM (1946), Resolution 2; confirmed by 9th CGPM (1948)."
+        },
+        {
+          "era": "2019\u2013present",
+          "value": "Defined by fixing the numerical value of the elementary charge e to 1.602176634\u00d710\u207b\u00b9\u2079 coulombs, where the coulomb is ampere-seconds.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
+        }
+      ],
       "etymology": "Named after Andr\u00e9-Marie Amp\u00e8re, French physicist and a founder of electromagnetism.",
       "cursedness": null
     },
@@ -45,6 +61,22 @@
       "currentDefinition": "The luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency 540\u00d710\u00b9\u00b2 Hz and has a radiant intensity in that direction of 1/683 watt per steradian.",
       "currentSource": "16th CGPM (1979), Resolution 3; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.7.",
       "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1946\u20131979",
+          "value": "Luminous intensity of a specified 'Planckian radiator' (blackbody) at the freezing temperature of platinum, per unit area, in a given direction (the 'new candle').",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "CIPM (1946), Resolution 2."
+        },
+        {
+          "era": "1979\u2013present",
+          "value": "The luminous intensity, in a given direction, of a source that emits monochromatic radiation of frequency 540\u00d710\u00b9\u00b2 Hz and has a radiant intensity in that direction of 1/683 watt per steradian.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "16th CGPM (1979), Resolution 3; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.7."
+        }
+      ],
       "etymology": "From Latin 'candela', meaning candle.",
       "cursedness": null
     },
@@ -69,6 +101,15 @@
       "currentDefinition": "A unit of thermodynamic temperature equal in magnitude to the kelvin, with its zero point set at 273.15 K (the ice point of water) instead of absolute zero.",
       "currentSource": "9th CGPM (1948); BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4.",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1948\u2013present",
+          "value": "A unit of thermodynamic temperature equal in magnitude to the kelvin, with its zero point set at 273.15 K (the ice point of water) instead of absolute zero.",
+          "basis": "offset-scale",
+          "current": true,
+          "source": "9th CGPM (1948); BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."
+        }
+      ],
       "etymology": "Named after Anders Celsius, who proposed a related centigrade scale in 1742 (originally with the scale inverted \u2014 0 at boiling, 100 at freezing).",
       "cursedness": "Same-sized degree as the kelvin, different zero \u2014 see the kelvin-celsius relationship for why they were historically conflated. Celsius's own original 1742 scale ran backwards from today's."
     },
@@ -93,6 +134,15 @@
       "currentDefinition": "The quantity of electricity carried in one second by a current of one ampere.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The quantity of electricity carried in one second by a current of one ampere.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Charles-Augustin de Coulomb, for his law of electrostatic force.",
       "cursedness": null
     },
@@ -117,6 +167,15 @@
       "currentDefinition": "The capacitance of a capacitor between the plates of which there appears a difference of potential of one volt when it is charged by a quantity of electricity of one coulomb.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The capacitance of a capacitor between the plates of which there appears a difference of potential of one volt when it is charged by a quantity of electricity of one coulomb.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Michael Faraday, for his contributions to electromagnetism and electrochemistry.",
       "cursedness": null
     },
@@ -141,6 +200,15 @@
       "currentDefinition": "The inductance of a closed circuit in which an electromotive force of one volt is produced when the electric current in the circuit varies uniformly at a rate of one ampere per second.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The inductance of a closed circuit in which an electromotive force of one volt is produced when the electric current in the circuit varies uniformly at a rate of one ampere per second.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Joseph Henry, who discovered electromagnetic self-inductance independently of Faraday.",
       "cursedness": null
     },
@@ -165,6 +233,15 @@
       "currentDefinition": "The frequency of a periodic phenomenon of which the period is one second.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1960\u2013present",
+          "value": "The frequency of a periodic phenomenon of which the period is one second.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Heinrich Hertz, who first conclusively demonstrated the existence of electromagnetic waves.",
       "cursedness": "Dimensionally identical to the becquerel (also inverse seconds), but the two are never interchanged \u2014 see the kelvin-celsius relationship note for the pattern; a hertz-becquerel relationship entry covering this is queued in PROGRESS.md."
     },
@@ -189,6 +266,15 @@
       "currentDefinition": "The work done when the point of application of a force of one newton is displaced a distance of one metre in the direction of the force.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The work done when the point of application of a force of one newton is displaced a distance of one metre in the direction of the force.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after James Prescott Joule, for his work on the mechanical equivalent of heat.",
       "cursedness": null
     },
@@ -213,6 +299,15 @@
       "currentDefinition": "The catalytic activity that increases the rate of conversion of a specified chemical reaction by one mole per second in a specified assay system.",
       "currentSource": "21st CGPM (1999), Resolution 12; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1999\u2013present",
+          "value": "The catalytic activity that increases the rate of conversion of a specified chemical reaction by one mole per second in a specified assay system.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "21st CGPM (1999), Resolution 12; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "From 'catalysis', via Greek 'katalyein', meaning to dissolve/loosen.",
       "cursedness": "The newest of the SI derived units with special names, added in 1999 specifically to standardize enzyme-activity measurements in biochemistry \u2014 most SI derived units are two centuries older."
     },
@@ -237,6 +332,22 @@
       "currentDefinition": "Defined by fixing the numerical value of the Boltzmann constant k to 1.380649\u00d710\u207b\u00b2\u00b3 J/K, where the joule is kg\u00b7m\u00b2\u00b7s\u207b\u00b2.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4.",
       "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1954\u20132019",
+          "value": "1/273.16 of the thermodynamic temperature of the triple point of water.",
+          "basis": "phase-point",
+          "current": false,
+          "source": "10th CGPM (1954), Resolution 4."
+        },
+        {
+          "era": "2019\u2013present",
+          "value": "Defined by fixing the numerical value of the Boltzmann constant k to 1.380649\u00d710\u207b\u00b2\u00b3 J/K, where the joule is kg\u00b7m\u00b2\u00b7s\u207b\u00b2.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."
+        }
+      ],
       "etymology": "Named after William Thomson, 1st Baron Kelvin, who proposed an absolute temperature scale in 1848.",
       "cursedness": null
     },
@@ -261,6 +372,29 @@
       "currentDefinition": "Defined by fixing the numerical value of the Planck constant h to 6.62607015\u00d710\u207b\u00b3\u2074 J\u00b7s, which is kg\u00b7m\u00b2\u00b7s\u207b\u00b9.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.2.",
       "definitionCount": 3,
+      "definitions": [
+        {
+          "era": "1799\u20131889",
+          "value": "Mass of the Kilogramme des Archives, a platinum artifact intended to equal the mass of one litre of water at its temperature of maximum density.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "Alder, K. (2002). The Measure of All Things."
+        },
+        {
+          "era": "1889\u20132019",
+          "value": "Mass of the International Prototype of the Kilogram (IPK), a platinum-iridium cylinder held at the BIPM.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "1st CGPM (1889), Resolution."
+        },
+        {
+          "era": "2019\u2013present",
+          "value": "Defined by fixing the numerical value of the Planck constant h to 6.62607015\u00d710\u207b\u00b3\u2074 J\u00b7s, which is kg\u00b7m\u00b2\u00b7s\u207b\u00b9.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.2."
+        }
+      ],
       "etymology": "From French 'kilogramme', from Greek 'khilioi' (thousand) + 'gramma' (small weight).",
       "cursedness": "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit."
     },
@@ -285,6 +419,15 @@
       "currentDefinition": "The luminous flux emitted into a solid angle of one steradian by a point source with a uniform intensity of one candela.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The luminous flux emitted into a solid angle of one steradian by a point source with a uniform intensity of one candela.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "From Latin 'lumen', meaning light.",
       "cursedness": null
     },
@@ -309,6 +452,15 @@
       "currentDefinition": "The illuminance produced by a luminous flux of one lumen uniformly distributed over a surface of one square metre.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The illuminance produced by a luminous flux of one lumen uniformly distributed over a surface of one square metre.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "From Latin 'lux', meaning light.",
       "cursedness": null
     },
@@ -333,6 +485,36 @@
       "currentDefinition": "Length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second.",
       "currentSource": "17th CGPM (1983), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1.",
       "definitionCount": 4,
+      "definitions": [
+        {
+          "era": "1793\u20131889",
+          "value": "One ten-millionth of the distance from the equator to the North Pole along the Paris meridian.",
+          "basis": "earth-measurement",
+          "current": false,
+          "source": "Alder, K. (2002). The Measure of All Things."
+        },
+        {
+          "era": "1889\u20131960",
+          "value": "Length of the International Prototype Metre, a platinum-iridium bar held at the BIPM.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "1st CGPM (1889), Resolution."
+        },
+        {
+          "era": "1960\u20131983",
+          "value": "1,650,763.73 wavelengths in vacuum of the radiation corresponding to a specified transition of krypton-86.",
+          "basis": "atomic-spectral-line",
+          "current": false,
+          "source": "11th CGPM (1960), Resolution 6."
+        },
+        {
+          "era": "1983\u2013present",
+          "value": "Length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "17th CGPM (1983), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
+        }
+      ],
       "etymology": "From Greek 'metron', meaning measure.",
       "cursedness": null
     },
@@ -357,6 +539,22 @@
       "currentDefinition": "Defined by fixing the numerical value of the Avogadro constant N_A to 6.02214076\u00d710\u00b2\u00b3 per mole.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.5.",
       "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1971\u20132019",
+          "value": "The amount of substance of a system which contains as many elementary entities as there are atoms in 0.012 kilogram of carbon-12.",
+          "basis": "reference-sample",
+          "current": false,
+          "source": "14th CGPM (1971), Resolution 3."
+        },
+        {
+          "era": "2019\u2013present",
+          "value": "Defined by fixing the numerical value of the Avogadro constant N_A to 6.02214076\u00d710\u00b2\u00b3 per mole.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.5."
+        }
+      ],
       "etymology": "From German 'Molek\u00fcl', coined by Wilhelm Ostwald around 1900 as a short form of 'gram-molecule'.",
       "cursedness": "Despite being clearly dimensionless (it's just Avogadro's number of something), the mole is counted as its own SI base unit rather than a bare number \u2014 a quirk chemistry insisted on."
     },
@@ -381,6 +579,15 @@
       "currentDefinition": "The force which gives a mass of one kilogram an acceleration of one metre per second squared.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The force which gives a mass of one kilogram an acceleration of one metre per second squared.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Isaac Newton, in recognition of his work on classical mechanics.",
       "cursedness": null
     },
@@ -405,6 +612,15 @@
       "currentDefinition": "The electric resistance between two points of a conductor when a constant potential difference of one volt, applied between these two points, produces a current of one ampere.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The electric resistance between two points of a conductor when a constant potential difference of one volt, applied between these two points, produces a current of one ampere.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Georg Simon Ohm, for his law relating voltage, current, and resistance.",
       "cursedness": null
     },
@@ -429,6 +645,15 @@
       "currentDefinition": "The pressure produced by a force of one newton applied uniformly over an area of one square metre.",
       "currentSource": "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1971\u2013present",
+          "value": "The pressure produced by a force of one newton applied uniformly over an area of one square metre.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Blaise Pascal, for his work on fluids and pressure.",
       "cursedness": null
     },
@@ -453,6 +678,15 @@
       "currentDefinition": "The plane angle between two radii of a circle which cut off on the circumference an arc equal in length to the radius \u2014 an arc-length-over-radius ratio, treated as dimensionless.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3.",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1960\u2013present",
+          "value": "The plane angle between two radii of a circle which cut off on the circumference an arc equal in length to the radius \u2014 an arc-length-over-radius ratio, treated as dimensionless.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
+        }
+      ],
       "etymology": "From Latin 'radius'.",
       "cursedness": "The radian is a metre-per-metre ratio, so SI treats it as dimensionless and usually drops it from equations entirely \u2014 but this is a choice, not a necessity. There's a competing, equally valid convention where the number 1 means one full revolution (used for rpm etc.), off from the radian convention by a factor of 2\u03c0. Angular momentum and torque only end up sharing units with energy because SI's convention quietly discards the radian."
     },
@@ -477,6 +711,29 @@
       "currentDefinition": "Duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom.",
       "currentSource": "13th CGPM (1967/68), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1.",
       "definitionCount": 3,
+      "definitions": [
+        {
+          "era": "pre-1960",
+          "value": "1/86,400 of a mean solar day.",
+          "basis": "earth-measurement",
+          "current": false,
+          "source": "Historical astronomical convention."
+        },
+        {
+          "era": "1960\u20131967",
+          "value": "1/31,556,925.9747 of the tropical year for 1900 January 0 at 12h ephemeris time (the 'ephemeris second').",
+          "basis": "earth-measurement",
+          "current": false,
+          "source": "11th CGPM (1960), Resolution 9."
+        },
+        {
+          "era": "1967\u2013present",
+          "value": "Duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom.",
+          "basis": "atomic-spectral-line",
+          "current": true,
+          "source": "13th CGPM (1967/68), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
+        }
+      ],
       "etymology": "From Latin 'secunda pars minuta', 'second small part' (of an hour), following 'prima pars minuta', the minute.",
       "cursedness": null
     },
@@ -501,6 +758,15 @@
       "currentDefinition": "The electrical conductance of a conductor in which a current of one ampere flows when a potential difference of one volt is applied \u2014 the reciprocal of the ohm.",
       "currentSource": "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1971\u2013present",
+          "value": "The electrical conductance of a conductor in which a current of one ampere flows when a potential difference of one volt is applied \u2014 the reciprocal of the ohm.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Ernst Werner von Siemens, industrialist and founder of the Siemens company.",
       "cursedness": null
     },
@@ -525,6 +791,15 @@
       "currentDefinition": "The solid angle which, having its vertex at the centre of a sphere, cuts off an area on the surface of the sphere equal to that of a square with sides of length equal to the radius of the sphere \u2014 an area-over-radius-squared ratio, treated as dimensionless.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3.",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1960\u2013present",
+          "value": "The solid angle which, having its vertex at the centre of a sphere, cuts off an area on the surface of the sphere equal to that of a square with sides of length equal to the radius of the sphere \u2014 an area-over-radius-squared ratio, treated as dimensionless.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3."
+        }
+      ],
       "etymology": "From Greek 'stereos' (solid) + 'radian'.",
       "cursedness": "The 3D counterpart to the radian's cursedness: a genuinely dimensionless area-over-length-squared ratio that SI nonetheless gives its own named unit, feeding directly into the lumen (candela \u00d7 steradian) as if it carried real dimension."
     },
@@ -549,6 +824,15 @@
       "currentDefinition": "The magnetic flux density given by a magnetic flux of one weber per square metre.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1960\u2013present",
+          "value": "The magnetic flux density given by a magnetic flux of one weber per square metre.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Nikola Tesla, for his contributions to the design of the modern alternating-current electricity supply system.",
       "cursedness": null
     },
@@ -573,6 +857,15 @@
       "currentDefinition": "The difference of electric potential between two points of a conducting wire carrying a constant current of one ampere, when the power dissipated between these points is one watt.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The difference of electric potential between two points of a conducting wire carrying a constant current of one ampere, when the power dissipated between these points is one watt.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Alessandro Volta, inventor of the first chemical battery.",
       "cursedness": null
     },
@@ -597,6 +890,15 @@
       "currentDefinition": "The power which gives rise to the production of energy at the rate of one joule per second.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The power which gives rise to the production of energy at the rate of one joule per second.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after James Watt, for his improvements to the steam engine.",
       "cursedness": "kg\u00b7m\u00b2\u00b7s\u207b\u00b3 is the joule's parent unit divided by time again \u2014 this exact chain (kg\u00b7m/s\u00b2 \u2192 kg\u00b7m\u00b2/s\u00b2 \u2192 kg\u00b7m\u00b2/s\u00b3) is the whole reason products like the kilowatt-hour feel so unintuitive: they multiply back by time instead of dividing, undoing part of this chain."
     },
@@ -621,6 +923,15 @@
       "currentDefinition": "The magnetic flux which, linking a circuit of one turn, produces in it an electromotive force of one volt as it is reduced to zero at a uniform rate in one second.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1946\u2013present",
+          "value": "The magnetic flux which, linking a circuit of one turn, produces in it an electromotive force of one volt as it is reduced to zero at a uniform rate in one second.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019)."
+        }
+      ],
       "etymology": "Named after Wilhelm Eduard Weber, for his work on electromagnetism.",
       "cursedness": null
     }
@@ -630,199 +941,318 @@
       "source": "kelvin",
       "target": "celsius",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "ampere",
       "target": "coulomb",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "second",
       "target": "coulomb",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "coulomb",
       "target": "farad",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "volt",
       "target": "farad",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "weber",
       "target": "henry",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "ampere",
       "target": "henry",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "second",
       "target": "hertz",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "newton",
       "target": "joule",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "metre",
       "target": "joule",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "mole",
       "target": "katal",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "second",
       "target": "katal",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "candela",
       "target": "lumen",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "steradian",
       "target": "lumen",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "lumen",
       "target": "lux",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "metre",
       "target": "lux",
       "type": "derivation",
-      "power": -2
+      "power": -2,
+      "powers": [
+        -2
+      ]
     },
     {
       "source": "kilogram",
       "target": "newton",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "metre",
       "target": "newton",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "second",
       "target": "newton",
       "type": "derivation",
-      "power": -2
+      "power": -2,
+      "powers": [
+        -2
+      ]
     },
     {
       "source": "volt",
       "target": "ohm",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "ampere",
       "target": "ohm",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "newton",
       "target": "pascal",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "metre",
       "target": "pascal",
       "type": "derivation",
-      "power": -2
+      "power": -2,
+      "powers": [
+        -2
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "radian",
+      "type": "derivation",
+      "power": 0,
+      "powers": [
+        1,
+        -1
+      ]
     },
     {
       "source": "ampere",
       "target": "siemens",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "volt",
       "target": "siemens",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "steradian",
+      "type": "derivation",
+      "power": 0,
+      "powers": [
+        2,
+        -2
+      ]
     },
     {
       "source": "weber",
       "target": "tesla",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "metre",
       "target": "tesla",
       "type": "derivation",
-      "power": -2
+      "power": -2,
+      "powers": [
+        -2
+      ]
     },
     {
       "source": "watt",
       "target": "volt",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "ampere",
       "target": "volt",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "joule",
       "target": "watt",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "second",
       "target": "watt",
       "type": "derivation",
-      "power": -1
+      "power": -1,
+      "powers": [
+        -1
+      ]
     },
     {
       "source": "volt",
       "target": "weber",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "second",
       "target": "weber",
       "type": "derivation",
-      "power": 1
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "kelvin",

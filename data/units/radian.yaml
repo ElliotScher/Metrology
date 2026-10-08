@@ -4,7 +4,9 @@ symbols: [rad]
 system: SI-derived
 domain: angle
 dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
-derived_from: []
+derived_from:
+  - { id: metre, power: 1 }
+  - { id: metre, power: -1 }
 equation: "rad = m/m"
 definitions:
   - era: "1960–present"
