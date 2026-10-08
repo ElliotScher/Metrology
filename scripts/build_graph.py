@@ -55,7 +55,26 @@ def grouped_components(unit):
     return groups
 
 
-def build_dot(units, relationships):
+def compute_levels(units):
+    """Each unit's level is one more than the highest level among its
+    components, so it sits as close to the base as it can while every unit it
+    depends on is on a level above it. Units with no components (defined from
+    physical constants) are level 0. validate.py guarantees there are no
+    cycles."""
+    levels = {}
+
+    def level_of(uid):
+        if uid not in levels:
+            comps = grouped_components(units[uid])
+            levels[uid] = 1 + max(map(level_of, comps)) if comps else 0
+        return levels[uid]
+
+    for uid in units:
+        level_of(uid)
+    return levels
+
+
+def build_dot(units, relationships, levels):
     lines = [
         "digraph metrology {",
         '  rankdir="TB";',
@@ -63,11 +82,27 @@ def build_dot(units, relationships):
         '  edge [fontname="Helvetica", fontsize=8];',
     ]
 
+    # Pin every unit to its level: an invisible, heavily weighted chain of
+    # level labels, with each level's units ranked alongside its label, stops
+    # dot from moving units to other ranks. Declaring the labels first keeps
+    # them on the left.
+    max_level = max(levels.values(), default=0)
+    for level in range(max_level + 1):
+        lines.append(
+            f'  "level-{level}" [label="Level {level}", shape=plaintext, style="", fontcolor="#616161"];'
+        )
+    for level in range(max_level):
+        lines.append(f'  "level-{level}" -> "level-{level + 1}" [style=invis, weight=100];')
+
     for uid, unit in units.items():
         color = SYSTEM_COLORS.get(unit.get("system"), DEFAULT_COLOR)
         symbols = ", ".join(unit.get("symbols", []))
         label = f"{unit.get('name')}\\n({symbols})"
         lines.append(f'  "{uid}" [label="{label}", fillcolor="{color}", fontcolor="white"];')
+
+    for level in range(max_level + 1):
+        members = " ".join(f'"{uid}";' for uid, lvl in levels.items() if lvl == level)
+        lines.append(f'  {{ rank=same; "level-{level}"; {members} }}')
 
     for uid, unit in units.items():
         for comp_id, powers in grouped_components(unit).items():
@@ -78,7 +113,7 @@ def build_dot(units, relationships):
         rel_units = rel.get("units", [])
         for a, b in zip(rel_units, rel_units[1:]):
             lines.append(
-                f'  "{a}" -> "{b}" [dir=none, style=dashed, color="#9e9e9e", '
+                f'  "{a}" -> "{b}" [dir=none, constraint=false, style=dashed, color="#9e9e9e", '
                 f'fontcolor="#616161", label="{rel.get("kind", "")}"];'
             )
 
@@ -86,7 +121,7 @@ def build_dot(units, relationships):
     return "\n".join(lines) + "\n"
 
 
-def build_json(units, relationships):
+def build_json(units, relationships, levels):
     nodes = []
     for uid, unit in units.items():
         cur = current_definition(unit)
@@ -96,6 +131,7 @@ def build_json(units, relationships):
                 "name": unit.get("name"),
                 "symbols": unit.get("symbols", []),
                 "system": unit.get("system"),
+                "level": levels[uid],
                 "domain": unit.get("domain"),
                 "dimension": unit.get("dimension"),
                 "equation": unit.get("equation"),
@@ -143,12 +179,14 @@ def main():
     units = load_yaml_dir(UNITS_DIR)
     relationships = load_yaml_dir(RELATIONSHIPS_DIR)
 
+    levels = compute_levels(units)
+
     OUTPUT_DIR.mkdir(exist_ok=True)
 
-    dot_text = build_dot(units, relationships)
+    dot_text = build_dot(units, relationships, levels)
     (OUTPUT_DIR / "graph.dot").write_text(dot_text)
 
-    (OUTPUT_DIR / "graph.json").write_text(json.dumps(build_json(units, relationships), indent=2) + "\n")
+    (OUTPUT_DIR / "graph.json").write_text(json.dumps(build_json(units, relationships, levels), indent=2) + "\n")
 
     result = subprocess.run(
         ["dot", "-Tsvg", str(OUTPUT_DIR / "graph.dot")],

@@ -162,13 +162,20 @@ source: "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."
 
 ## Output
 
+`build_graph.py` arranges units in **levels**. Level 0 holds the units with
+no components, which are defined directly from physical constants. Every other
+unit sits one level below the deepest unit it's built from. For example, the
+watt is built from the joule (level 2) and the second (level 0), so it's on
+level 3. Each unit is therefore as high as it can be while every unit it
+depends on stays above it. The SVG and the web viewer use the same levels.
+
 `build_graph.py` writes:
 
-- `output/graph.dot` / `output/graph.svg`: a top-down Graphviz diagram with
+- `output/graph.dot` / `output/graph.svg`: a top-down Graphviz diagram, one row per level, with
   nodes colored by system. Solid edges are derivations, labeled with their
   power. Dashed edges are relationships.
-- `output/graph.json`: a `{nodes, links}` graph for force-directed viewers
-  such as D3
+- `output/graph.json`: a `{nodes, links}` graph, with each unit's `level`, for viewers
+  such as the one in `site/`
 
 ## Web viewer
 

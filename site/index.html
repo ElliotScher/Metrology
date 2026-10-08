@@ -274,6 +274,40 @@
   #panel .def-source { font-size: 11px; color: var(--text-muted); font-style: italic; }
   #panel .cursed { background: var(--accent-soft); border-radius: 6px; padding: 8px 10px; font-size: 12.5px; }
 
+  #intro {
+    padding: 14px 20px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-surface);
+    overflow-y: auto;
+    max-height: 40vh;
+  }
+  #intro[hidden] { display: none; }
+  #intro .intro-inner { max-width: 78ch; }
+  #intro h2 {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 0 6px;
+  }
+  #intro p { font-size: 13.5px; line-height: 1.6; color: var(--text-secondary); margin: 0 0 8px; }
+  #intro p:last-child { margin-bottom: 0; }
+  #intro strong { color: var(--text-primary); font-weight: 600; }
+  .text-button {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 5px 10px;
+    font: inherit;
+    font-size: 12px;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .text-button:hover { color: var(--text-primary); border-color: var(--accent); }
+
+  .level-band { fill: var(--text-primary); opacity: 0.035; }
+  .level-label { fill: var(--text-muted); font: 600 11px "JetBrains Mono", ui-monospace, monospace; letter-spacing: 0.04em; }
+  .level-caption { fill: var(--text-muted); font-size: 9.5px; }
+
   #footer-note {
     padding: 6px 20px 10px;
     font-size: 10.5px;
@@ -298,6 +332,8 @@
     }
     #legend { left: 16px; max-width: 46vw; padding: 8px 10px; font-size: 10.5px; }
     #footer-note { padding: 6px 16px 10px; }
+    #intro { padding: 12px 16px 14px; max-height: 32vh; }
+    #intro p { font-size: 13px; }
     header input[type="search"] { width: 130px; }
   }
 </style>
@@ -309,7 +345,32 @@
     <div class="subtitle" id="subtitle">loading…</div>
     <div class="spacer"></div>
     <input type="search" id="search" placeholder="Search units…" autocomplete="off" aria-label="Search units">
+    <button class="text-button" id="intro-toggle" aria-controls="intro" aria-expanded="true">Hide intro</button>
   </header>
+  <section id="intro" aria-label="About this project">
+    <div class="intro-inner">
+      <h2>Untangling every unit of measurement</h2>
+      <p>
+        On paper, the world measures with one system. The SI defines seven base
+        units, and since 2019 each one is set by fixing the value of a physical
+        constant. In practice, many other systems are still in use. Imperial
+        and US customary units share names but not sizes. CGS has three
+        incompatible variants. Natural units set chosen constants to 1, and
+        astronomy, radiology, navigation and computing each keep units of
+        their own. Even within SI, some conventions are still argued over, such
+        as whether an angle has a dimension.
+      </p>
+      <p>
+        This project aims to untangle all of it, one unit at a time. For each
+        unit it records what the unit is built from, every formal definition it
+        has had, and how it relates to other units. The graph is arranged in
+        <strong>levels</strong>. Level 0 holds the units defined directly
+        from constants of nature. Every other unit sits one level below the
+        deepest unit it's built from, so you can trace any unit upward to the
+        constants it ultimately rests on. Click a unit to see its full history.
+      </p>
+    </div>
+  </section>
   <main>
     <div id="canvas-wrap">
       <svg id="graph" role="img" aria-label="Graph of units of measurement and their derivations"></svg>
@@ -361,6 +422,13 @@
     return div.innerHTML;
   }
 
+  var NODE_H = 38;
+  var NODE_GAP = 22;      // minimum horizontal space between units in a row
+  var LEVEL_GAP = 104;    // vertical distance between levels
+  var LABEL_GUTTER = 120; // room left of the widest row for level labels
+  var SWEEPS = 8;         // crossing-reduction passes
+  var MIN_SCALE = 0.6;    // smallest initial zoom that keeps labels legible
+
   var svg = d3.select("#graph");
   var wrap = document.getElementById("canvas-wrap");
   var tooltip = document.getElementById("tooltip");
@@ -369,6 +437,22 @@
   var legendEl = document.getElementById("legend");
   var subtitleEl = document.getElementById("subtitle");
   var searchInput = document.getElementById("search");
+  var intro = document.getElementById("intro");
+  var introToggle = document.getElementById("intro-toggle");
+
+  // Remember whether this viewer hid the intro; storage may be unavailable.
+  function setIntroHidden(hidden) {
+    intro.hidden = hidden;
+    introToggle.textContent = hidden ? "About" : "Hide intro";
+    introToggle.setAttribute("aria-expanded", String(!hidden));
+  }
+  try { setIntroHidden(localStorage.getItem("metrology.introHidden") === "1"); } catch (e) { /* default: shown */ }
+  introToggle.addEventListener("click", function () {
+    var hidden = !intro.hidden;
+    setIntroHidden(hidden);
+    try { localStorage.setItem("metrology.introHidden", hidden ? "1" : "0"); } catch (e) { /* ignore */ }
+    window.dispatchEvent(new Event("resize"));
+  });
 
   svg.append("defs").append("marker")
     .attr("id", "arrow")
@@ -383,6 +467,7 @@
     .attr("fill", "var(--edge-deriv)");
 
   var zoomLayer = svg.append("g");
+  var levelLayer = zoomLayer.append("g");
   var linkLayer = zoomLayer.append("g");
   var nodeLayer = zoomLayer.append("g");
 
@@ -402,77 +487,158 @@
       console.error(err);
     });
 
+  function mean(xs) {
+    return xs.reduce(function (a, b) { return a + b; }, 0) / xs.length;
+  }
+
+  // Layered layout. Each unit's level comes from build_graph.py; here we only
+  // choose the left-to-right order within each level and the x positions.
+  // Fully deterministic, so the same data always draws the same picture.
+  function layout(nodes, componentsOf, dependentsOf, byId) {
+    var rows = [];
+    nodes.forEach(function (n) { (rows[n.level] = rows[n.level] || []).push(n); });
+    rows = rows.map(function (r) { return r || []; });
+
+    rows.forEach(function (row) {
+      row.sort(function (a, b) {
+        return SYSTEM_ORDER.indexOf(a.system) - SYSTEM_ORDER.indexOf(b.system) || a.name.localeCompare(b.name);
+      });
+    });
+
+    // 1. Ordering: barycenter sweeps over each unit's relative position in
+    //    its row (0..1), alternating down and up, to reduce edge crossings.
+    function setRanks(row) {
+      row.forEach(function (n, i) { n.rank = (i + 0.5) / row.length; });
+    }
+    function sweep(row, neighbours) {
+      row.forEach(function (n) {
+        var ids = neighbours(n);
+        n.bary = ids.length ? mean(ids.map(function (id) { return byId[id].rank; })) : n.rank;
+      });
+      row.sort(function (a, b) { return a.bary - b.bary || a.rank - b.rank; });
+      setRanks(row);
+    }
+    var up = function (n) { return componentsOf[n.id].map(function (c) { return c.id; }); };
+    var down = function (n) { return dependentsOf[n.id]; };
+
+    rows.forEach(setRanks);
+    for (var s = 0; s < SWEEPS; s++) {
+      for (var i = 1; i < rows.length; i++) sweep(rows[i], up);
+      for (var j = rows.length - 2; j >= 0; j--) sweep(rows[j], down);
+    }
+
+    // 2. Positioning, top-down in a single pass: level 0 is evenly spaced, and
+    //    each lower unit is placed under the units it's built from, as near as
+    //    the minimum gap allows, keeping the order chosen above.
+    function evenRow(row) {
+      var total = row.reduce(function (sum, n) { return sum + n.w; }, 0) + NODE_GAP * (row.length - 1);
+      var x = -total / 2;
+      row.forEach(function (n) { n.x = x + n.w / 2; x += n.w + NODE_GAP; });
+    }
+    function packRow(row, desired) {
+      var xs = [];
+      row.forEach(function (n, i) {
+        var x = desired[i];
+        if (i > 0) x = Math.max(x, xs[i - 1] + (row[i - 1].w + n.w) / 2 + NODE_GAP);
+        xs.push(x);
+      });
+      var shift = mean(desired) - mean(xs);
+      row.forEach(function (n, i) { n.x = xs[i] + shift; });
+    }
+
+    evenRow(rows[0]);
+    for (var k = 1; k < rows.length; k++) {
+      packRow(rows[k], rows[k].map(function (n) {
+        return mean(up(n).map(function (id) { return byId[id].x; }));
+      }));
+    }
+
+    nodes.forEach(function (n) { n.y = n.level * LEVEL_GAP; });
+    return rows;
+  }
+
   function init(data) {
     var nodes = data.nodes.map(function (d) { return Object.assign({}, d); });
-    var derivLinks = data.links.filter(function (l) { return l.type === "derivation"; });
-    var relLinks = data.links.filter(function (l) { return l.type === "relationship"; });
-
-    subtitleEl.textContent = nodes.length + " units · " + derivLinks.length + " derivations · " +
-      relLinks.length + " relationship" + (relLinks.length === 1 ? "" : "s");
-
     var byId = {};
     nodes.forEach(function (n) {
       var sym = n.symbols.join(", ");
       n.w = Math.min(150, Math.max(66, Math.max(n.name.length * 6.2, sym.length * 8) + 20));
-      n.h = 38;
+      n.h = NODE_H;
       byId[n.id] = n;
     });
 
-    // Component units (with powers) and dependents, for the detail panel.
+    var links = data.links.map(function (l) {
+      return Object.assign({}, l, { source: byId[l.source], target: byId[l.target] });
+    });
+    var derivLinks = links.filter(function (l) { return l.type === "derivation"; });
+    var relLinks = links.filter(function (l) { return l.type === "relationship"; });
+
     var componentsOf = {};
     var dependentsOf = {};
     nodes.forEach(function (n) { componentsOf[n.id] = []; dependentsOf[n.id] = []; });
     derivLinks.forEach(function (l) {
-      componentsOf[l.target].push({ id: l.source, powers: l.powers || [l.power] });
-      dependentsOf[l.source].push(l.target);
+      componentsOf[l.target.id].push({ id: l.source.id, powers: l.powers || [l.power] });
+      dependentsOf[l.source.id].push(l.target.id);
     });
 
-    // Topological depth from derivation edges, for a layered layout.
-    var depthCache = {};
-    function depthOf(id) {
-      if (depthCache[id] !== undefined) return depthCache[id];
-      var parents = componentsOf[id];
-      var d = parents.length === 0 ? 0 : 1 + Math.max.apply(null, parents.map(function (c) { return depthOf(c.id); }));
-      depthCache[id] = d;
-      return d;
+    var rows = layout(nodes, componentsOf, dependentsOf, byId);
+
+    subtitleEl.textContent = nodes.length + " units · " + rows.length + " levels · " + derivLinks.length +
+      " derivations · " + relLinks.length + " relationship" + (relLinks.length === 1 ? "" : "s");
+
+    // Level bands and labels.
+    var minX = d3.min(nodes, function (n) { return n.x - n.w / 2; });
+    var maxX = d3.max(nodes, function (n) { return n.x + n.w / 2; });
+    var bandLeft = minX - LABEL_GUTTER;
+    var bandRight = maxX + 30;
+    var levelSel = levelLayer.selectAll(".level")
+      .data(rows.map(function (row, level) { return { level: level, count: row.length }; }))
+      .enter().append("g")
+      .attr("class", "level")
+      .attr("transform", function (d) { return "translate(0," + d.level * LEVEL_GAP + ")"; });
+    levelSel.filter(function (d) { return d.level % 2 === 0; }).append("rect")
+      .attr("class", "level-band")
+      .attr("x", bandLeft)
+      .attr("y", -LEVEL_GAP / 2)
+      .attr("width", bandRight - bandLeft)
+      .attr("height", LEVEL_GAP)
+      .attr("rx", 8);
+    levelSel.append("text")
+      .attr("class", "level-label")
+      .attr("x", bandLeft + 14)
+      .attr("y", -2)
+      .text(function (d) { return "LEVEL " + d.level; });
+    levelSel.append("text")
+      .attr("class", "level-caption")
+      .attr("x", bandLeft + 14)
+      .attr("y", 12)
+      .text(function (d) { return d.level === 0 ? "from constants" : d.count + " unit" + (d.count === 1 ? "" : "s"); });
+
+    function curve(l) {
+      var s = l.source, t = l.target;
+      if (s.level === t.level) {
+        var a = s.x < t.x ? s : t, b = s.x < t.x ? t : s;
+        return "M" + (a.x + a.w / 2) + "," + a.y + "L" + (b.x - b.w / 2) + "," + b.y;
+      }
+      var top = s.level < t.level ? s : t, bottom = s.level < t.level ? t : s;
+      var y1 = top.y + top.h / 2, y2 = bottom.y - bottom.h / 2, my = (y1 + y2) / 2;
+      return "M" + top.x + "," + y1 + "C" + top.x + "," + my + " " + bottom.x + "," + my + " " + bottom.x + "," + y2;
     }
-    nodes.forEach(function (n) { n.depth = depthOf(n.id); });
-    var maxDepth = Math.max.apply(null, nodes.map(function (n) { return n.depth; }));
-
-    // allLinks must share object references with derivLinks/relLinks:
-    // d3.forceLink replaces each link's source/target id with the node
-    // object in place, and the <path> elements are bound to those arrays.
-    var allLinks = derivLinks.concat(relLinks);
-
-    var rect = wrap.getBoundingClientRect();
-    var width = rect.width || 900;
-    var height = rect.height || 600;
-    svg.attr("viewBox", [0, 0, width, height]);
-
-    var ySpacing = Math.max(70, (height - 120) / Math.max(1, maxDepth));
-
-    var simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(allLinks).id(function (d) { return d.id; })
-        .distance(function (l) { return l.type === "relationship" ? 90 : 130; })
-        .strength(function (l) { return l.type === "relationship" ? 0.25 : 0.5; }))
-      .force("charge", d3.forceManyBody().strength(-260))
-      .force("x", d3.forceX(width / 2).strength(0.05))
-      .force("y", d3.forceY(function (d) { return 70 + d.depth * ySpacing; }).strength(0.35))
-      .force("collide", d3.forceCollide().radius(function (d) { return Math.max(d.w, d.h) / 1.5; }));
 
     var linkDeriv = linkLayer.selectAll(".edge-deriv")
       .data(derivLinks)
       .enter().append("path")
       .attr("class", "edge-deriv")
-      .attr("marker-end", "url(#arrow)");
+      .attr("marker-end", "url(#arrow)")
+      .attr("d", curve);
 
     var linkRelGroup = linkLayer.selectAll(".rel-group")
       .data(relLinks)
       .enter().append("g")
       .attr("class", "rel-group");
 
-    linkRelGroup.append("path").attr("class", "edge-rel");
-    linkRelGroup.append("path").attr("class", "edge-hit")
+    linkRelGroup.append("path").attr("class", "edge-rel").attr("d", curve);
+    linkRelGroup.append("path").attr("class", "edge-hit").attr("d", curve)
       .on("mouseenter", function (ev, d) { showTooltip(ev, d.kind.replace(/-/g, " ")); })
       .on("mousemove", moveTooltip)
       .on("mouseleave", hideTooltip)
@@ -485,11 +651,8 @@
       .data(nodes, function (d) { return d.id; })
       .enter().append("g")
       .attr("class", "node")
-      .call(d3.drag()
-        .on("start", dragStarted)
-        .on("drag", dragged)
-        .on("end", dragEnded))
-      .on("mouseenter", function (ev, d) { showTooltip(ev, d.name, d.symbols.join(", ")); })
+      .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
+      .on("mouseenter", function (ev, d) { showTooltip(ev, d.name, d.symbols.join(", ") + " · level " + d.level); })
       .on("mousemove", moveTooltip)
       .on("mouseleave", hideTooltip)
       .on("click", function (ev, d) {
@@ -519,44 +682,29 @@
 
     svg.on("click", closePanel);
 
-    simulation.on("tick", function () {
-      linkDeriv.attr("d", linePath);
-      linkRelGroup.selectAll(".edge-rel,.edge-hit").attr("d", linePath);
-      nodeSel.attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
-    });
+    var bounds = {
+      x: bandLeft - 10,
+      y: -LEVEL_GAP / 2 - 10,
+      w: bandRight - bandLeft + 20,
+      h: rows.length * LEVEL_GAP + 20
+    };
 
-    simulation.on("end", fitToView);
-    window.addEventListener("resize", function () {
+    function fitToView(animate) {
       var r = wrap.getBoundingClientRect();
       svg.attr("viewBox", [0, 0, r.width, r.height]);
-    });
-
-    function linePath(d) {
-      return "M" + d.source.x + "," + d.source.y + "L" + d.target.x + "," + d.target.y;
+      // Never shrink below MIN_SCALE to fit a narrow screen; pan instead.
+      var scale = Math.max(MIN_SCALE, Math.min(1.2, r.width / bounds.w, r.height / bounds.h));
+      var tx = r.width / 2 - scale * (bounds.x + bounds.w / 2);
+      var ty = r.height / 2 - scale * (bounds.y + bounds.h / 2);
+      // When the graph overflows, start at the top-left (Level 0 and the
+      // level labels) rather than in the middle.
+      if (scale * bounds.w > r.width) tx = -scale * bounds.x;
+      if (scale * bounds.h > r.height) ty = -scale * bounds.y;
+      var t = d3.zoomIdentity.translate(tx, ty).scale(scale);
+      (animate ? svg.transition().duration(300) : svg).call(zoom.transform, t);
     }
-
-    function fitToView() {
-      var r = wrap.getBoundingClientRect();
-      var xs = nodes.map(function (d) { return d.x; });
-      var ys = nodes.map(function (d) { return d.y; });
-      var minX = Math.min.apply(null, xs) - 80, maxX = Math.max.apply(null, xs) + 80;
-      var minY = Math.min.apply(null, ys) - 60, maxY = Math.max.apply(null, ys) + 60;
-      var bw = maxX - minX, bh = maxY - minY;
-      var scale = Math.min(1.15, r.width / bw, r.height / bh);
-      var tx = r.width / 2 - scale * (minX + bw / 2);
-      var ty = r.height / 2 - scale * (minY + bh / 2);
-      svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
-    }
-
-    function dragStarted(ev, d) {
-      if (!ev.active) simulation.alphaTarget(0.2).restart();
-      d.fx = d.x; d.fy = d.y;
-    }
-    function dragged(ev, d) { d.fx = ev.x; d.fy = ev.y; }
-    function dragEnded(ev, d) {
-      if (!ev.active) simulation.alphaTarget(0);
-      d.fx = null; d.fy = null;
-    }
+    fitToView(false);
+    window.addEventListener("resize", function () { fitToView(true); });
 
     function showTooltip(ev, name, meta) {
       tooltip.hidden = false;
@@ -620,7 +768,7 @@
       var html = "";
       html += '<span class="badge" style="background:' + systemColorVar(d.system) + '">' + esc(d.system) + "</span>";
       html += "<h2>" + esc(d.name) + "</h2>";
-      html += '<div class="panel-symbols">' + esc(d.symbols.join(", ")) + " · " + esc(d.domain) + "</div>";
+      html += '<div class="panel-symbols">' + esc(d.symbols.join(", ")) + " · " + esc(d.domain) + " · level " + d.level + "</div>";
 
       if (d.equation) {
         html += '<div class="field-label">Equation</div><div class="equation">' + esc(d.equation) + "</div>";
@@ -628,12 +776,13 @@
       html += '<div class="field-label">Dimension</div><div class="dimension">' + esc(formatDimension(d.dimension)) + "</div>";
 
       var comps = componentsOf[d.id];
+      html += '<div class="field-label">Derived from</div>';
       if (comps.length) {
-        html += '<div class="field-label">Derived from</div><div class="unit-chips">';
+        html += '<div class="unit-chips">';
         comps.forEach(function (c) { html += unitChip(c.id, c.powers); });
         html += "</div>";
       } else {
-        html += '<div class="field-label">Derived from</div><p style="color:var(--text-muted)">Nothing — defined directly from a physical constant.</p>';
+        html += '<p style="color:var(--text-muted)">Nothing. It is defined directly from a physical constant.</p>';
       }
 
       var deps = dependentsOf[d.id];
@@ -662,8 +811,7 @@
     }
 
     function renderRelationshipPanel(d) {
-      var a = byId[d.source.id || d.source];
-      var b = byId[d.target.id || d.target];
+      var a = d.source, b = d.target;
       var html = "";
       html += '<span class="badge" style="background:var(--edge-rel)">' + esc((d.kind || "").replace(/-/g, " ")) + "</span>";
       html += "<h2>" + esc(a.name) + " ↔ " + esc(b.name) + "</h2>";

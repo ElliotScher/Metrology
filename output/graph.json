@@ -7,6 +7,7 @@
         "A"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "electric-current",
       "dimension": {
         "length": 0,
@@ -47,6 +48,7 @@
         "cd"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "luminous-intensity",
       "dimension": {
         "length": 0,
@@ -87,6 +89,7 @@
         "\u00b0C"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "thermodynamic-temperature",
       "dimension": {
         "length": 0,
@@ -120,6 +123,7 @@
         "C"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "electromagnetism",
       "dimension": {
         "length": 0,
@@ -153,6 +157,7 @@
         "F"
       ],
       "system": "SI-derived",
+      "level": 5,
       "domain": "electromagnetism",
       "dimension": {
         "length": -2,
@@ -186,6 +191,7 @@
         "H"
       ],
       "system": "SI-derived",
+      "level": 6,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -219,6 +225,7 @@
         "Hz"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "mechanics",
       "dimension": {
         "length": 0,
@@ -252,6 +259,7 @@
         "J"
       ],
       "system": "SI-derived",
+      "level": 2,
       "domain": "mechanics",
       "dimension": {
         "length": 2,
@@ -285,6 +293,7 @@
         "kat"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "chemistry",
       "dimension": {
         "length": 0,
@@ -318,6 +327,7 @@
         "K"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "thermodynamic-temperature",
       "dimension": {
         "length": 0,
@@ -358,6 +368,7 @@
         "kg"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "mass",
       "dimension": {
         "length": 0,
@@ -405,6 +416,7 @@
         "lm"
       ],
       "system": "SI-derived",
+      "level": 2,
       "domain": "photometry",
       "dimension": {
         "length": 0,
@@ -438,6 +450,7 @@
         "lx"
       ],
       "system": "SI-derived",
+      "level": 3,
       "domain": "photometry",
       "dimension": {
         "length": -2,
@@ -471,6 +484,7 @@
         "m"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "length",
       "dimension": {
         "length": 1,
@@ -525,6 +539,7 @@
         "mol"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "amount-of-substance",
       "dimension": {
         "length": 0,
@@ -565,6 +580,7 @@
         "N"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "mechanics",
       "dimension": {
         "length": 1,
@@ -598,6 +614,7 @@
         "\u03a9"
       ],
       "system": "SI-derived",
+      "level": 5,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -631,6 +648,7 @@
         "Pa"
       ],
       "system": "SI-derived",
+      "level": 2,
       "domain": "mechanics",
       "dimension": {
         "length": -1,
@@ -664,6 +682,7 @@
         "rad"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "angle",
       "dimension": {
         "length": 0,
@@ -697,6 +716,7 @@
         "s"
       ],
       "system": "SI-base",
+      "level": 0,
       "domain": "time",
       "dimension": {
         "length": 0,
@@ -744,6 +764,7 @@
         "S"
       ],
       "system": "SI-derived",
+      "level": 5,
       "domain": "electromagnetism",
       "dimension": {
         "length": -2,
@@ -777,6 +798,7 @@
         "sr"
       ],
       "system": "SI-derived",
+      "level": 1,
       "domain": "solid-angle",
       "dimension": {
         "length": 0,
@@ -810,6 +832,7 @@
         "T"
       ],
       "system": "SI-derived",
+      "level": 6,
       "domain": "electromagnetism",
       "dimension": {
         "length": 0,
@@ -843,6 +866,7 @@
         "V"
       ],
       "system": "SI-derived",
+      "level": 4,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
@@ -876,6 +900,7 @@
         "W"
       ],
       "system": "SI-derived",
+      "level": 3,
       "domain": "mechanics",
       "dimension": {
         "length": 2,
@@ -909,6 +934,7 @@
         "Wb"
       ],
       "system": "SI-derived",
+      "level": 5,
       "domain": "electromagnetism",
       "dimension": {
         "length": 2,
