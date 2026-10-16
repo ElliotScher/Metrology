@@ -1,0 +1,21 @@
+id: teaspoon
+name: "Teaspoon"
+symbols: ["tsp"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: tablespoon, power: 1 }
+factor: 0.3333333333333333
+equation: "tsp = ⅓ tbsp"
+definitions:
+  - era: "19th century–present"
+    value: "A third of a tablespoon (about 4.93 mL). US nutrition labels use exactly 5 mL."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C; 21 CFR 101.9(b)(5)(viii)."
+notes:
+  etymology: "From the spoon used to stir tea."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

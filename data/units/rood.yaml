@@ -1,0 +1,21 @@
+id: rood
+name: "Rood"
+symbols: ["ro"]
+system: imperial
+domain: area
+dimension: { length: 2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: furlong, power: 1 }
+  - { id: rod, power: 1 }
+equation: "ro = 1 fur × 1 rd"
+definitions:
+  - era: "medieval–present"
+    value: "One furlong by one rod: a quarter of an acre (1210 square yards), exactly 1011.714 105 6 m²."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "From Old English 'rōd', a rod or pole; the same word as 'rood' for a cross."
+  cursedness: null
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

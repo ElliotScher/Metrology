@@ -1,0 +1,21 @@
+id: fathom
+name: "Fathom"
+symbols: ["ftm"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: yard, power: 1 }
+factor: 2
+equation: "ftm = 2 yd"
+definitions:
+  - era: "1959–present"
+    value: "Two yards (six feet), exactly 1.8288 m. Used for the depth of water."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old English 'fæthm', the outstretched arms — the span of a sailor's arms when hauling a sounding line."
+  cursedness: "Nautical charts used fathoms for depth until metrication; the 'Mark Twain' pen name is a leadsman's call for two fathoms."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

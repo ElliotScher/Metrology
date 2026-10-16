@@ -1,0 +1,31 @@
+id: imperial-gallon
+name: "Imperial gallon"
+symbols: ["imp gal"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: litre, power: 1 }
+factor: 4.54609
+equation: "imp gal = 4.54609 L"
+definitions:
+  - era: "1824–1963"
+    value: "The volume of 10 pounds of distilled water weighed in air with brass weights, at 62 °F and a barometric pressure of 30 inches of mercury."
+    basis: reference-sample
+    current: false
+    source: "Weights and Measures Act 1824."
+  - era: "1963–1985"
+    value: "The same 10 pounds of water, with the densities of the water, air and weights specified, which works out to about 4.546 09 L."
+    basis: reference-sample
+    current: false
+    source: "Weights and Measures Act 1963."
+  - era: "1985–present"
+    value: "Exactly 4.546 09 litres."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old Northern French 'galon', a liquid measure."
+  cursedness: "Defined so that a gallon of water weighs 10 pounds, which makes an imperial fluid ounce of water weigh almost exactly an ounce. It replaced the English wine, ale and corn gallons in 1824, too late for the United States, which kept the wine gallon. UK fuel is sold in litres, but fuel economy is still quoted in miles per imperial gallon."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1", "Weights and Measures Act 1824"]

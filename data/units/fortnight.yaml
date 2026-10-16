@@ -1,0 +1,21 @@
+id: fortnight
+name: "Fortnight"
+symbols: ["fortnight"]
+system: imperial
+domain: time
+dimension: { length: 0, mass: 0, time: 1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: day, power: 1 }
+factor: 14
+equation: "fortnight = 14 d"
+definitions:
+  - era: "medieval–present"
+    value: "Fourteen days."
+    basis: exact-multiple
+    current: true
+    source: "Traditional English usage."
+notes:
+  etymology: "From Old English 'fēowertīene niht', fourteen nights."
+  cursedness: "Common in British English and almost unknown in American English. It anchors the joke FFF system (furlong, firkin, fortnight), in which the speed of light is about 1.8 × 10¹² furlongs per fortnight."
+status: verified
+sources: []

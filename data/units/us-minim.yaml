@@ -1,0 +1,21 @@
+id: us-minim
+name: "US minim"
+symbols: ["US minim"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-fluid-dram, power: 1 }
+factor: 0.016666666666666666
+equation: "US minim = 1/60 US fl dr"
+definitions:
+  - era: "1707–present"
+    value: "1/60 of a US fluid dram (about 61.6 µL), roughly a drop."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Latin 'minimus', smallest."
+  cursedness: "Meant to replace the 'drop', which varies with the liquid and the dropper. Old syringes are still marked in minims alongside millilitres."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

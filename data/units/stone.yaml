@@ -1,0 +1,21 @@
+id: stone
+name: "Stone"
+symbols: ["st"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound, power: 1 }
+factor: 14
+equation: "st = 14 lb"
+definitions:
+  - era: "1835–present"
+    value: "14 avoirdupois pounds: exactly 6.350 293 18 kg."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1835; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "From the stones once used as weights."
+  cursedness: "Before 1835 the stone varied by commodity: 8 lb for meat, 16 lb for cheese, 24 lb for glass. Britons still give body weight in stones and pounds, a unit the US never used."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

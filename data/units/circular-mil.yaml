@@ -1,0 +1,21 @@
+id: circular-mil
+name: "Circular mil"
+symbols: ["cmil"]
+system: us-customary
+domain: area
+dimension: { length: 2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: thou, power: 2 }
+factor: 0.7853981633974483
+equation: "cmil = (π/4) mil²"
+definitions:
+  - era: "19th century–present"
+    value: "The area of a circle one mil (0.001 inch) in diameter: π/4 square mils, about 506.7 µm²."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Circular, because it measures circles: a wire d mils across has an area of exactly d² circular mils."
+  cursedness: "It exists so electricians never have to multiply by π: square the diameter and you're done. US wire sizes above 4/0 AWG are given in kcmil (thousands of circular mils), also written MCM."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

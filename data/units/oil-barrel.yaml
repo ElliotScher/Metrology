@@ -1,0 +1,21 @@
+id: oil-barrel
+name: "Barrel (petroleum)"
+symbols: ["bbl"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-gallon, power: 1 }
+factor: 42
+equation: "bbl = 42 US gal"
+definitions:
+  - era: "1872–present"
+    value: "42 US gallons (about 158.987 L), the standard barrel for crude oil and petroleum products."
+    basis: exact-multiple
+    current: true
+    source: "Petroleum Producers Association (1872); NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From the wooden barrels oil was first shipped in, in 1860s Pennsylvania."
+  cursedness: "There is no single 'barrel': US law also defines a 31½-gallon liquid barrel, a 31-gallon beer barrel and a 105-dry-quart barrel for fruit and vegetables, and the British had their own. The 42-gallon oil barrel came from the English wine tierce. Its symbol 'bbl' is often said to stand for 'blue barrel', but that story is unproven."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,13 @@
+id: hertz-becquerel
+units: [hertz, becquerel]
+kind: context-differentiated
+note: |
+  The hertz and the becquerel are both the reciprocal second (s⁻¹), but the
+  SI never lets one stand in for the other. The hertz is for periodic
+  phenomena: a wave or oscillation completing one cycle per second. The
+  becquerel is for radioactive activity: on average one random nuclear decay
+  per second, with no period at all. The CGPM gave activity its own name in
+  1975 because writing "s⁻¹" or "Hz" for a radiation source invites mistakes
+  that could endanger human health. Angular velocity (rad/s) is a third
+  quantity with the same dimension, and the SI keeps it out of hertz too.
+source: "15th CGPM (1975), Resolution 8; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."

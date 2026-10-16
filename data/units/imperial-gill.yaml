@@ -1,0 +1,21 @@
+id: imperial-gill
+name: "Imperial gill"
+symbols: ["imp gi"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-pint, power: 1 }
+factor: 0.25
+equation: "imp gi = ¼ imp pt"
+definitions:
+  - era: "1824–present"
+    value: "A quarter of an imperial pint: 5 imperial fluid ounces (142.065 312 5 mL)."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old French 'gille'."
+  cursedness: "In parts of northern England a 'gill' meant half a pint, so the same word named two different volumes in the same country."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

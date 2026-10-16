@@ -1,0 +1,26 @@
+id: yard
+name: "Yard"
+symbols: ["yd"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: foot, power: 1 }
+factor: 3
+equation: "yd = 3 ft"
+definitions:
+  - era: "1855–1959"
+    value: "The distance between two lines on the Imperial Standard Yard, a bronze bar kept in London, at 62 °F. In the US, from 1893, exactly 3600/3937 metre."
+    basis: physical-artifact
+    current: false
+    source: "Standards of Weights and Measures Act 1855 (UK); Mendenhall Order (US, 1893)."
+  - era: "1959–present"
+    value: "Exactly 0.9144 metres."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old English 'gierd', a stick or rod."
+  cursedness: "The 1834 fire at the Houses of Parliament destroyed the standard yard, and the replacement bars made in 1855 slowly shrank — by about 1.5 parts per million per century — so the British yard was getting shorter until 1959. The US gave up on its copies in 1893 and defined the yard from the metre instead."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

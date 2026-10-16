@@ -1,0 +1,26 @@
+id: btu
+name: "British thermal unit"
+symbols: ["Btu", "BTU"]
+system: imperial
+domain: thermodynamics
+dimension: { length: 2, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: joule, power: 1 }
+factor: 1055.05585262
+equation: "Btu = 1055.05585262 J"
+definitions:
+  - era: "19th century–1956"
+    value: "The heat needed to raise the temperature of one pound of water by one degree Fahrenheit. Its value depended on the starting temperature, giving 39 °F, 59 °F, 60 °F and 'mean' Btus."
+    basis: reference-sample
+    current: false
+    source: "Historical engineering usage."
+  - era: "1956–present"
+    value: "The International Table Btu: exactly 1055.055 852 62 joules."
+    basis: exact-multiple
+    current: true
+    source: "Fifth International Conference on the Properties of Steam (London, 1956)."
+notes:
+  etymology: "Named for Britain, though it is now used mainly in the US for heating and air conditioning."
+  cursedness: "There are at least six Btus that differ by up to 0.1 %. Air conditioners are rated in 'Btu', which actually means Btu per hour, a unit of power, and a 'ton' of cooling is 12 000 Btu/h, the cooling from melting a short ton of ice in a day."
+status: verified
+sources: ["Fifth International Conference on the Properties of Steam (1956)", "NIST Handbook 44, Appendix C"]

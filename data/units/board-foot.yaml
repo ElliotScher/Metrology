@@ -1,0 +1,21 @@
+id: board-foot
+name: "Board foot"
+symbols: ["bd ft", "FBM"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: foot, power: 2 }
+  - { id: inch, power: 1 }
+equation: "bd ft = 1 ft × 1 ft × 1 in"
+definitions:
+  - era: "19th century–present"
+    value: "A board one foot long, one foot wide and one inch thick: 144 cubic inches (about 2.36 L). Used for lumber."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From the sawn board."
+  cursedness: "Lumber is measured by its nominal size before drying and planing, so a '2×4' is really 1½ × 3½ inches, but board feet are still worked out from the nominal 2 × 4."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

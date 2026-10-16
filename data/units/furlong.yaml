@@ -1,0 +1,21 @@
+id: furlong
+name: "Furlong"
+symbols: ["fur"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: chain, power: 1 }
+factor: 10
+equation: "fur = 10 ch"
+definitions:
+  - era: "1593–present"
+    value: "Ten chains (40 rods, 220 yards), exactly 201.168 m."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1593 (35 Eliz. 1 c. 6); International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old English 'furh lang', the length of a furrow in a common field."
+  cursedness: "It began as the length a team of oxen could plough without resting, so it predates the mile and the mile was eventually stretched to fit it. Horse racing still uses it. The 'furlong per fortnight', about 0.17 mm/s, is the classic joke unit of speed."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

@@ -1,0 +1,21 @@
+id: pennyweight
+name: "Pennyweight"
+symbols: ["dwt"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: grain, power: 1 }
+factor: 24
+equation: "dwt = 24 gr"
+definitions:
+  - era: "medieval–present"
+    value: "24 grains (about 1.555 g): 1/20 of a troy ounce, used for precious metals."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "The weight of a medieval English silver penny."
+  cursedness: "Its symbol is dwt, with d from the Roman denarius, the same d as in pre-decimal British pounds, shillings and pence (£sd)."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

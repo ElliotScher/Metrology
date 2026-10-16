@@ -1,0 +1,21 @@
+id: long-hundredweight
+name: "Long hundredweight"
+symbols: ["long cwt"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: quarter, power: 1 }
+factor: 4
+equation: "long cwt = 4 qr"
+definitions:
+  - era: "1835–present"
+    value: "112 pounds (8 stones), about 50.8 kg: the British hundredweight."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "From 'hundred' plus 'weight'; 'cwt' uses the Roman numeral C for centum, a hundred."
+  cursedness: "A 'hundredweight' of 112 lb. The British kept the long one and the Americans adopted a short one of an honest 100 lb, so 'cwt' means a different mass on each side of the Atlantic."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

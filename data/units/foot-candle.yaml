@@ -1,0 +1,21 @@
+id: foot-candle
+name: "Foot-candle"
+symbols: ["fc"]
+system: us-customary
+domain: photometry
+dimension: { length: -2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 1 }
+derived_from:
+  - { id: lumen, power: 1 }
+  - { id: foot, power: -2 }
+equation: "fc = lm/ft²"
+definitions:
+  - era: "20th century–present"
+    value: "One lumen per square foot: about 10.764 lux."
+    basis: coherent-derived
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "The illuminance one foot from a standard candle, before the candle was replaced by the candela."
+  cursedness: "Still the unit of US lighting codes and photography light meters, so a building can be designed in foot-candles and inspected in lux."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

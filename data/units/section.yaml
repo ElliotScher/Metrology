@@ -1,0 +1,20 @@
+id: section
+name: "Section"
+symbols: ["section"]
+system: us-customary
+domain: area
+dimension: { length: 2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: mile, power: 2 }
+equation: "section = 1 mi²"
+definitions:
+  - era: "1785–present"
+    value: "One square mile (640 acres), the basic unit of the US Public Land Survey System."
+    basis: exact-multiple
+    current: true
+    source: "Land Ordinance of 1785; NIST Handbook 44, Appendix C."
+notes:
+  etymology: "A numbered section of a surveyed township."
+  cursedness: "Most of the US west of Ohio is divided into a grid of these, which is why so many rural roads run exactly a mile apart. Because the Earth is curved and the grid isn't, surveyors had to insert 'correction lines' every 24 miles, where north–south roads jog sideways."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

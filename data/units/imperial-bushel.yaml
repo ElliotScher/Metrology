@@ -1,0 +1,21 @@
+id: imperial-bushel
+name: "Imperial bushel"
+symbols: ["imp bu"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-peck, power: 1 }
+factor: 4
+equation: "imp bu = 4 imp pk"
+definitions:
+  - era: "1824–present"
+    value: "Eight imperial gallons (36.368 72 L)."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "From Old French 'boissel'."
+  cursedness: "About 3 % larger than the US (Winchester) bushel, because Britain rebased all its dry measures on the new imperial gallon in 1824."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

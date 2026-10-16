@@ -1,0 +1,21 @@
+id: imperial-peck
+name: "Imperial peck"
+symbols: ["imp pk"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-gallon, power: 1 }
+factor: 2
+equation: "imp pk = 2 imp gal"
+definitions:
+  - era: "1824–present"
+    value: "Two imperial gallons (9.092 18 L)."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "Middle English 'pek'."
+  cursedness: null
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

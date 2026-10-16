@@ -1,0 +1,21 @@
+id: hand
+name: "Hand"
+symbols: ["hh"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 1 }
+factor: 4
+equation: "hh = 4 in"
+definitions:
+  - era: "1540–present"
+    value: "Four inches, used for the height of horses at the withers."
+    basis: exact-multiple
+    current: true
+    source: "Horses Act 1540 (32 Hen. 8); defined from the inch since 1959."
+notes:
+  etymology: "From the breadth of a hand across the palm, thumb included."
+  cursedness: "Horse heights are written in base 4: a horse 62 inches tall is '15.2 hands' (15 hands and 2 inches), and the next height after 15.3 is 16.0. So 15.2 hh is not 15.2 hands."
+status: verified
+sources: ["Horses Act 1540 (32 Hen. 8)"]

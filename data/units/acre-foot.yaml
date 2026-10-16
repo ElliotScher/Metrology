@@ -1,0 +1,21 @@
+id: acre-foot
+name: "Acre-foot"
+symbols: ["ac-ft"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: acre, power: 1 }
+  - { id: foot, power: 1 }
+equation: "ac-ft = 1 ac × 1 ft"
+definitions:
+  - era: "19th century–present"
+    value: "The volume of water covering one acre to a depth of one foot: 43 560 cubic feet (about 1233.5 m³)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Literally an acre of area times a foot of depth."
+  cursedness: "The working unit of water rights in the western US. Roughly what one or two suburban households use in a year."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

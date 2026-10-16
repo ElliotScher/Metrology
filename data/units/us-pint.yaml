@@ -1,0 +1,21 @@
+id: us-pint
+name: "US liquid pint"
+symbols: ["US pt"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-quart, power: 1 }
+factor: 0.5
+equation: "US pt = ½ US qt"
+definitions:
+  - era: "1707–present"
+    value: "Half a US liquid quart (28.875 in³, 0.473 176 473 L), 16 US fluid ounces."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Probably from Old French 'pinte', perhaps from a painted mark on a vessel."
+  cursedness: "'A pint's a pound the world around' only works in the US: a US pint of water weighs about 1.04 lb. An imperial pint is 20 imperial fluid ounces, so a British pint of beer is about 20 % bigger."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,21 @@
+id: imperial-pint
+name: "Imperial pint"
+symbols: ["imp pt"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-quart, power: 1 }
+factor: 0.5
+equation: "imp pt = ½ imp qt"
+definitions:
+  - era: "1824–present"
+    value: "Half an imperial quart: 20 imperial fluid ounces (568.261 25 mL)."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "Probably from Old French 'pinte'."
+  cursedness: "Still the legal measure for draught beer and cider in UK pubs and for doorstep milk, decades after metrication — one of the few imperial units the EU explicitly allowed the UK to keep."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

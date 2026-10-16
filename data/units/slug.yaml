@@ -1,0 +1,22 @@
+id: slug
+name: "Slug"
+symbols: ["slug"]
+system: us-customary
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound-force, power: 1 }
+  - { id: second, power: 2 }
+  - { id: foot, power: -1 }
+equation: "slug = lbf·s²/ft"
+definitions:
+  - era: "c. 1900–present"
+    value: "The mass that accelerates at 1 ft/s² under a force of one pound-force: about 14.594 kg (32.174 pounds)."
+    basis: coherent-derived
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Coined by the British physicist Arthur Mason Worthington around 1900, from 'sluggish' — a mass is what resists acceleration."
+  cursedness: "It exists so that F = ma works with pounds-force and feet without a stray 32.174. The US engineering system thus has a pound of force and a slug of mass, while the 'absolute' system has a pound of mass and a poundal of force."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

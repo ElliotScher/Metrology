@@ -1,0 +1,21 @@
+id: us-quart
+name: "US liquid quart"
+symbols: ["US qt"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-gallon, power: 1 }
+factor: 0.25
+equation: "US qt = ¼ US gal"
+definitions:
+  - era: "1707–present"
+    value: "A quarter of a US gallon (57.75 in³, 0.946 352 946 L)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Latin 'quartus', a fourth (of a gallon)."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,12 @@
+id: foot-survey-foot
+units: [foot, us-survey-foot]
+kind: historical-connection
+note: |
+  When the US adopted the international foot (0.3048 m) in 1959, it kept the
+  old foot of 1200/3937 m for geodetic surveying, so as not to change decades
+  of survey records. The two differ by 2 parts per million, about 3.2 mm in a
+  mile. That is invisible on a building site but adds up across a State Plane
+  coordinate grid, and states disagreed over which foot their grids used.
+  NIST, NOAA and the National Geodetic Survey deprecated the survey foot
+  from 1 January 2023.
+source: "Federal Register 24 FR 5348 (1959); Federal Register 85 FR 62698 (2020)."

@@ -1,6 +1,76 @@
 {
   "nodes": [
     {
+      "id": "acre-foot",
+      "name": "Acre-foot",
+      "symbols": [
+        "ac-ft"
+      ],
+      "system": "us-customary",
+      "level": 9,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ac-ft = 1 ac \u00d7 1 ft",
+      "factor": 1,
+      "currentDefinition": "The volume of water covering one acre to a depth of one foot: 43 560 cubic feet (about 1233.5 m\u00b3).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "The volume of water covering one acre to a depth of one foot: 43 560 cubic feet (about 1233.5 m\u00b3).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Literally an acre of area times a foot of depth.",
+      "cursedness": "The working unit of water rights in the western US. Roughly what one or two suburban households use in a year."
+    },
+    {
+      "id": "acre",
+      "name": "Acre",
+      "symbols": [
+        "ac"
+      ],
+      "system": "imperial",
+      "level": 8,
+      "domain": "area",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ac = 1 fur \u00d7 1 ch",
+      "factor": 1,
+      "currentDefinition": "One furlong by one chain: 4840 square yards (43 560 square feet), exactly 4046.856 422 4 m\u00b2.",
+      "currentSource": "Statute for Measuring Land (c. 1305); International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "c. 1300\u2013present",
+          "value": "One furlong by one chain: 4840 square yards (43 560 square feet), exactly 4046.856 422 4 m\u00b2.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Statute for Measuring Land (c. 1305); International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old English '\u00e6cer', a field: the land a yoke of oxen could plough in a day.",
+      "cursedness": "An acre is a furlong long and a chain wide, the shape of a ploughed strip. It has no simple relation to the square mile except that 640 acres make one. The US kept a slightly larger 'survey acre' (based on the survey foot) for land records until 2022."
+    },
+    {
       "id": "ampere",
       "name": "Ampere",
       "symbols": [
@@ -19,6 +89,7 @@
         "luminous_intensity": 0
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Defined by fixing the numerical value of the elementary charge e to 1.602176634\u00d710\u207b\u00b9\u2079 coulombs, where the coulomb is ampere-seconds.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3.",
       "definitionCount": 2,
@@ -42,6 +113,305 @@
       "cursedness": "The 2019 definition fixes the elementary charge e, which is a charge, not a current, in coulombs (ampere-seconds). Solving for the ampere gives 1 A = e / (1.602176634\u00d710\u207b\u00b9\u2079 s), so this 'base' unit actually rests on the second. The elementary charge would most naturally define the coulomb, with no second needed (1 C = e / 1.602176634\u00d710\u207b\u00b9\u2079), and the ampere would then be the derived unit, C/s. The SI kept the ampere as the base unit for historical reasons: its 1946\u20132019 definition used the force between two current-carrying wires, which made current the quantity labs could measure directly. When the 2019 redefinition switched to fixing e, the ampere stayed the base unit and the coulomb stayed derived. That leaves the definition reading in a circle: it states e in coulombs, 'which is equal to A s', so the ampere is defined through a unit built from the ampere. It isn't a true loop, because the fixed value of e pins the ampere down. But the IEC's terminology committee has pointed out that all seven 2019 definitions read circularly as worded, and that they can't be copied verbatim into a terminology standard (Mari et al., 2019)."
     },
     {
+      "id": "apothecaries-dram",
+      "name": "Apothecaries' dram",
+      "symbols": [
+        "dr ap",
+        "\u0292"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "dr ap = 3 \u2108",
+      "factor": 3,
+      "currentDefinition": "Three scruples (60 grains, about 3.888 g): 1/8 of an apothecaries' ounce.",
+      "currentSource": "British Pharmacopoeia (abandoned on metrication, 1971); NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "medieval\u20131971",
+          "value": "Three scruples (60 grains, about 3.888 g): 1/8 of an apothecaries' ounce.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "British Pharmacopoeia (abandoned on metrication, 1971); NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Greek 'drachm\u0113'.",
+      "cursedness": "More than twice the avoirdupois dram, under the same name. Prescriptions written with the \u0292 symbol were a classic source of dosing errors."
+    },
+    {
+      "id": "arcminute",
+      "name": "Arcminute",
+      "symbols": [
+        "\u2032",
+        "arcmin"
+      ],
+      "system": "SI-accepted",
+      "level": 4,
+      "domain": "angle",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "\u2032 = (1/60)\u00b0",
+      "factor": 0.016666666666666666,
+      "currentDefinition": "A unit of plane angle equal to 1/60 degree (\u03c0/10 800 radian). Accepted for use with the SI, where it is simply called the minute.",
+      "currentSource": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1969\u2013present",
+          "value": "A unit of plane angle equal to 1/60 degree (\u03c0/10 800 radian). Accepted for use with the SI, where it is simply called the minute.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "The same 'first small part' (pars minuta prima) as the minute of time; 'arc' distinguishes it.",
+      "cursedness": "The SI Brochure calls it just the 'minute', the same name as the unit of time, which is why everyone else says arcminute. The nautical mile was originally one arcminute of latitude."
+    },
+    {
+      "id": "arcsecond",
+      "name": "Arcsecond",
+      "symbols": [
+        "\u2033",
+        "arcsec"
+      ],
+      "system": "SI-accepted",
+      "level": 5,
+      "domain": "angle",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "\u2033 = (1/60)\u2032",
+      "factor": 0.016666666666666666,
+      "currentDefinition": "A unit of plane angle equal to 1/60 arcminute (\u03c0/648 000 radian). Accepted for use with the SI, where it is simply called the second.",
+      "currentSource": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1969\u2013present",
+          "value": "A unit of plane angle equal to 1/60 arcminute (\u03c0/648 000 radian). Accepted for use with the SI, where it is simply called the second.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From 'pars minuta secunda', the 'second small part' of a degree \u2014 the same root as the second of time.",
+      "cursedness": "The SI Brochure names it the 'second', the same as the SI base unit of time. Astronomers put prefixes on it (mas, \u00b5as) even though the symbol \u2033 is not a letter. The parsec is defined from it: the distance at which 1 au subtends one arcsecond."
+    },
+    {
+      "id": "astronomical-unit",
+      "name": "Astronomical unit",
+      "symbols": [
+        "au"
+      ],
+      "system": "SI-accepted",
+      "level": 2,
+      "domain": "astronomy",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "au = 149 597 870 700 m",
+      "factor": 149597870700,
+      "currentDefinition": "Exactly 149 597 870 700 metres. Accepted for use with the SI.",
+      "currentSource": "IAU (2012), Resolution B2; BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1976\u20132012",
+          "value": "The radius of an unperturbed circular orbit around the Sun of a body of negligible mass moving at a mean angular speed of 0.017 202 098 95 radian per day (the Gaussian gravitational constant), measured at about 149 597 870 700 m.",
+          "basis": "physical-constant",
+          "current": false,
+          "source": "IAU (1976), Resolution 10."
+        },
+        {
+          "era": "2012\u2013present",
+          "value": "Exactly 149 597 870 700 metres. Accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "IAU (2012), Resolution B2; BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "Originally the mean distance between the Earth and the Sun, the natural yardstick of the solar system.",
+      "cursedness": "For centuries it was the Earth\u2013Sun distance, then a dynamical length tied to the Gaussian gravitational constant, which made its value in metres depend on which relativistic time scale you used. In 2012 the IAU gave up and set it to a fixed number of metres. Its symbol was variously AU, ua and a.u.; the IAU and BIPM settled on 'au' only in 2012\u20132014."
+    },
+    {
+      "id": "barleycorn",
+      "name": "Barleycorn",
+      "symbols": [
+        "barleycorn"
+      ],
+      "system": "imperial",
+      "level": 3,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "barleycorn = \u2153 in",
+      "factor": 0.3333333333333333,
+      "currentDefinition": "One third of an inch. Originally the length of a grain of barley; now exactly 1/3 in.",
+      "currentSource": "Composition of Yards and Perches (c. 1300); defined from the inch since 1959.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "c. 1300\u2013present",
+          "value": "One third of an inch. Originally the length of a grain of barley; now exactly 1/3 in.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Composition of Yards and Perches (c. 1300); defined from the inch since 1959."
+        }
+      ],
+      "etymology": "From the grain of barley, the oldest English length standard.",
+      "cursedness": "The inch was originally defined as three barleycorns, so the barleycorn was the base of the whole English length system. It survives only in UK and US shoe sizes, where each full size is one barleycorn longer than the last."
+    },
+    {
+      "id": "becquerel",
+      "name": "Becquerel",
+      "symbols": [
+        "Bq"
+      ],
+      "system": "SI-derived",
+      "level": 1,
+      "domain": "ionizing-radiation",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": -1,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "Bq = 1/s",
+      "factor": 1,
+      "currentDefinition": "The activity of a radionuclide decaying at a rate of one spontaneous nuclear transition per second.",
+      "currentSource": "15th CGPM (1975), Resolution 8; BIPM SI Brochure, 9th ed. (2019), Table 4.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1975\u2013present",
+          "value": "The activity of a radionuclide decaying at a rate of one spontaneous nuclear transition per second.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "15th CGPM (1975), Resolution 8; BIPM SI Brochure, 9th ed. (2019), Table 4."
+        }
+      ],
+      "etymology": "Named after Henri Becquerel, who discovered radioactivity in uranium salts in 1896.",
+      "cursedness": "Dimensionally identical to the hertz, but the SI forbids using one for the other: the becquerel counts random decay events, while the hertz counts cycles of a periodic phenomenon. The SI Brochure restricts the hertz to periodic phenomena and the becquerel to radioactive decay, and the CGPM gave activity its own name in 1975 so that mistakes in radiation measurements couldn't endanger human health. See the hertz-becquerel relationship. It replaced the curie (3.7 \u00d7 10\u00b9\u2070 Bq, roughly the activity of one gram of radium-226), which is still widely used in the US."
+    },
+    {
+      "id": "board-foot",
+      "name": "Board foot",
+      "symbols": [
+        "bd ft",
+        "FBM"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "bd ft = 1 ft \u00d7 1 ft \u00d7 1 in",
+      "factor": 1,
+      "currentDefinition": "A board one foot long, one foot wide and one inch thick: 144 cubic inches (about 2.36 L). Used for lumber.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "A board one foot long, one foot wide and one inch thick: 144 cubic inches (about 2.36 L). Used for lumber.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From the sawn board.",
+      "cursedness": "Lumber is measured by its nominal size before drying and planing, so a '2\u00d74' is really 1\u00bd \u00d7 3\u00bd inches, but board feet are still worked out from the nominal 2 \u00d7 4."
+    },
+    {
+      "id": "btu",
+      "name": "British thermal unit",
+      "symbols": [
+        "Btu",
+        "BTU"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "thermodynamics",
+      "dimension": {
+        "length": 2,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "Btu = 1055.05585262 J",
+      "factor": 1055.05585262,
+      "currentDefinition": "The International Table Btu: exactly 1055.055 852 62 joules.",
+      "currentSource": "Fifth International Conference on the Properties of Steam (London, 1956).",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "19th century\u20131956",
+          "value": "The heat needed to raise the temperature of one pound of water by one degree Fahrenheit. Its value depended on the starting temperature, giving 39 \u00b0F, 59 \u00b0F, 60 \u00b0F and 'mean' Btus.",
+          "basis": "reference-sample",
+          "current": false,
+          "source": "Historical engineering usage."
+        },
+        {
+          "era": "1956\u2013present",
+          "value": "The International Table Btu: exactly 1055.055 852 62 joules.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Fifth International Conference on the Properties of Steam (London, 1956)."
+        }
+      ],
+      "etymology": "Named for Britain, though it is now used mainly in the US for heating and air conditioning.",
+      "cursedness": "There are at least six Btus that differ by up to 0.1 %. Air conditioners are rated in 'Btu', which actually means Btu per hour, a unit of power, and a 'ton' of cooling is 12 000 Btu/h, the cooling from melting a short ton of ice in a day."
+    },
+    {
       "id": "candela",
       "name": "Candela",
       "symbols": [
@@ -60,6 +430,7 @@
         "luminous_intensity": 1
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Defined by fixing the numerical value of the luminous efficacy of monochromatic radiation of frequency 540\u00d710\u00b9\u00b2 Hz, K_cd, to 683 lumens per watt, where the lumen is cd\u00b7sr.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1.",
       "definitionCount": 3,
@@ -108,6 +479,7 @@
         "luminous_intensity": 0
       },
       "equation": "\u00b0C = K \u2212 273.15",
+      "factor": 1,
       "currentDefinition": "A unit of thermodynamic temperature equal in magnitude to the kelvin, with its zero point set at 273.15 K (the ice point of water) instead of absolute zero.",
       "currentSource": "9th CGPM (1948); BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4.",
       "definitionCount": 1,
@@ -122,6 +494,111 @@
       ],
       "etymology": "Named after Anders Celsius, who proposed a related centigrade scale in 1742 (originally with the scale inverted \u2014 0 at boiling, 100 at freezing).",
       "cursedness": "Same-sized degree as the kelvin, different zero \u2014 see the kelvin-celsius relationship for why they were historically conflated. Celsius's own original 1742 scale ran backwards from today's."
+    },
+    {
+      "id": "chain",
+      "name": "Chain",
+      "symbols": [
+        "ch"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ch = 4 rd",
+      "factor": 4,
+      "currentDefinition": "Four rods (22 yards, 66 feet), exactly 20.1168 m: the length of Gunter's surveying chain of 100 links.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1620\u2013present",
+          "value": "Four rods (22 yards, 66 feet), exactly 20.1168 m: the length of Gunter's surveying chain of 100 links.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From the physical chain, introduced by the English mathematician Edmund Gunter in 1620.",
+      "cursedness": "Gunter's chain made English land decimal: an acre is 10 square chains, and 100 links make a chain, so surveyors could do decimal arithmetic in a non-decimal system. A cricket pitch is still exactly one chain long."
+    },
+    {
+      "id": "circular-mil",
+      "name": "Circular mil",
+      "symbols": [
+        "cmil"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "area",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "cmil = (\u03c0/4) mil\u00b2",
+      "factor": 0.7853981633974483,
+      "currentDefinition": "The area of a circle one mil (0.001 inch) in diameter: \u03c0/4 square mils, about 506.7 \u00b5m\u00b2.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "The area of a circle one mil (0.001 inch) in diameter: \u03c0/4 square mils, about 506.7 \u00b5m\u00b2.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Circular, because it measures circles: a wire d mils across has an area of exactly d\u00b2 circular mils.",
+      "cursedness": "It exists so electricians never have to multiply by \u03c0: square the diameter and you're done. US wire sizes above 4/0 AWG are given in kcmil (thousands of circular mils), also written MCM."
+    },
+    {
+      "id": "cord",
+      "name": "Cord",
+      "symbols": [
+        "cord"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "cord = 128 ft\u00b3",
+      "factor": 128,
+      "currentDefinition": "128 cubic feet of stacked firewood: a pile 8 ft long, 4 ft high and 4 ft deep, gaps included.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "17th century\u2013present",
+          "value": "128 cubic feet of stacked firewood: a pile 8 ft long, 4 ft high and 4 ft deep, gaps included.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From the cord or string once used to measure the stack.",
+      "cursedness": "Firewood sellers often sell a 'face cord' or 'rick', a single row that can be any depth, so it is a third or less of a real cord."
     },
     {
       "id": "coulomb",
@@ -142,6 +619,7 @@
         "luminous_intensity": 0
       },
       "equation": "C = A\u00b7s",
+      "factor": 1,
       "currentDefinition": "The quantity of electricity carried in one second by a current of one ampere.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -156,6 +634,232 @@
       ],
       "etymology": "Named after Charles-Augustin de Coulomb, for his law of electrostatic force.",
       "cursedness": null
+    },
+    {
+      "id": "dalton",
+      "name": "Dalton",
+      "symbols": [
+        "Da",
+        "u"
+      ],
+      "system": "SI-accepted",
+      "level": 3,
+      "domain": "atomic-physics",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "Da \u2248 1.66053906892 \u00d7 10\u207b\u00b2\u2077 kg",
+      "factor": 1.66053906892e-27,
+      "currentDefinition": "1/12 of the mass of a free carbon-12 atom, at rest and in its ground state. Its value in kilograms is measured, not fixed: 1.660 539 068 92(52) \u00d7 10\u207b\u00b2\u2077 kg (CODATA 2022). Accepted for use with the SI.",
+      "currentSource": "IUPAP and IUPAC (1960\u20131961); BIPM SI Brochure, 9th ed. (2019), Table 8; CODATA 2022.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1961\u2013present",
+          "value": "1/12 of the mass of a free carbon-12 atom, at rest and in its ground state. Its value in kilograms is measured, not fixed: 1.660 539 068 92(52) \u00d7 10\u207b\u00b2\u2077 kg (CODATA 2022). Accepted for use with the SI.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "IUPAP and IUPAC (1960\u20131961); BIPM SI Brochure, 9th ed. (2019), Table 8; CODATA 2022."
+        }
+      ],
+      "etymology": "Named after John Dalton, who proposed the atomic theory of matter. The symbol u comes from its older name, the 'unified atomic mass unit'.",
+      "cursedness": "Before 2019, the mole was defined from carbon-12 too, so a mole of daltons was exactly one gram. The 2019 redefinition fixed the Avogadro constant instead, and that link is now only approximate, though still good to better than a part in a billion. Before 1961, physicists based their atomic mass unit on oxygen-16 and chemists on natural oxygen, so there were two units differing by about 0.03 %; the carbon-12 unit was the compromise."
+    },
+    {
+      "id": "day",
+      "name": "Day",
+      "symbols": [
+        "d"
+      ],
+      "system": "SI-accepted",
+      "level": 3,
+      "domain": "time",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 1,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "d = 24 h",
+      "factor": 24,
+      "currentDefinition": "A unit of time equal to 24 hours (86 400 seconds), accepted for use with the SI.",
+      "currentSource": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1969\u2013present",
+          "value": "A unit of time equal to 24 hours (86 400 seconds), accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From Old English 'd\u00e6g'.",
+      "cursedness": "The second was originally 1/86 400 of a mean solar day; now the day is defined as 86 400 seconds, and the Earth's actual rotation no longer matches. Tidal braking makes the solar day about 2 ms longer per century, which is why leap seconds were needed. The symbol d is also the deci prefix."
+    },
+    {
+      "id": "degree",
+      "name": "Degree",
+      "symbols": [
+        "\u00b0",
+        "deg"
+      ],
+      "system": "SI-accepted",
+      "level": 3,
+      "domain": "angle",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "\u00b0 = (\u03c0/180) rad",
+      "factor": 0.017453292519943295,
+      "currentDefinition": "A unit of plane angle equal to \u03c0/180 radian, so that a full turn is 360\u00b0. Accepted for use with the SI.",
+      "currentSource": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1969\u2013present",
+          "value": "A unit of plane angle equal to \u03c0/180 radian, so that a full turn is 360\u00b0. Accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From Latin 'gradus', a step. The 360-part circle comes from Babylonian astronomy, probably via the roughly 360-day year and base-60 counting.",
+      "cursedness": "With the arcminute and arcsecond, it is one of the only units accepted for use with the SI whose factor to its SI unit is irrational: 1\u00b0 = \u03c0/180 rad, so no exact decimal exists. The symbol \u00b0 is also the one in \u00b0C, which is a different thing entirely."
+    },
+    {
+      "id": "dram",
+      "name": "Dram (avoirdupois)",
+      "symbols": [
+        "dr avdp"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "dr avdp = 1/16 oz",
+      "factor": 0.0625,
+      "currentDefinition": "1/16 of an avoirdupois ounce: about 1.771 845 g.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "1/16 of an avoirdupois ounce: about 1.771 845 g.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Greek 'drachm\u0113', a coin and weight.",
+      "cursedness": "The avoirdupois dram (1/16 oz) and the apothecaries' dram (1/8 apothecaries' ounce) differ by more than a factor of two, and there's a fluid dram too. 'A wee dram' of whisky is none of them."
+    },
+    {
+      "id": "electronvolt",
+      "name": "Electronvolt",
+      "symbols": [
+        "eV"
+      ],
+      "system": "SI-accepted",
+      "level": 5,
+      "domain": "atomic-physics",
+      "dimension": {
+        "length": 2,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "eV = 1.602176634 \u00d7 10\u207b\u00b9\u2079 J",
+      "factor": 1.602176634e-19,
+      "currentDefinition": "The kinetic energy gained by an electron passing through a potential difference of one volt in vacuum: exactly 1.602 176 634 \u00d7 10\u207b\u00b9\u2079 J, since the 2019 redefinition fixed the elementary charge. Accepted for use with the SI.",
+      "currentSource": "BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "pre-2019",
+          "value": "The kinetic energy gained by an electron passing through a potential difference of one volt in vacuum; its value in joules was measured.",
+          "basis": "physical-constant",
+          "current": false,
+          "source": "BIPM SI Brochure, 8th ed. (2006), Table 7."
+        },
+        {
+          "era": "2019\u2013present",
+          "value": "The kinetic energy gained by an electron passing through a potential difference of one volt in vacuum: exactly 1.602 176 634 \u00d7 10\u207b\u00b9\u2079 J, since the 2019 redefinition fixed the elementary charge. Accepted for use with the SI.",
+          "basis": "physical-constant",
+          "current": true,
+          "source": "BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "'Electron' plus 'volt': the energy one electron's charge gains across one volt.",
+      "cursedness": "Particle physicists quote masses in eV/c\u00b2 and then drop the c\u00b2, so the 'mass of the proton is 938 MeV'. In natural units, where c = 1, energy, mass, momentum and inverse length all end up in eV. Before 2019 its value in joules was measured; now it is exact, because the elementary charge is fixed."
+    },
+    {
+      "id": "fahrenheit",
+      "name": "Degree Fahrenheit",
+      "symbols": [
+        "\u00b0F"
+      ],
+      "system": "us-customary",
+      "level": 7,
+      "domain": "thermodynamic-temperature",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 1,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "\u00b0F = \u00b0R \u2212 459.67",
+      "factor": 1,
+      "currentDefinition": "Defined from the Celsius scale: t/\u00b0F = 1.8 \u00b7 t/\u00b0C + 32, so water freezes at 32 \u00b0F and boils at 212 \u00b0F at standard pressure. A degree Fahrenheit is 5/9 of a kelvin, and 0 \u00b0F is 459.67 \u00b0R.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1724\u20131940s",
+          "value": "A scale with 0 \u00b0F at the temperature of a brine of ice, water and ammonium chloride and 96 \u00b0F at human body temperature; water froze at 32 \u00b0F.",
+          "basis": "phase-point",
+          "current": false,
+          "source": "D. G. Fahrenheit, Philosophical Transactions 33 (1724)."
+        },
+        {
+          "era": "1940s\u2013present",
+          "value": "Defined from the Celsius scale: t/\u00b0F = 1.8 \u00b7 t/\u00b0C + 32, so water freezes at 32 \u00b0F and boils at 212 \u00b0F at standard pressure. A degree Fahrenheit is 5/9 of a kelvin, and 0 \u00b0F is 459.67 \u00b0R.",
+          "basis": "offset-scale",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Named after Daniel Gabriel Fahrenheit, the German-Polish instrument maker who invented the mercury thermometer.",
+      "cursedness": "Fahrenheit's fixed points didn't survive: after recalibration, body temperature came out at about 98.6 \u00b0F, not 96. It is now defined from the Celsius scale, which is defined from the kelvin, so the US measures temperature in a scale that depends on two others. Like the degree Celsius, it is a degree size and an offset, so 20 \u00b0F is not 'twice as hot' as 10 \u00b0F."
     },
     {
       "id": "farad",
@@ -176,6 +880,7 @@
         "luminous_intensity": 0
       },
       "equation": "F = C/V",
+      "factor": 1,
       "currentDefinition": "The capacitance of a capacitor between the plates of which there appears a difference of potential of one volt when it is charged by a quantity of electricity of one coulomb.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -190,6 +895,328 @@
       ],
       "etymology": "Named after Michael Faraday, for his contributions to electromagnetism and electrochemistry.",
       "cursedness": null
+    },
+    {
+      "id": "fathom",
+      "name": "Fathom",
+      "symbols": [
+        "ftm"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ftm = 2 yd",
+      "factor": 2,
+      "currentDefinition": "Two yards (six feet), exactly 1.8288 m. Used for the depth of water.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "Two yards (six feet), exactly 1.8288 m. Used for the depth of water.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old English 'f\u00e6thm', the outstretched arms \u2014 the span of a sailor's arms when hauling a sounding line.",
+      "cursedness": "Nautical charts used fathoms for depth until metrication; the 'Mark Twain' pen name is a leadsman's call for two fathoms."
+    },
+    {
+      "id": "foot-candle",
+      "name": "Foot-candle",
+      "symbols": [
+        "fc"
+      ],
+      "system": "us-customary",
+      "level": 8,
+      "domain": "photometry",
+      "dimension": {
+        "length": -2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 1
+      },
+      "equation": "fc = lm/ft\u00b2",
+      "factor": 1,
+      "currentDefinition": "One lumen per square foot: about 10.764 lux.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "20th century\u2013present",
+          "value": "One lumen per square foot: about 10.764 lux.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "The illuminance one foot from a standard candle, before the candle was replaced by the candela.",
+      "cursedness": "Still the unit of US lighting codes and photography light meters, so a building can be designed in foot-candles and inspected in lux."
+    },
+    {
+      "id": "foot",
+      "name": "Foot",
+      "symbols": [
+        "ft"
+      ],
+      "system": "imperial",
+      "level": 3,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ft = 12 in",
+      "factor": 12,
+      "currentDefinition": "Exactly 0.3048 metres (12 inches, 1/3 of the international yard).",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "pre-1959",
+          "value": "1/3 of the national standard yard. Its length depended on whose standard: the British, American (1893: 1200/3937 m) and others differed by a few parts per million.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "Weights and Measures Act 1878 (UK); Mendenhall Order (US, 1893)."
+        },
+        {
+          "era": "1959\u2013present",
+          "value": "Exactly 0.3048 metres (12 inches, 1/3 of the international yard).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From the human foot; Old English 'f\u014dt'.",
+      "cursedness": "Feet have ranged from about 25 cm to 34 cm across history and Europe; nearly every town once had its own. The Roman foot was about 29.6 cm. Even after 1959, the US kept a second foot for land surveying \u2014 see the US survey foot \u2014 and only retired it at the end of 2022."
+    },
+    {
+      "id": "fortnight",
+      "name": "Fortnight",
+      "symbols": [
+        "fortnight"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "time",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 1,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "fortnight = 14 d",
+      "factor": 14,
+      "currentDefinition": "Fourteen days.",
+      "currentSource": "Traditional English usage.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "medieval\u2013present",
+          "value": "Fourteen days.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Traditional English usage."
+        }
+      ],
+      "etymology": "From Old English 'f\u0113owert\u012bene niht', fourteen nights.",
+      "cursedness": "Common in British English and almost unknown in American English. It anchors the joke FFF system (furlong, firkin, fortnight), in which the speed of light is about 1.8 \u00d7 10\u00b9\u00b2 furlongs per fortnight."
+    },
+    {
+      "id": "furlong",
+      "name": "Furlong",
+      "symbols": [
+        "fur"
+      ],
+      "system": "imperial",
+      "level": 7,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "fur = 10 ch",
+      "factor": 10,
+      "currentDefinition": "Ten chains (40 rods, 220 yards), exactly 201.168 m.",
+      "currentSource": "Weights and Measures Act 1593 (35 Eliz. 1 c. 6); International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1593\u2013present",
+          "value": "Ten chains (40 rods, 220 yards), exactly 201.168 m.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1593 (35 Eliz. 1 c. 6); International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old English 'furh lang', the length of a furrow in a common field.",
+      "cursedness": "It began as the length a team of oxen could plough without resting, so it predates the mile and the mile was eventually stretched to fit it. Horse racing still uses it. The 'furlong per fortnight', about 0.17 mm/s, is the classic joke unit of speed."
+    },
+    {
+      "id": "grain",
+      "name": "Grain",
+      "symbols": [
+        "gr"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "gr = 1/7000 lb",
+      "factor": 0.00014285714285714287,
+      "currentDefinition": "1/7000 of a pound: exactly 64.798 91 milligrams.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "1/7000 of a pound: exactly 64.798 91 milligrams.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From a grain of barley (or wheat) as a unit of weight.",
+      "cursedness": "The one unit shared by the avoirdupois, troy and apothecaries' systems, which is how they connect: 7000 grains to the avoirdupois pound, 5760 to the troy pound. Still used for bullets, arrowheads and gunpowder."
+    },
+    {
+      "id": "gray",
+      "name": "Gray",
+      "symbols": [
+        "Gy"
+      ],
+      "system": "SI-derived",
+      "level": 5,
+      "domain": "ionizing-radiation",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "Gy = J/kg",
+      "factor": 1,
+      "currentDefinition": "The absorbed dose of ionizing radiation corresponding to one joule of energy imparted per kilogram of matter.",
+      "currentSource": "15th CGPM (1975), Resolution 9; BIPM SI Brochure, 9th ed. (2019), Table 4.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1975\u2013present",
+          "value": "The absorbed dose of ionizing radiation corresponding to one joule of energy imparted per kilogram of matter.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "15th CGPM (1975), Resolution 9; BIPM SI Brochure, 9th ed. (2019), Table 4."
+        }
+      ],
+      "etymology": "Named after Louis Harold Gray, a British physicist who pioneered radiobiology and the measurement of absorbed dose.",
+      "cursedness": "Shares its unit, J/kg, with the sievert and with specific energy in general, but the three are never interchangeable. See the gray-sievert relationship. It replaced the rad (0.01 Gy), which collides with the symbol of the radian."
+    },
+    {
+      "id": "hand",
+      "name": "Hand",
+      "symbols": [
+        "hh"
+      ],
+      "system": "imperial",
+      "level": 3,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "hh = 4 in",
+      "factor": 4,
+      "currentDefinition": "Four inches, used for the height of horses at the withers.",
+      "currentSource": "Horses Act 1540 (32 Hen. 8); defined from the inch since 1959.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1540\u2013present",
+          "value": "Four inches, used for the height of horses at the withers.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Horses Act 1540 (32 Hen. 8); defined from the inch since 1959."
+        }
+      ],
+      "etymology": "From the breadth of a hand across the palm, thumb included.",
+      "cursedness": "Horse heights are written in base 4: a horse 62 inches tall is '15.2 hands' (15 hands and 2 inches), and the next height after 15.3 is 16.0. So 15.2 hh is not 15.2 hands."
+    },
+    {
+      "id": "hectare",
+      "name": "Hectare",
+      "symbols": [
+        "ha"
+      ],
+      "system": "SI-accepted",
+      "level": 2,
+      "domain": "area",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ha = 10\u2074 m\u00b2",
+      "factor": 10000,
+      "currentDefinition": "A unit of area equal to one square hectometre (10 000 m\u00b2), or 100 ares, where the are (a) of the original metric system is 100 m\u00b2. Accepted for use with the SI.",
+      "currentSource": "French metric law of 18 Germinal An III (1795) (the are); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1795\u2013present",
+          "value": "A unit of area equal to one square hectometre (10 000 m\u00b2), or 100 ares, where the are (a) of the original metric system is 100 m\u00b2. Accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "French metric law of 18 Germinal An III (1795) (the are); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "'Hect-' (hecto, 100) plus 'are', from Latin 'area'.",
+      "cursedness": "The only survivor of the are, which the SI no longer lists. The hecto prefix is fused into the name, so you can't take it off: there is no accepted unit called the 'are' any more, and a 'kilohectare' isn't allowed."
     },
     {
       "id": "henry",
@@ -210,6 +1237,7 @@
         "luminous_intensity": 0
       },
       "equation": "H = Wb/A",
+      "factor": 1,
       "currentDefinition": "The inductance of a closed circuit in which an electromotive force of one volt is produced when the electric current in the circuit varies uniformly at a rate of one ampere per second.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -244,6 +1272,7 @@
         "luminous_intensity": 0
       },
       "equation": "Hz = 1/s",
+      "factor": 1,
       "currentDefinition": "The frequency of a periodic phenomenon of which the period is one second.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -257,7 +1286,483 @@
         }
       ],
       "etymology": "Named after Heinrich Hertz, who first conclusively demonstrated the existence of electromagnetic waves.",
-      "cursedness": "Dimensionally identical to the becquerel (also inverse seconds), but the two are never interchanged \u2014 see the kelvin-celsius relationship note for the pattern; a hertz-becquerel relationship entry covering this is queued in PROGRESS.md."
+      "cursedness": "Dimensionally identical to the becquerel (also inverse seconds), but the two are never interchanged. See the hertz-becquerel relationship."
+    },
+    {
+      "id": "horsepower",
+      "name": "Horsepower",
+      "symbols": [
+        "hp"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mechanics",
+      "dimension": {
+        "length": 2,
+        "mass": 1,
+        "time": -3,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "hp = 550 ft\u00b7lbf/s",
+      "factor": 550,
+      "currentDefinition": "Mechanical horsepower: 550 foot-pounds-force per second, about 745.7 W.",
+      "currentSource": "James Watt (c. 1782); NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1782\u2013present",
+          "value": "Mechanical horsepower: 550 foot-pounds-force per second, about 745.7 W.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "James Watt (c. 1782); NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Coined by James Watt to sell steam engines to mine owners who were replacing horses.",
+      "cursedness": "Watt's figure was a sales estimate of what a mill horse could sustain. There are now many horsepowers: mechanical (745.7 W), metric (PS, 735.5 W), electrical (746 W) and boiler (about 9.8 kW). Car makers quote whichever looks best."
+    },
+    {
+      "id": "hour",
+      "name": "Hour",
+      "symbols": [
+        "h"
+      ],
+      "system": "SI-accepted",
+      "level": 2,
+      "domain": "time",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 1,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "h = 60 min",
+      "factor": 60,
+      "currentDefinition": "A unit of time equal to 60 minutes (3600 seconds), accepted for use with the SI.",
+      "currentSource": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1969\u2013present",
+          "value": "A unit of time equal to 60 minutes (3600 seconds), accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From Greek 'h\u014dra', a season or period of time, via Latin and Old French.",
+      "cursedness": "The symbol h is also the hecto prefix and the Planck constant. Ancient Egyptian 'temporal hours' split daylight into 12 parts whatever the season, so an hour was longer in summer than in winter; equal hours only became standard with mechanical clocks in the 14th century."
+    },
+    {
+      "id": "imperial-bushel",
+      "name": "Imperial bushel",
+      "symbols": [
+        "imp bu"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp bu = 4 imp pk",
+      "factor": 4,
+      "currentDefinition": "Eight imperial gallons (36.368 72 L).",
+      "currentSource": "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "Eight imperial gallons (36.368 72 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "From Old French 'boissel'.",
+      "cursedness": "About 3 % larger than the US (Winchester) bushel, because Britain rebased all its dry measures on the new imperial gallon in 1824."
+    },
+    {
+      "id": "imperial-fluid-drachm",
+      "name": "Imperial fluid drachm",
+      "symbols": [
+        "imp fl dr"
+      ],
+      "system": "imperial",
+      "level": 7,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp fl dr = \u215b imp fl oz",
+      "factor": 0.125,
+      "currentDefinition": "1/8 of an imperial fluid ounce (about 3.552 mL). An apothecaries' measure.",
+      "currentSource": "Medicines Act and British Pharmacopoeia usage; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "1/8 of an imperial fluid ounce (about 3.552 mL). An apothecaries' measure.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Medicines Act and British Pharmacopoeia usage; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Greek 'drachm\u0113'; 'drachm' is the British spelling of 'dram'.",
+      "cursedness": null
+    },
+    {
+      "id": "imperial-fluid-ounce",
+      "name": "Imperial fluid ounce",
+      "symbols": [
+        "imp fl oz"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp fl oz = 1/20 imp pt",
+      "factor": 0.05,
+      "currentDefinition": "1/20 of an imperial pint (28.413 062 5 mL): about the volume of one avoirdupois ounce of water.",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "1/20 of an imperial pint (28.413 062 5 mL): about the volume of one avoirdupois ounce of water.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "'Fluid' to distinguish it from the ounce of mass.",
+      "cursedness": "About 4 % smaller than a US fluid ounce, yet the imperial pint is bigger than the US pint, because it holds 20 of them instead of 16."
+    },
+    {
+      "id": "imperial-gallon",
+      "name": "Imperial gallon",
+      "symbols": [
+        "imp gal"
+      ],
+      "system": "imperial",
+      "level": 3,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp gal = 4.54609 L",
+      "factor": 4.54609,
+      "currentDefinition": "Exactly 4.546 09 litres.",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 3,
+      "definitions": [
+        {
+          "era": "1824\u20131963",
+          "value": "The volume of 10 pounds of distilled water weighed in air with brass weights, at 62 \u00b0F and a barometric pressure of 30 inches of mercury.",
+          "basis": "reference-sample",
+          "current": false,
+          "source": "Weights and Measures Act 1824."
+        },
+        {
+          "era": "1963\u20131985",
+          "value": "The same 10 pounds of water, with the densities of the water, air and weights specified, which works out to about 4.546 09 L.",
+          "basis": "reference-sample",
+          "current": false,
+          "source": "Weights and Measures Act 1963."
+        },
+        {
+          "era": "1985\u2013present",
+          "value": "Exactly 4.546 09 litres.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old Northern French 'galon', a liquid measure.",
+      "cursedness": "Defined so that a gallon of water weighs 10 pounds, which makes an imperial fluid ounce of water weigh almost exactly an ounce. It replaced the English wine, ale and corn gallons in 1824, too late for the United States, which kept the wine gallon. UK fuel is sold in litres, but fuel economy is still quoted in miles per imperial gallon."
+    },
+    {
+      "id": "imperial-gill",
+      "name": "Imperial gill",
+      "symbols": [
+        "imp gi"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp gi = \u00bc imp pt",
+      "factor": 0.25,
+      "currentDefinition": "A quarter of an imperial pint: 5 imperial fluid ounces (142.065 312 5 mL).",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "A quarter of an imperial pint: 5 imperial fluid ounces (142.065 312 5 mL).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old French 'gille'.",
+      "cursedness": "In parts of northern England a 'gill' meant half a pint, so the same word named two different volumes in the same country."
+    },
+    {
+      "id": "imperial-minim",
+      "name": "Imperial minim",
+      "symbols": [
+        "imp minim"
+      ],
+      "system": "imperial",
+      "level": 8,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp minim = 1/60 imp fl dr",
+      "factor": 0.016666666666666666,
+      "currentDefinition": "1/60 of an imperial fluid drachm (about 59.2 \u00b5L).",
+      "currentSource": "British Pharmacopoeia usage.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "1/60 of an imperial fluid drachm (about 59.2 \u00b5L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "British Pharmacopoeia usage."
+        }
+      ],
+      "etymology": "From Latin 'minimus', smallest.",
+      "cursedness": null
+    },
+    {
+      "id": "imperial-peck",
+      "name": "Imperial peck",
+      "symbols": [
+        "imp pk"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp pk = 2 imp gal",
+      "factor": 2,
+      "currentDefinition": "Two imperial gallons (9.092 18 L).",
+      "currentSource": "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "Two imperial gallons (9.092 18 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "Middle English 'pek'.",
+      "cursedness": null
+    },
+    {
+      "id": "imperial-pint",
+      "name": "Imperial pint",
+      "symbols": [
+        "imp pt"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp pt = \u00bd imp qt",
+      "factor": 0.5,
+      "currentDefinition": "Half an imperial quart: 20 imperial fluid ounces (568.261 25 mL).",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "Half an imperial quart: 20 imperial fluid ounces (568.261 25 mL).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "Probably from Old French 'pinte'.",
+      "cursedness": "Still the legal measure for draught beer and cider in UK pubs and for doorstep milk, decades after metrication \u2014 one of the few imperial units the EU explicitly allowed the UK to keep."
+    },
+    {
+      "id": "imperial-quart",
+      "name": "Imperial quart",
+      "symbols": [
+        "imp qt"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "imp qt = \u00bc imp gal",
+      "factor": 0.25,
+      "currentDefinition": "A quarter of an imperial gallon (1.136 522 5 L).",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1824\u2013present",
+          "value": "A quarter of an imperial gallon (1.136 522 5 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Latin 'quartus', a fourth (of a gallon).",
+      "cursedness": null
+    },
+    {
+      "id": "inch-of-mercury",
+      "name": "Inch of mercury",
+      "symbols": [
+        "inHg"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mechanics",
+      "dimension": {
+        "length": -1,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "inHg \u2248 3386.389 Pa",
+      "factor": 3386.38864,
+      "currentDefinition": "The pressure of a column of mercury one inch high at standard density (13.5951 g/cm\u00b3) and standard gravity: about 3386.389 Pa.",
+      "currentSource": "NIST SP 811 (2008), Appendix B.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "conventional",
+          "value": "The pressure of a column of mercury one inch high at standard density (13.5951 g/cm\u00b3) and standard gravity: about 3386.389 Pa.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST SP 811 (2008), Appendix B."
+        }
+      ],
+      "etymology": "From the mercury barometer, which measures pressure by the height of a column of mercury.",
+      "cursedness": "US weather reports give air pressure in inches of mercury, and aircraft altimeters are set in it, even though barometers stopped using mercury long ago. The value depends on the mercury's temperature, so the conventional value assumes 0 \u00b0C."
+    },
+    {
+      "id": "inch",
+      "name": "Inch",
+      "symbols": [
+        "in"
+      ],
+      "system": "imperial",
+      "level": 2,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "in = 2.54 cm",
+      "factor": 0.0254,
+      "currentDefinition": "Exactly 2.54 centimetres (1/36 of the international yard).",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1324\u20131959",
+          "value": "Three grains of barley, dry and round, placed end to end. By the 19th century it was 1/36 of the national standard yard, which made the British inch about 25.399 98 mm and the American inch (from 1893) 25.400 05 mm.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "Composition of Yards and Perches (c. 1300); Mendenhall Order (US, 1893)."
+        },
+        {
+          "era": "1959\u2013present",
+          "value": "Exactly 2.54 centimetres (1/36 of the international yard).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old English 'ynce', from Latin 'uncia', a twelfth part \u2014 the same word as 'ounce'.",
+      "cursedness": "Before 1959 the British, American and Canadian inches were all slightly different, by a few parts per million. Industry had already standardized on 25.4 mm in the 1930s, so the 1959 agreement mostly made official what machinists were doing anyway. The inch is now defined by the metre, so every customary length is a metric length in disguise."
     },
     {
       "id": "joule",
@@ -278,6 +1783,7 @@
         "luminous_intensity": 0
       },
       "equation": "J = N\u00b7m",
+      "factor": 1,
       "currentDefinition": "The work done when the point of application of a force of one newton is displaced a distance of one metre in the direction of the force.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -312,6 +1818,7 @@
         "luminous_intensity": 0
       },
       "equation": "kat = mol/s",
+      "factor": 1,
       "currentDefinition": "The catalytic activity that increases the rate of conversion of a specified chemical reaction by one mole per second in a specified assay system.",
       "currentSource": "21st CGPM (1999), Resolution 12; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -346,6 +1853,7 @@
         "luminous_intensity": 0
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Defined by fixing the numerical value of the Boltzmann constant k to 1.380649\u00d710\u207b\u00b2\u00b3 J/K, where the joule is kg\u00b7m\u00b2\u00b7s\u207b\u00b2.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4.",
       "definitionCount": 2,
@@ -387,6 +1895,7 @@
         "luminous_intensity": 0
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Defined by fixing the numerical value of the Planck constant h to 6.62607015\u00d710\u207b\u00b3\u2074 J\u00b7s, which is kg\u00b7m\u00b2\u00b7s\u207b\u00b9.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.2.",
       "definitionCount": 3,
@@ -417,6 +1926,224 @@
       "cursedness": "The only SI base unit whose name contains a prefix ('kilo-'), a historical artifact of the gram being defined first and later found too small to be practical as the base unit. Since 2019, the definition fixes the Planck constant h in joule-seconds (kg\u00b7m\u00b2\u00b7s\u207b\u00b9), so the kilogram actually depends on the metre and second: 1 kg = h / (6.62607015\u00d710\u207b\u00b3\u2074 m\u00b2\u00b7s\u207b\u00b9). Before 2019, the dependency ran the other way. The joule, newton and every other mechanical unit were tied to a metal cylinder in a vault in S\u00e8vres, which slowly drifted in mass compared with its official copies. The 2019 wording also reads in a circle: it states h in joule-seconds, and the joule is N\u00b7m with N = kg\u00b7m/s\u00b2, so the kilogram is defined through a unit built from the kilogram. Fixing h's value pins it down anyway, but the IEC's terminology committee singled the kilogram out as the hardest definition to rephrase in non-circular words (Mari et al., 2019)."
     },
     {
+      "id": "kip",
+      "name": "Kip",
+      "symbols": [
+        "kip"
+      ],
+      "system": "us-customary",
+      "level": 5,
+      "domain": "mechanics",
+      "dimension": {
+        "length": 1,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "kip = 1000 lbf",
+      "factor": 1000,
+      "currentDefinition": "1000 pounds-force (about 4.448 kN). Used in US structural engineering.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "20th century\u2013present",
+          "value": "1000 pounds-force (about 4.448 kN). Used in US structural engineering.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From 'kilo-pound'.",
+      "cursedness": "A metric prefix applied to an imperial unit, then shortened into a word. Stress in kips per square inch is written ksi."
+    },
+    {
+      "id": "league",
+      "name": "League",
+      "symbols": [
+        "lea"
+      ],
+      "system": "imperial",
+      "level": 9,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "lea = 3 mi",
+      "factor": 3,
+      "currentDefinition": "Three miles in English usage, though it never had a statutory definition and varied widely by country.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "medieval\u2013present",
+          "value": "Three miles in English usage, though it never had a statutory definition and varied widely by country.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Late Latin 'leuga', a Gaulish unit of distance.",
+      "cursedness": "Roughly the distance a person could walk in an hour, so its length varied from about 3 to 7 km depending on country and era. 'Twenty Thousand Leagues Under the Seas' is a distance travelled, not a depth."
+    },
+    {
+      "id": "link",
+      "name": "Link",
+      "symbols": [
+        "li"
+      ],
+      "system": "imperial",
+      "level": 7,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "li = 0.01 ch",
+      "factor": 0.01,
+      "currentDefinition": "1/100 of a chain (7.92 inches), exactly 0.201168 m: one link of Gunter's chain.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1620\u2013present",
+          "value": "1/100 of a chain (7.92 inches), exactly 0.201168 m: one link of Gunter's chain.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "One physical link of Gunter's surveying chain.",
+      "cursedness": null
+    },
+    {
+      "id": "litre",
+      "name": "Litre",
+      "symbols": [
+        "L",
+        "l"
+      ],
+      "system": "SI-accepted",
+      "level": 2,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "L = 10\u207b\u00b3 m\u00b3",
+      "factor": 0.001,
+      "currentDefinition": "A special name for the cubic decimetre (10\u207b\u00b3 m\u00b3), accepted for use with the SI.",
+      "currentSource": "12th CGPM (1964), Resolution 6; BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1901\u20131964",
+          "value": "The volume occupied by a mass of 1 kilogram of pure water at its maximum density and at standard atmospheric pressure \u2014 about 1.000028 dm\u00b3.",
+          "basis": "reference-sample",
+          "current": false,
+          "source": "3rd CGPM (1901)."
+        },
+        {
+          "era": "1964\u2013present",
+          "value": "A special name for the cubic decimetre (10\u207b\u00b3 m\u00b3), accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "12th CGPM (1964), Resolution 6; BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From the French 'litron', an older unit of dry volume, via Medieval Latin and Greek 'litra', a unit of weight.",
+      "cursedness": "From 1901 to 1964 the litre was defined from a kilogram of water, which made it 28 parts per million bigger than a cubic decimetre. High-precision volumes measured in that era have to be corrected. It has two official symbols, because a lowercase l is hard to tell from the digit 1; the CGPM added the capital L in 1979 as a deliberate exception to the rule that only units named after people get a capital."
+    },
+    {
+      "id": "long-hundredweight",
+      "name": "Long hundredweight",
+      "symbols": [
+        "long cwt"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "long cwt = 4 qr",
+      "factor": 4,
+      "currentDefinition": "112 pounds (8 stones), about 50.8 kg: the British hundredweight.",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1835\u2013present",
+          "value": "112 pounds (8 stones), about 50.8 kg: the British hundredweight.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "From 'hundred' plus 'weight'; 'cwt' uses the Roman numeral C for centum, a hundred.",
+      "cursedness": "A 'hundredweight' of 112 lb. The British kept the long one and the Americans adopted a short one of an honest 100 lb, so 'cwt' means a different mass on each side of the Atlantic."
+    },
+    {
+      "id": "long-ton",
+      "name": "Long ton",
+      "symbols": [
+        "long ton"
+      ],
+      "system": "imperial",
+      "level": 7,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "long ton = 20 long cwt",
+      "factor": 20,
+      "currentDefinition": "20 long hundredweight: 2240 pounds, about 1016.05 kg. Also called the imperial or gross ton.",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1835\u2013present",
+          "value": "20 long hundredweight: 2240 pounds, about 1016.05 kg. Also called the imperial or gross ton.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "From the 'tun', a large wine cask; the same root as 'tonne'.",
+      "cursedness": "Three tons share one name: the long ton (2240 lb), the short ton (2000 lb) and the metric tonne (1000 kg \u2248 2205 lb). The long ton and the tonne differ by only 1.6 %, which made them easy to confuse in shipping. A ship's 'tonnage' is usually a volume, not a mass."
+    },
+    {
       "id": "lumen",
       "name": "Lumen",
       "symbols": [
@@ -435,6 +2162,7 @@
         "luminous_intensity": 1
       },
       "equation": "lm = cd\u00b7sr",
+      "factor": 1,
       "currentDefinition": "The luminous flux emitted into a solid angle of one steradian by a point source with a uniform intensity of one candela.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -469,6 +2197,7 @@
         "luminous_intensity": 1
       },
       "equation": "lx = lm/m\u00b2",
+      "factor": 1,
       "currentDefinition": "The illuminance produced by a luminous flux of one lumen uniformly distributed over a surface of one square metre.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -503,6 +2232,7 @@
         "luminous_intensity": 0
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Length of the path travelled by light in vacuum during a time interval of 1/299,792,458 of a second.",
       "currentSource": "17th CGPM (1983), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1.",
       "definitionCount": 4,
@@ -540,6 +2270,83 @@
       "cursedness": "The metre's definition fixes the speed of light c in metres per second, so this base unit actually rests on the second: 1 m is the distance light travels in 1/299,792,458 s. Since 1983, length has had no standard of its own. It is measured as time multiplied by an exact constant."
     },
     {
+      "id": "mile",
+      "name": "Mile",
+      "symbols": [
+        "mi"
+      ],
+      "system": "imperial",
+      "level": 8,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "mi = 8 fur",
+      "factor": 8,
+      "currentDefinition": "Exactly 1609.344 metres (5280 international feet).",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1593\u20131959",
+          "value": "Eight furlongs of 40 perches of 16\u00bd feet, as defined by the statute of Elizabeth I: 5280 feet of the national standard foot.",
+          "basis": "exact-multiple",
+          "current": false,
+          "source": "Weights and Measures Act 1593 (35 Eliz. 1 c. 6)."
+        },
+        {
+          "era": "1959\u2013present",
+          "value": "Exactly 1609.344 metres (5280 international feet).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Latin 'mille passus', a thousand paces (double steps) of a Roman legion.",
+      "cursedness": "The Roman mile was 5000 Roman feet. The English mile became 5280 feet in 1593 only because Parliament wanted it to be a whole number of furlongs. 'Statute mile' distinguishes it from the nautical mile (1852 m), and until 2022 there was also a US survey mile, 3.2 mm longer."
+    },
+    {
+      "id": "minute",
+      "name": "Minute",
+      "symbols": [
+        "min"
+      ],
+      "system": "SI-accepted",
+      "level": 1,
+      "domain": "time",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 1,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "min = 60 s",
+      "factor": 60,
+      "currentDefinition": "A unit of time equal to 60 seconds, accepted for use with the SI.",
+      "currentSource": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1969\u2013present",
+          "value": "A unit of time equal to 60 seconds, accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From Medieval Latin 'pars minuta prima', the 'first small part' of an hour in Babylonian-derived sexagesimal division.",
+      "cursedness": "Not every minute has 60 seconds. When a leap second is inserted into UTC, that minute has 61 \u2014 and the 2022 decision to stop inserting leap seconds by 2035 means this is being phased out rather than fixed. The base-60 split itself comes from Babylonian astronomy."
+    },
+    {
       "id": "mole",
       "name": "Mole",
       "symbols": [
@@ -558,6 +2365,7 @@
         "luminous_intensity": 0
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Defined by fixing the numerical value of the Avogadro constant N_A to 6.02214076\u00d710\u00b2\u00b3 per mole.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.5.",
       "definitionCount": 2,
@@ -599,6 +2407,7 @@
         "luminous_intensity": 0
       },
       "equation": "N = kg\u00b7m/s\u00b2",
+      "factor": 1,
       "currentDefinition": "The force which gives a mass of one kilogram an acceleration of one metre per second squared.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -633,6 +2442,7 @@
         "luminous_intensity": 0
       },
       "equation": "\u03a9 = V/A",
+      "factor": 1,
       "currentDefinition": "The electric resistance between two points of a conductor when a constant potential difference of one volt, applied between these two points, produces a current of one ampere.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -647,6 +2457,76 @@
       ],
       "etymology": "Named after Georg Simon Ohm, for his law relating voltage, current, and resistance.",
       "cursedness": null
+    },
+    {
+      "id": "oil-barrel",
+      "name": "Barrel (petroleum)",
+      "symbols": [
+        "bbl"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "bbl = 42 US gal",
+      "factor": 42,
+      "currentDefinition": "42 US gallons (about 158.987 L), the standard barrel for crude oil and petroleum products.",
+      "currentSource": "Petroleum Producers Association (1872); NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1872\u2013present",
+          "value": "42 US gallons (about 158.987 L), the standard barrel for crude oil and petroleum products.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Petroleum Producers Association (1872); NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From the wooden barrels oil was first shipped in, in 1860s Pennsylvania.",
+      "cursedness": "There is no single 'barrel': US law also defines a 31\u00bd-gallon liquid barrel, a 31-gallon beer barrel and a 105-dry-quart barrel for fruit and vegetables, and the British had their own. The 42-gallon oil barrel came from the English wine tierce. Its symbol 'bbl' is often said to stand for 'blue barrel', but that story is unproven."
+    },
+    {
+      "id": "ounce",
+      "name": "Ounce",
+      "symbols": [
+        "oz"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "oz = 1/16 lb",
+      "factor": 0.0625,
+      "currentDefinition": "1/16 of an avoirdupois pound: exactly 28.349 523 125 grams.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "1/16 of an avoirdupois pound: exactly 28.349 523 125 grams.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Latin 'uncia', a twelfth \u2014 the same word as 'inch', though the avoirdupois ounce is a sixteenth.",
+      "cursedness": "There are three ounces: the avoirdupois ounce for groceries, the heavier troy ounce (about 31.1 g) for gold and silver, and the fluid ounce, which is a volume. A troy ounce is heavier than an avoirdupois ounce, but a troy pound is lighter than an avoirdupois pound."
     },
     {
       "id": "pascal",
@@ -667,6 +2547,7 @@
         "luminous_intensity": 0
       },
       "equation": "Pa = N/m\u00b2",
+      "factor": 1,
       "currentDefinition": "The pressure produced by a force of one newton applied uniformly over an area of one square metre.",
       "currentSource": "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -680,6 +2561,300 @@
         }
       ],
       "etymology": "Named after Blaise Pascal, for his work on fluids and pressure.",
+      "cursedness": null
+    },
+    {
+      "id": "pennyweight",
+      "name": "Pennyweight",
+      "symbols": [
+        "dwt"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "dwt = 24 gr",
+      "factor": 24,
+      "currentDefinition": "24 grains (about 1.555 g): 1/20 of a troy ounce, used for precious metals.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "medieval\u2013present",
+          "value": "24 grains (about 1.555 g): 1/20 of a troy ounce, used for precious metals.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "The weight of a medieval English silver penny.",
+      "cursedness": "Its symbol is dwt, with d from the Roman denarius, the same d as in pre-decimal British pounds, shillings and pence (\u00a3sd)."
+    },
+    {
+      "id": "pica",
+      "name": "Pica",
+      "symbols": [
+        "pc"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "typography",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "pc = 12 pt",
+      "factor": 12,
+      "currentDefinition": "12 points, exactly 1/6 inch in desktop publishing.",
+      "currentSource": "Adobe PostScript Language Reference (1985).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1980s\u2013present",
+          "value": "12 points, exactly 1/6 inch in desktop publishing.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Adobe PostScript Language Reference (1985)."
+        }
+      ],
+      "etymology": "Possibly from the 'Pica', a medieval book of church rules printed in this size of type.",
+      "cursedness": "Like the point, the pica changed size when computers arrived: the 1886 American pica was 0.166 044 inch, slightly less than 1/6."
+    },
+    {
+      "id": "point",
+      "name": "Point",
+      "symbols": [
+        "pt"
+      ],
+      "system": "us-customary",
+      "level": 3,
+      "domain": "typography",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "pt = 1/72 in",
+      "factor": 0.013888888888888888,
+      "currentDefinition": "The desktop-publishing (PostScript) point: exactly 1/72 inch, 0.352 7 mm.",
+      "currentSource": "Adobe PostScript Language Reference (1985).",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1886\u20131980s",
+          "value": "The American printer's point: 0.013 837 inch, so that 72 points are about 0.996 inch. Set by the US Type Founders Association from the pica of the L. Johnson & Co. foundry.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "US Type Founders Association (1886)."
+        },
+        {
+          "era": "1980s\u2013present",
+          "value": "The desktop-publishing (PostScript) point: exactly 1/72 inch, 0.352 7 mm.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Adobe PostScript Language Reference (1985)."
+        }
+      ],
+      "etymology": "From the French 'point', the smallest typographic unit.",
+      "cursedness": "There have been many points: the Fournier and Didot points in France, the 1886 American point, TeX's 1/72.27 inch, and the PostScript 1/72 inch that every computer uses today. A 12-point font isn't 12 points of anything visible: it's the height of the metal block the letters were cast on."
+    },
+    {
+      "id": "pound-force",
+      "name": "Pound-force",
+      "symbols": [
+        "lbf"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "mechanics",
+      "dimension": {
+        "length": 1,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "lbf = lb \u00d7 9.80665 m/s\u00b2",
+      "factor": 9.80665,
+      "currentDefinition": "The weight of one pound under standard gravity (9.806 65 m/s\u00b2): exactly 4.448 221 615 260 5 newtons.",
+      "currentSource": "3rd CGPM (1901) (standard gravity); NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1901\u2013present",
+          "value": "The weight of one pound under standard gravity (9.806 65 m/s\u00b2): exactly 4.448 221 615 260 5 newtons.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "3rd CGPM (1901) (standard gravity); NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "The force with which a pound mass is pulled by standard gravity.",
+      "cursedness": "A pound weighs slightly different amounts in different places, so engineers use a conventional standard gravity that matches nowhere in particular (roughly 45\u00b0 latitude at sea level). Pounds and pounds-force are routinely written the same, as 'lb', and the Mars Climate Orbiter was lost because of a pound-force second read as a newton-second."
+    },
+    {
+      "id": "pound",
+      "name": "Pound",
+      "symbols": [
+        "lb"
+      ],
+      "system": "imperial",
+      "level": 3,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "lb = 0.45359237 kg",
+      "factor": 0.45359237,
+      "currentDefinition": "Exactly 0.453 592 37 kilograms (the avoirdupois pound).",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1855\u20131959",
+          "value": "The mass of the Imperial Standard Pound, a platinum cylinder kept in London. In the US, from 1893, defined as 0.453 592 427 7 kg via the kilogram.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "Standards of Weights and Measures Act 1855 (UK); Mendenhall Order (US, 1893)."
+        },
+        {
+          "era": "1959\u2013present",
+          "value": "Exactly 0.453 592 37 kilograms (the avoirdupois pound).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Latin 'libra pondo', a pound by weight: 'pound' from 'pondo', and the symbol lb from 'libra'.",
+      "cursedness": "'Pound' means a mass, but in everyday and engineering use it often means the force that mass weighs (the pound-force). Confusing them is how the Mars Climate Orbiter was lost in 1999: one team's software reported impulse in pound-force seconds and another read it as newton-seconds. There are also troy and apothecaries' pounds of 12 ounces, used for precious metals and drugs."
+    },
+    {
+      "id": "poundal",
+      "name": "Poundal",
+      "symbols": [
+        "pdl"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "mechanics",
+      "dimension": {
+        "length": 1,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "pdl = lb\u00b7ft/s\u00b2",
+      "factor": 1,
+      "currentDefinition": "The force that accelerates one pound at 1 ft/s\u00b2: about 0.138 255 N.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1879\u2013present",
+          "value": "The force that accelerates one pound at 1 ft/s\u00b2: about 0.138 255 N.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "'Pound' plus '-al', by analogy with the quintal; coined by James Thomson in 1879.",
+      "cursedness": "The coherent force unit of the foot\u2013pound\u2013second system, so F = ma works with pounds of mass. Almost nobody used it: engineers preferred the pound-force, which is 32.174 times larger."
+    },
+    {
+      "id": "psi",
+      "name": "Pound per square inch",
+      "symbols": [
+        "psi"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mechanics",
+      "dimension": {
+        "length": -1,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "psi = lbf/in\u00b2",
+      "factor": 1,
+      "currentDefinition": "One pound-force per square inch: about 6894.757 Pa.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "One pound-force per square inch: about 6894.757 Pa.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "An initialism of 'pounds per square inch'.",
+      "cursedness": "Tyre gauges often read 'psig' (gauge, above atmospheric) while engineering tables may use 'psia' (absolute); the two differ by about 14.7 psi, a full atmosphere."
+    },
+    {
+      "id": "quarter",
+      "name": "Quarter",
+      "symbols": [
+        "qr"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "qr = 2 st",
+      "factor": 2,
+      "currentDefinition": "Two stones (28 lb), a quarter of a long hundredweight: about 12.7 kg.",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1835\u2013present",
+          "value": "Two stones (28 lb), a quarter of a long hundredweight: about 12.7 kg.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "A quarter of a hundredweight.",
       "cursedness": null
     },
     {
@@ -701,6 +2876,7 @@
         "luminous_intensity": 0
       },
       "equation": "rad = m/m",
+      "factor": 1,
       "currentDefinition": "The plane angle between two radii of a circle which cut off on the circumference an arc equal in length to the radius \u2014 an arc-length-over-radius ratio, treated as dimensionless.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3.",
       "definitionCount": 1,
@@ -715,6 +2891,147 @@
       ],
       "etymology": "From Latin 'radius'.",
       "cursedness": "The radian is a metre-per-metre ratio, so SI treats it as dimensionless and usually drops it from equations entirely \u2014 but this is a choice, not a necessity. There's a competing, equally valid convention where the number 1 means one full revolution (used for rpm etc.), off from the radian convention by a factor of 2\u03c0. Angular momentum and torque only end up sharing units with energy because SI's convention quietly discards the radian."
+    },
+    {
+      "id": "rankine",
+      "name": "Rankine",
+      "symbols": [
+        "\u00b0R"
+      ],
+      "system": "us-customary",
+      "level": 6,
+      "domain": "thermodynamic-temperature",
+      "dimension": {
+        "length": 0,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 1,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "\u00b0R = (5/9) K",
+      "factor": 0.5555555555555556,
+      "currentDefinition": "An absolute temperature scale with Fahrenheit-sized degrees: 0 \u00b0R is absolute zero, and 1 \u00b0R = 5/9 K.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1859\u2013present",
+          "value": "An absolute temperature scale with Fahrenheit-sized degrees: 0 \u00b0R is absolute zero, and 1 \u00b0R = 5/9 K.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Named after William John Macquorn Rankine, the Scottish engineer who proposed it in 1859.",
+      "cursedness": "It is to Fahrenheit what the kelvin is to Celsius, and US thermodynamics textbooks still use it. The symbol \u00b0R was also used for the long-dead R\u00e9aumur scale."
+    },
+    {
+      "id": "rod",
+      "name": "Rod",
+      "symbols": [
+        "rd"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "rd = 5\u00bd yd",
+      "factor": 5.5,
+      "currentDefinition": "5\u00bd yards (16\u00bd feet), exactly 5.0292 m. Also called the pole or perch.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "5\u00bd yards (16\u00bd feet), exactly 5.0292 m. Also called the pole or perch.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From the surveyor's or ploughman's rod; 'pole' and 'perch' (Latin 'pertica', a pole) are other names for it.",
+      "cursedness": "The odd 16\u00bd feet is a compromise between older rods of 15, 18 and 20 feet, fixed so that a furlong would be 40 rods. Its three names are interchangeable, and 'perch' is also a unit of area (a square rod)."
+    },
+    {
+      "id": "rood",
+      "name": "Rood",
+      "symbols": [
+        "ro"
+      ],
+      "system": "imperial",
+      "level": 8,
+      "domain": "area",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "ro = 1 fur \u00d7 1 rd",
+      "factor": 1,
+      "currentDefinition": "One furlong by one rod: a quarter of an acre (1210 square yards), exactly 1011.714 105 6 m\u00b2.",
+      "currentSource": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "medieval\u2013present",
+          "value": "One furlong by one rod: a quarter of an acre (1210 square yards), exactly 1011.714 105 6 m\u00b2.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "From Old English 'r\u014dd', a rod or pole; the same word as 'rood' for a cross.",
+      "cursedness": null
+    },
+    {
+      "id": "scruple",
+      "name": "Scruple",
+      "symbols": [
+        "\u2108",
+        "s ap"
+      ],
+      "system": "imperial",
+      "level": 5,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "\u2108 = 20 gr",
+      "factor": 20,
+      "currentDefinition": "20 grains (about 1.296 g), an apothecaries' weight for drugs.",
+      "currentSource": "British Pharmacopoeia (abandoned on metrication, 1971); NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "medieval\u20131971",
+          "value": "20 grains (about 1.296 g), an apothecaries' weight for drugs.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "British Pharmacopoeia (abandoned on metrication, 1971); NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Latin 'scrupulus', a small sharp stone \u2014 the same origin as 'scruples', small doubts.",
+      "cursedness": null
     },
     {
       "id": "second",
@@ -735,6 +3052,7 @@
         "luminous_intensity": 0
       },
       "equation": null,
+      "factor": 1,
       "currentDefinition": "Defined by fixing the numerical value of the caesium frequency \u0394\u03bd_Cs, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to 9,192,631,770 hertz, where the hertz is s\u207b\u00b9.",
       "currentSource": "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1.",
       "definitionCount": 4,
@@ -772,6 +3090,111 @@
       "cursedness": "Since 2019 the definition fixes the caesium frequency in hertz, 'which is equal to s\u207b\u00b9', so the second is defined through a unit built from the second. The IEC's terminology committee used the second as its main example of how the 2019 definitions read circularly: the caesium frequency is stated in a unit made of seconds, and the second is defined by that frequency. They concluded the definition is still sound, since fixing the number pins the second to the caesium atom, but that its wording can't be copied verbatim into a terminology standard (Mari et al., 2019). The rewording didn't change the size of the second; it only restated the 1967 definition as a fixed constant, like the other six base units."
     },
     {
+      "id": "section",
+      "name": "Section",
+      "symbols": [
+        "section"
+      ],
+      "system": "us-customary",
+      "level": 9,
+      "domain": "area",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "section = 1 mi\u00b2",
+      "factor": 1,
+      "currentDefinition": "One square mile (640 acres), the basic unit of the US Public Land Survey System.",
+      "currentSource": "Land Ordinance of 1785; NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1785\u2013present",
+          "value": "One square mile (640 acres), the basic unit of the US Public Land Survey System.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Land Ordinance of 1785; NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "A numbered section of a surveyed township.",
+      "cursedness": "Most of the US west of Ohio is divided into a grid of these, which is why so many rural roads run exactly a mile apart. Because the Earth is curved and the grid isn't, surveyors had to insert 'correction lines' every 24 miles, where north\u2013south roads jog sideways."
+    },
+    {
+      "id": "short-hundredweight",
+      "name": "Short hundredweight",
+      "symbols": [
+        "short cwt"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "short cwt = 100 lb",
+      "factor": 100,
+      "currentDefinition": "Exactly 100 pounds (about 45.36 kg): the US hundredweight.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "Exactly 100 pounds (about 45.36 kg): the US hundredweight.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From 'hundred' plus 'weight'.",
+      "cursedness": null
+    },
+    {
+      "id": "short-ton",
+      "name": "Short ton",
+      "symbols": [
+        "short ton"
+      ],
+      "system": "us-customary",
+      "level": 5,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "short ton = 20 short cwt",
+      "factor": 20,
+      "currentDefinition": "20 short hundredweight: exactly 2000 pounds, about 907.18 kg. The US 'ton'.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "20 short hundredweight: exactly 2000 pounds, about 907.18 kg. The US 'ton'.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From the 'tun'.",
+      "cursedness": null
+    },
+    {
       "id": "siemens",
       "name": "Siemens",
       "symbols": [
@@ -790,6 +3213,7 @@
         "luminous_intensity": 0
       },
       "equation": "S = A/V",
+      "factor": 1,
       "currentDefinition": "The electrical conductance of a conductor in which a current of one ampere flows when a potential difference of one volt is applied \u2014 the reciprocal of the ohm.",
       "currentSource": "14th CGPM (1971), Resolution 7; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -804,6 +3228,76 @@
       ],
       "etymology": "Named after Ernst Werner von Siemens, industrialist and founder of the Siemens company.",
       "cursedness": null
+    },
+    {
+      "id": "sievert",
+      "name": "Sievert",
+      "symbols": [
+        "Sv"
+      ],
+      "system": "SI-derived",
+      "level": 5,
+      "domain": "ionizing-radiation",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "Sv = J/kg",
+      "factor": 1,
+      "currentDefinition": "The dose equivalent (and, in radiological protection, the equivalent and effective dose) of one joule per kilogram, after the absorbed dose is weighted by dimensionless factors for the type of radiation and the tissue exposed.",
+      "currentSource": "16th CGPM (1979), Resolution 5; CIPM (2002), Recommendation 2; BIPM SI Brochure, 9th ed. (2019), Table 4.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1979\u2013present",
+          "value": "The dose equivalent (and, in radiological protection, the equivalent and effective dose) of one joule per kilogram, after the absorbed dose is weighted by dimensionless factors for the type of radiation and the tissue exposed.",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "16th CGPM (1979), Resolution 5; CIPM (2002), Recommendation 2; BIPM SI Brochure, 9th ed. (2019), Table 4."
+        }
+      ],
+      "etymology": "Named after Rolf Sievert, a Swedish medical physicist who worked on measuring radiation doses and their biological effects.",
+      "cursedness": "A sievert is a joule per kilogram, exactly like a gray, but the number in front has been multiplied by weighting factors that the International Commission on Radiological Protection revises from time to time. The same exposure can therefore be a different number of sieverts depending on which year's recommendations you use. See the gray-sievert relationship. It replaced the rem (0.01 Sv)."
+    },
+    {
+      "id": "slug",
+      "name": "Slug",
+      "symbols": [
+        "slug"
+      ],
+      "system": "us-customary",
+      "level": 5,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "slug = lbf\u00b7s\u00b2/ft",
+      "factor": 1,
+      "currentDefinition": "The mass that accelerates at 1 ft/s\u00b2 under a force of one pound-force: about 14.594 kg (32.174 pounds).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "c. 1900\u2013present",
+          "value": "The mass that accelerates at 1 ft/s\u00b2 under a force of one pound-force: about 14.594 kg (32.174 pounds).",
+          "basis": "coherent-derived",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Coined by the British physicist Arthur Mason Worthington around 1900, from 'sluggish' \u2014 a mass is what resists acceleration.",
+      "cursedness": "It exists so that F = ma works with pounds-force and feet without a stray 32.174. The US engineering system thus has a pound of force and a slug of mass, while the 'absolute' system has a pound of mass and a poundal of force."
     },
     {
       "id": "steradian",
@@ -824,6 +3318,7 @@
         "luminous_intensity": 0
       },
       "equation": "sr = m\u00b2/m\u00b2",
+      "factor": 1,
       "currentDefinition": "The solid angle which, having its vertex at the centre of a sphere, cuts off an area on the surface of the sphere equal to that of a square with sides of length equal to the radius of the sphere \u2014 an area-over-radius-squared ratio, treated as dimensionless.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.3.",
       "definitionCount": 1,
@@ -838,6 +3333,112 @@
       ],
       "etymology": "From Greek 'stereos' (solid) + 'radian'.",
       "cursedness": "The 3D counterpart to the radian's cursedness: a genuinely dimensionless area-over-length-squared ratio that SI nonetheless gives its own named unit, feeding directly into the lumen (candela \u00d7 steradian) as if it carried real dimension."
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "symbols": [
+        "st"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "st = 14 lb",
+      "factor": 14,
+      "currentDefinition": "14 avoirdupois pounds: exactly 6.350 293 18 kg.",
+      "currentSource": "Weights and Measures Act 1835; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1835\u2013present",
+          "value": "14 avoirdupois pounds: exactly 6.350 293 18 kg.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Weights and Measures Act 1835; Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+        }
+      ],
+      "etymology": "From the stones once used as weights.",
+      "cursedness": "Before 1835 the stone varied by commodity: 8 lb for meat, 16 lb for cheese, 24 lb for glass. Britons still give body weight in stones and pounds, a unit the US never used."
+    },
+    {
+      "id": "tablespoon",
+      "name": "Tablespoon",
+      "symbols": [
+        "tbsp",
+        "Tbsp"
+      ],
+      "system": "us-customary",
+      "level": 8,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "tbsp = \u00bd US fl oz",
+      "factor": 0.5,
+      "currentDefinition": "Half a US fluid ounce (about 14.79 mL). US nutrition labels use exactly 15 mL.",
+      "currentSource": "NIST Handbook 44, Appendix C; 21 CFR 101.9(b)(5)(viii).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "Half a US fluid ounce (about 14.79 mL). US nutrition labels use exactly 15 mL.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C; 21 CFR 101.9(b)(5)(viii)."
+        }
+      ],
+      "etymology": "From the serving spoon used at the table.",
+      "cursedness": "The Australian tablespoon is 20 mL (four teaspoons), not 15 mL, so Australian recipes need a third more of everything measured by the spoon."
+    },
+    {
+      "id": "teaspoon",
+      "name": "Teaspoon",
+      "symbols": [
+        "tsp"
+      ],
+      "system": "us-customary",
+      "level": 9,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "tsp = \u2153 tbsp",
+      "factor": 0.3333333333333333,
+      "currentDefinition": "A third of a tablespoon (about 4.93 mL). US nutrition labels use exactly 5 mL.",
+      "currentSource": "NIST Handbook 44, Appendix C; 21 CFR 101.9(b)(5)(viii).",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "A third of a tablespoon (about 4.93 mL). US nutrition labels use exactly 5 mL.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C; 21 CFR 101.9(b)(5)(viii)."
+        }
+      ],
+      "etymology": "From the spoon used to stir tea.",
+      "cursedness": null
     },
     {
       "id": "tesla",
@@ -858,6 +3459,7 @@
         "luminous_intensity": 0
       },
       "equation": "T = Wb/m\u00b2",
+      "factor": 1,
       "currentDefinition": "The magnetic flux density given by a magnetic flux of one weber per square metre.",
       "currentSource": "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -872,6 +3474,679 @@
       ],
       "etymology": "Named after Nikola Tesla, for his contributions to the design of the modern alternating-current electricity supply system.",
       "cursedness": null
+    },
+    {
+      "id": "therm",
+      "name": "Therm",
+      "symbols": [
+        "thm"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "thermodynamics",
+      "dimension": {
+        "length": 2,
+        "mass": 1,
+        "time": -2,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "thm = 10\u2075 Btu",
+      "factor": 100000,
+      "currentDefinition": "100 000 British thermal units (about 105.5 MJ). Used for natural gas billing.",
+      "currentSource": "NIST Handbook 44, Appendix C; EU Directive 80/181/EEC.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "20th century\u2013present",
+          "value": "100 000 British thermal units (about 105.5 MJ). Used for natural gas billing.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C; EU Directive 80/181/EEC."
+        }
+      ],
+      "etymology": "From Greek 'therm\u0113', heat.",
+      "cursedness": "The US therm is defined with the 59 \u00b0F Btu (105.4804 MJ) and the EU therm with the International Table Btu (105.506 MJ), so the same gas bill unit differs by 0.02 % across the Atlantic."
+    },
+    {
+      "id": "thou",
+      "name": "Thou",
+      "symbols": [
+        "thou",
+        "mil"
+      ],
+      "system": "imperial",
+      "level": 3,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "thou = 0.001 in",
+      "factor": 0.001,
+      "currentDefinition": "One thousandth of an inch, exactly 25.4 \u00b5m.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "One thousandth of an inch, exactly 25.4 \u00b5m.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "'Thou' is short for thousandth; 'mil' is from Latin 'mille', a thousand.",
+      "cursedness": "Americans call it a mil and the British a thou. Outside engineering, a 'mil' usually means a millimetre, or (in 'mil-spec') military, so a 'ten-mil' plastic sheet and a ten-millimetre sheet differ by a factor of 39."
+    },
+    {
+      "id": "tonne",
+      "name": "Tonne",
+      "symbols": [
+        "t"
+      ],
+      "system": "SI-accepted",
+      "level": 3,
+      "domain": "mechanics",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "t = 10\u00b3 kg",
+      "factor": 1000,
+      "currentDefinition": "A unit of mass equal to 1000 kilograms (one megagram), accepted for use with the SI.",
+      "currentSource": "CIPM (1879); BIPM SI Brochure, 9th ed. (2019), Table 8.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1879\u2013present",
+          "value": "A unit of mass equal to 1000 kilograms (one megagram), accepted for use with the SI.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "CIPM (1879); BIPM SI Brochure, 9th ed. (2019), Table 8."
+        }
+      ],
+      "etymology": "From French 'tonne', from the 'tun', a large wine cask; the same root as the imperial ton.",
+      "cursedness": "Three different 'tons' share the name: the metric tonne (1000 kg), the long ton (2240 lb, about 1016 kg) and the short ton (2000 lb, about 907 kg). In the US the tonne is officially called the 'metric ton'. A tonne of TNT, as used for explosive yield, is defined as 4.184 GJ and isn't a mass at all."
+    },
+    {
+      "id": "township",
+      "name": "Township",
+      "symbols": [
+        "twp"
+      ],
+      "system": "us-customary",
+      "level": 10,
+      "domain": "area",
+      "dimension": {
+        "length": 2,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "twp = 36 sections",
+      "factor": 36,
+      "currentDefinition": "36 sections: a square six miles on a side, in the US Public Land Survey System.",
+      "currentSource": "Land Ordinance of 1785; NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1785\u2013present",
+          "value": "36 sections: a square six miles on a side, in the US Public Land Survey System.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Land Ordinance of 1785; NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From the settlements the survey grid was meant to hold.",
+      "cursedness": "Sections within a township are numbered back and forth, boustrophedon style: 1 to 6 right to left along the top row, then 7 to 12 left to right below it."
+    },
+    {
+      "id": "troy-ounce",
+      "name": "Troy ounce",
+      "symbols": [
+        "oz t"
+      ],
+      "system": "imperial",
+      "level": 6,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "oz t = 20 dwt",
+      "factor": 20,
+      "currentDefinition": "480 grains: exactly 31.103 476 8 grams. The unit gold, silver and platinum are priced in.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "480 grains: exactly 31.103 476 8 grams. The unit gold, silver and platinum are priced in.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "Probably from the market town of Troyes in Champagne, France.",
+      "cursedness": "About 10 % heavier than an avoirdupois ounce. The apothecaries' ounce is the same mass. When gold is quoted 'per ounce', it is always the troy ounce."
+    },
+    {
+      "id": "troy-pound",
+      "name": "Troy pound",
+      "symbols": [
+        "lb t"
+      ],
+      "system": "imperial",
+      "level": 7,
+      "domain": "mass",
+      "dimension": {
+        "length": 0,
+        "mass": 1,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "lb t = 12 oz t",
+      "factor": 12,
+      "currentDefinition": "12 troy ounces (5760 grains): about 373.24 g.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1959\u2013present",
+          "value": "12 troy ounces (5760 grains): about 373.24 g.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Troyes, France.",
+      "cursedness": "The troy pound has only 12 ounces, so it is lighter than the 16-ounce avoirdupois pound even though each troy ounce is heavier. Britain abolished it in 1878, except for the troy ounce."
+    },
+    {
+      "id": "us-bushel",
+      "name": "US bushel",
+      "symbols": [
+        "US bu"
+      ],
+      "system": "us-customary",
+      "level": 3,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US bu = 2150.42 in\u00b3",
+      "factor": 2150.42,
+      "currentDefinition": "The Winchester bushel: a cylinder 18\u00bd inches across and 8 inches deep, rounded to exactly 2150.42 cubic inches (about 35.239 L). Recognized by Congress in 1836.",
+      "currentSource": "Act of 1696\u201397 (8 & 9 Will. 3); US joint resolution of 14 June 1836; NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1696\u2013present",
+          "value": "The Winchester bushel: a cylinder 18\u00bd inches across and 8 inches deep, rounded to exactly 2150.42 cubic inches (about 35.239 L). Recognized by Congress in 1836.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Act of 1696\u201397 (8 & 9 Will. 3); US joint resolution of 14 June 1836; NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Old French 'boissel', a small box.",
+      "cursedness": "Grain is traded by the bushel but weighed, not measured: a legal 'bushel' of wheat is 60 lb, of corn 56 lb and of oats 32 lb, whatever volume they fill. Britain replaced the Winchester bushel with the larger imperial bushel in 1824; the US kept it."
+    },
+    {
+      "id": "us-cup",
+      "name": "US cup",
+      "symbols": [
+        "cup"
+      ],
+      "system": "us-customary",
+      "level": 6,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "cup = \u00bd US pt",
+      "factor": 0.5,
+      "currentDefinition": "Half a US pint: 8 US fluid ounces (236.588 236 5 mL).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "19th century\u2013present",
+          "value": "Half a US pint: 8 US fluid ounces (236.588 236 5 mL).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From the drinking cup.",
+      "cursedness": "Nutrition labels in the US use a different 'legal cup' of exactly 240 mL, and the Commonwealth metric cup is 250 mL. A recipe written in cups can be off by 6 % depending on which one the author meant."
+    },
+    {
+      "id": "us-dry-pint",
+      "name": "US dry pint",
+      "symbols": [
+        "US dry pt"
+      ],
+      "system": "us-customary",
+      "level": 6,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US dry pt = \u00bd US dry qt",
+      "factor": 0.5,
+      "currentDefinition": "Half a US dry quart (33.600 312 5 in\u00b3, about 0.551 L).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1696\u2013present",
+          "value": "Half a US dry quart (33.600 312 5 in\u00b3, about 0.551 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": null,
+      "cursedness": null
+    },
+    {
+      "id": "us-dry-quart",
+      "name": "US dry quart",
+      "symbols": [
+        "US dry qt"
+      ],
+      "system": "us-customary",
+      "level": 5,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US dry qt = \u215b US pk",
+      "factor": 0.125,
+      "currentDefinition": "1/32 of a US bushel (67.200 625 in\u00b3, about 1.101 L).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1696\u2013present",
+          "value": "1/32 of a US bushel (67.200 625 in\u00b3, about 1.101 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Latin 'quartus', a fourth (of a dry gallon).",
+      "cursedness": "About 16 % larger than the US liquid quart, because the two descend from different English gallons. Berries are sold in dry pints and dry quarts."
+    },
+    {
+      "id": "us-fluid-dram",
+      "name": "US fluid dram",
+      "symbols": [
+        "US fl dr"
+      ],
+      "system": "us-customary",
+      "level": 8,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US fl dr = \u215b US fl oz",
+      "factor": 0.125,
+      "currentDefinition": "1/8 of a US fluid ounce (about 3.697 mL). An apothecaries' measure.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "1/8 of a US fluid ounce (about 3.697 mL). An apothecaries' measure.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Greek 'drachm\u0113', a coin and weight.",
+      "cursedness": null
+    },
+    {
+      "id": "us-fluid-ounce",
+      "name": "US fluid ounce",
+      "symbols": [
+        "US fl oz"
+      ],
+      "system": "us-customary",
+      "level": 7,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US fl oz = \u215b cup",
+      "factor": 0.125,
+      "currentDefinition": "1/128 of a US gallon (1.804 687 5 in\u00b3, 29.573 529 562 5 mL).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "1/128 of a US gallon (1.804 687 5 in\u00b3, 29.573 529 562 5 mL).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "'Fluid' to distinguish it from the ounce of mass.",
+      "cursedness": "A US fluid ounce of water weighs about 1.04 ounces; an imperial fluid ounce of water weighs almost exactly one ounce, which was the point of its definition. US food labels use a rounded 30 mL fluid ounce."
+    },
+    {
+      "id": "us-gallon",
+      "name": "US gallon",
+      "symbols": [
+        "US gal"
+      ],
+      "system": "us-customary",
+      "level": 3,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US gal = 231 in\u00b3",
+      "factor": 231,
+      "currentDefinition": "Exactly 231 cubic inches (3.785 411 784 L): Queen Anne's wine gallon, adopted by the US as its liquid gallon.",
+      "currentSource": "Act of 1706 (6 Ann. c. 27); NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "Exactly 231 cubic inches (3.785 411 784 L): Queen Anne's wine gallon, adopted by the US as its liquid gallon.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Act of 1706 (6 Ann. c. 27); NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Old Northern French 'galon', a liquid measure.",
+      "cursedness": "The US kept the old English wine gallon of 231 in\u00b3, while Britain replaced all its gallons with the imperial gallon in 1824. So a US gallon is about 83 % of an imperial one, and a US mpg figure looks worse than the same car's UK figure. England once had separate gallons for wine, ale and corn."
+    },
+    {
+      "id": "us-gill",
+      "name": "US gill",
+      "symbols": [
+        "US gi"
+      ],
+      "system": "us-customary",
+      "level": 7,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US gi = \u00bd cup",
+      "factor": 0.5,
+      "currentDefinition": "Half a US cup: 4 US fluid ounces (118.294 118 25 mL).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "Half a US cup: 4 US fluid ounces (118.294 118 25 mL).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Old French 'gille', a wine measure.",
+      "cursedness": "The US gill is a quarter of a US pint; the imperial gill is a quarter of an imperial pint, so it is 5 imperial fluid ounces, not 4."
+    },
+    {
+      "id": "us-minim",
+      "name": "US minim",
+      "symbols": [
+        "US minim"
+      ],
+      "system": "us-customary",
+      "level": 9,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US minim = 1/60 US fl dr",
+      "factor": 0.016666666666666666,
+      "currentDefinition": "1/60 of a US fluid dram (about 61.6 \u00b5L), roughly a drop.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "1/60 of a US fluid dram (about 61.6 \u00b5L), roughly a drop.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Latin 'minimus', smallest.",
+      "cursedness": "Meant to replace the 'drop', which varies with the liquid and the dropper. Old syringes are still marked in minims alongside millilitres."
+    },
+    {
+      "id": "us-peck",
+      "name": "US peck",
+      "symbols": [
+        "US pk"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US pk = \u00bc US bu",
+      "factor": 0.25,
+      "currentDefinition": "A quarter of a US bushel (537.605 in\u00b3, about 8.81 L).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1696\u2013present",
+          "value": "A quarter of a US bushel (537.605 in\u00b3, about 8.81 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Of uncertain origin; Middle English 'pek'.",
+      "cursedness": null
+    },
+    {
+      "id": "us-pint",
+      "name": "US liquid pint",
+      "symbols": [
+        "US pt"
+      ],
+      "system": "us-customary",
+      "level": 5,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US pt = \u00bd US qt",
+      "factor": 0.5,
+      "currentDefinition": "Half a US liquid quart (28.875 in\u00b3, 0.473 176 473 L), 16 US fluid ounces.",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "Half a US liquid quart (28.875 in\u00b3, 0.473 176 473 L), 16 US fluid ounces.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "Probably from Old French 'pinte', perhaps from a painted mark on a vessel.",
+      "cursedness": "'A pint's a pound the world around' only works in the US: a US pint of water weighs about 1.04 lb. An imperial pint is 20 imperial fluid ounces, so a British pint of beer is about 20 % bigger."
+    },
+    {
+      "id": "us-quart",
+      "name": "US liquid quart",
+      "symbols": [
+        "US qt"
+      ],
+      "system": "us-customary",
+      "level": 4,
+      "domain": "volume",
+      "dimension": {
+        "length": 3,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "US qt = \u00bc US gal",
+      "factor": 0.25,
+      "currentDefinition": "A quarter of a US gallon (57.75 in\u00b3, 0.946 352 946 L).",
+      "currentSource": "NIST Handbook 44, Appendix C.",
+      "definitionCount": 1,
+      "definitions": [
+        {
+          "era": "1707\u2013present",
+          "value": "A quarter of a US gallon (57.75 in\u00b3, 0.946 352 946 L).",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "NIST Handbook 44, Appendix C."
+        }
+      ],
+      "etymology": "From Latin 'quartus', a fourth (of a gallon).",
+      "cursedness": null
+    },
+    {
+      "id": "us-survey-foot",
+      "name": "US survey foot",
+      "symbols": [
+        "survey ft"
+      ],
+      "system": "us-customary",
+      "level": 2,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "survey ft = 1200/3937 m",
+      "factor": 0.3048006096012192,
+      "currentDefinition": "Deprecated: the 'foot' in US surveying is now the international foot (0.3048 m). The survey foot remains only for converting historical records.",
+      "currentSource": "Federal Register 85 FR 62698 (2020), effective 31 December 2022.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1893\u20132022",
+          "value": "Exactly 1200/3937 metre: the foot of the Mendenhall Order, kept for geodetic surveys when the international foot was adopted in 1959.",
+          "basis": "exact-multiple",
+          "current": false,
+          "source": "Mendenhall Order (1893); Federal Register 24 FR 5348 (1959)."
+        },
+        {
+          "era": "2023\u2013present",
+          "value": "Deprecated: the 'foot' in US surveying is now the international foot (0.3048 m). The survey foot remains only for converting historical records.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "Federal Register 85 FR 62698 (2020), effective 31 December 2022."
+        }
+      ],
+      "etymology": "The foot used by the US Coast and Geodetic Survey and the State Plane Coordinate System.",
+      "cursedness": "It differs from the international foot by just 2 parts per million, but over the 6 000 km width of the US that adds up to about 12 m, and state coordinate grids use survey feet in some states and international feet in others. Mixing them up put buildings and property lines in the wrong place for decades. NIST and NOAA retired it at the end of 2022."
     },
     {
       "id": "volt",
@@ -892,6 +4167,7 @@
         "luminous_intensity": 0
       },
       "equation": "V = W/A",
+      "factor": 1,
       "currentDefinition": "The difference of electric potential between two points of a conducting wire carrying a constant current of one ampere, when the power dissipated between these points is one watt.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -926,6 +4202,7 @@
         "luminous_intensity": 0
       },
       "equation": "W = J/s",
+      "factor": 1,
       "currentDefinition": "The power which gives rise to the production of energy at the rate of one joule per second.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -960,6 +4237,7 @@
         "luminous_intensity": 0
       },
       "equation": "Wb = V\u00b7s",
+      "factor": 1,
       "currentDefinition": "The magnetic flux which, linking a circuit of one turn, produces in it an electromotive force of one volt as it is reduced to zero at a uniform rate in one second.",
       "currentSource": "CIPM (1946), Resolution 2; BIPM SI Brochure, 9th ed. (2019).",
       "definitionCount": 1,
@@ -974,13 +4252,172 @@
       ],
       "etymology": "Named after Wilhelm Eduard Weber, for his work on electromagnetism.",
       "cursedness": null
+    },
+    {
+      "id": "yard",
+      "name": "Yard",
+      "symbols": [
+        "yd"
+      ],
+      "system": "imperial",
+      "level": 4,
+      "domain": "length",
+      "dimension": {
+        "length": 1,
+        "mass": 0,
+        "time": 0,
+        "current": 0,
+        "temperature": 0,
+        "amount": 0,
+        "luminous_intensity": 0
+      },
+      "equation": "yd = 3 ft",
+      "factor": 3,
+      "currentDefinition": "Exactly 0.9144 metres.",
+      "currentSource": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1.",
+      "definitionCount": 2,
+      "definitions": [
+        {
+          "era": "1855\u20131959",
+          "value": "The distance between two lines on the Imperial Standard Yard, a bronze bar kept in London, at 62 \u00b0F. In the US, from 1893, exactly 3600/3937 metre.",
+          "basis": "physical-artifact",
+          "current": false,
+          "source": "Standards of Weights and Measures Act 1855 (UK); Mendenhall Order (US, 1893)."
+        },
+        {
+          "era": "1959\u2013present",
+          "value": "Exactly 0.9144 metres.",
+          "basis": "exact-multiple",
+          "current": true,
+          "source": "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+        }
+      ],
+      "etymology": "From Old English 'gierd', a stick or rod.",
+      "cursedness": "The 1834 fire at the Houses of Parliament destroyed the standard yard, and the replacement bars made in 1855 slowly shrank \u2014 by about 1.5 parts per million per century \u2014 so the British yard was getting shorter until 1959. The US gave up on its copies in 1893 and defined the yard from the metre instead."
     }
   ],
   "links": [
     {
+      "source": "acre",
+      "target": "acre-foot",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "acre-foot",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "furlong",
+      "target": "acre",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "chain",
+      "target": "acre",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
       "source": "second",
       "target": "ampere",
       "type": "definition"
+    },
+    {
+      "source": "scruple",
+      "target": "apothecaries-dram",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "degree",
+      "target": "arcminute",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "arcminute",
+      "target": "arcsecond",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "astronomical-unit",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "barleycorn",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "second",
+      "target": "becquerel",
+      "type": "derivation",
+      "power": -1,
+      "powers": [
+        -1
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "board-foot",
+      "type": "derivation",
+      "power": 2,
+      "powers": [
+        2
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "board-foot",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "joule",
+      "target": "btu",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "hertz",
@@ -1007,6 +4444,33 @@
       ]
     },
     {
+      "source": "rod",
+      "target": "chain",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "thou",
+      "target": "circular-mil",
+      "type": "derivation",
+      "power": 2,
+      "powers": [
+        2
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "cord",
+      "type": "derivation",
+      "power": 3,
+      "powers": [
+        3
+      ]
+    },
+    {
       "source": "ampere",
       "target": "coulomb",
       "type": "derivation",
@@ -1018,6 +4482,60 @@
     {
       "source": "second",
       "target": "coulomb",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "kilogram",
+      "target": "dalton",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "hour",
+      "target": "day",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "radian",
+      "target": "degree",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "ounce",
+      "target": "dram",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "joule",
+      "target": "electronvolt",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "rankine",
+      "target": "fahrenheit",
       "type": "derivation",
       "power": 1,
       "powers": [
@@ -1040,6 +4558,105 @@
       "power": -1,
       "powers": [
         -1
+      ]
+    },
+    {
+      "source": "yard",
+      "target": "fathom",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "lumen",
+      "target": "foot-candle",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "foot-candle",
+      "type": "derivation",
+      "power": -2,
+      "powers": [
+        -2
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "foot",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "day",
+      "target": "fortnight",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "chain",
+      "target": "furlong",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pound",
+      "target": "grain",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "joule",
+      "target": "gray",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "kilogram",
+      "target": "gray",
+      "type": "derivation",
+      "power": -1,
+      "powers": [
+        -1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "hand",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "hectare",
+      "type": "derivation",
+      "power": 2,
+      "powers": [
+        2
       ]
     },
     {
@@ -1067,6 +4684,141 @@
       "power": -1,
       "powers": [
         -1
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "horsepower",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pound-force",
+      "target": "horsepower",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "second",
+      "target": "horsepower",
+      "type": "derivation",
+      "power": -1,
+      "powers": [
+        -1
+      ]
+    },
+    {
+      "source": "minute",
+      "target": "hour",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-peck",
+      "target": "imperial-bushel",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-fluid-ounce",
+      "target": "imperial-fluid-drachm",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-pint",
+      "target": "imperial-fluid-ounce",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "litre",
+      "target": "imperial-gallon",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-pint",
+      "target": "imperial-gill",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-fluid-drachm",
+      "target": "imperial-minim",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-gallon",
+      "target": "imperial-peck",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-quart",
+      "target": "imperial-pint",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "imperial-gallon",
+      "target": "imperial-quart",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pascal",
+      "target": "inch-of-mercury",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "inch",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
       ]
     },
     {
@@ -1121,6 +4873,60 @@
       "type": "definition"
     },
     {
+      "source": "pound-force",
+      "target": "kip",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "mile",
+      "target": "league",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "chain",
+      "target": "link",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "litre",
+      "type": "derivation",
+      "power": 3,
+      "powers": [
+        3
+      ]
+    },
+    {
+      "source": "quarter",
+      "target": "long-hundredweight",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "long-hundredweight",
+      "target": "long-ton",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
       "source": "candela",
       "target": "lumen",
       "type": "derivation",
@@ -1160,6 +4966,24 @@
       "source": "second",
       "target": "metre",
       "type": "definition"
+    },
+    {
+      "source": "furlong",
+      "target": "mile",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "second",
+      "target": "minute",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
     },
     {
       "source": "kilogram",
@@ -1207,6 +5031,24 @@
       ]
     },
     {
+      "source": "us-gallon",
+      "target": "oil-barrel",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pound",
+      "target": "ounce",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
       "source": "newton",
       "target": "pascal",
       "type": "derivation",
@@ -1225,6 +5067,123 @@
       ]
     },
     {
+      "source": "grain",
+      "target": "pennyweight",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "point",
+      "target": "pica",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "point",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pound",
+      "target": "pound-force",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "pound-force",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "second",
+      "target": "pound-force",
+      "type": "derivation",
+      "power": -2,
+      "powers": [
+        -2
+      ]
+    },
+    {
+      "source": "kilogram",
+      "target": "pound",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pound",
+      "target": "poundal",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "poundal",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "second",
+      "target": "poundal",
+      "type": "derivation",
+      "power": -2,
+      "powers": [
+        -2
+      ]
+    },
+    {
+      "source": "pound-force",
+      "target": "psi",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "psi",
+      "type": "derivation",
+      "power": -2,
+      "powers": [
+        -2
+      ]
+    },
+    {
+      "source": "stone",
+      "target": "quarter",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
       "source": "metre",
       "target": "radian",
       "type": "derivation",
@@ -1232,6 +5191,78 @@
       "powers": [
         1,
         -1
+      ]
+    },
+    {
+      "source": "kelvin",
+      "target": "rankine",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "yard",
+      "target": "rod",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "furlong",
+      "target": "rood",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "rod",
+      "target": "rood",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "grain",
+      "target": "scruple",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "mile",
+      "target": "section",
+      "type": "derivation",
+      "power": 2,
+      "powers": [
+        2
+      ]
+    },
+    {
+      "source": "pound",
+      "target": "short-hundredweight",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "short-hundredweight",
+      "target": "short-ton",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
       ]
     },
     {
@@ -1253,6 +5284,51 @@
       ]
     },
     {
+      "source": "joule",
+      "target": "sievert",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "kilogram",
+      "target": "sievert",
+      "type": "derivation",
+      "power": -1,
+      "powers": [
+        -1
+      ]
+    },
+    {
+      "source": "pound-force",
+      "target": "slug",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "second",
+      "target": "slug",
+      "type": "derivation",
+      "power": 2,
+      "powers": [
+        2
+      ]
+    },
+    {
+      "source": "foot",
+      "target": "slug",
+      "type": "derivation",
+      "power": -1,
+      "powers": [
+        -1
+      ]
+    },
+    {
       "source": "metre",
       "target": "steradian",
       "type": "derivation",
@@ -1260,6 +5336,33 @@
       "powers": [
         2,
         -2
+      ]
+    },
+    {
+      "source": "pound",
+      "target": "stone",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-fluid-ounce",
+      "target": "tablespoon",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "tablespoon",
+      "target": "teaspoon",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
       ]
     },
     {
@@ -1278,6 +5381,177 @@
       "power": -2,
       "powers": [
         -2
+      ]
+    },
+    {
+      "source": "btu",
+      "target": "therm",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "thou",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "kilogram",
+      "target": "tonne",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "section",
+      "target": "township",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "pennyweight",
+      "target": "troy-ounce",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "troy-ounce",
+      "target": "troy-pound",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "us-bushel",
+      "type": "derivation",
+      "power": 3,
+      "powers": [
+        3
+      ]
+    },
+    {
+      "source": "us-pint",
+      "target": "us-cup",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-dry-quart",
+      "target": "us-dry-pint",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-peck",
+      "target": "us-dry-quart",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-fluid-ounce",
+      "target": "us-fluid-dram",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-cup",
+      "target": "us-fluid-ounce",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "inch",
+      "target": "us-gallon",
+      "type": "derivation",
+      "power": 3,
+      "powers": [
+        3
+      ]
+    },
+    {
+      "source": "us-cup",
+      "target": "us-gill",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-fluid-dram",
+      "target": "us-minim",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-bushel",
+      "target": "us-peck",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-quart",
+      "target": "us-pint",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "us-gallon",
+      "target": "us-quart",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "metre",
+      "target": "us-survey-foot",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
       ]
     },
     {
@@ -1335,6 +5609,51 @@
       ]
     },
     {
+      "source": "foot",
+      "target": "yard",
+      "type": "derivation",
+      "power": 1,
+      "powers": [
+        1
+      ]
+    },
+    {
+      "source": "fahrenheit",
+      "target": "celsius",
+      "type": "relationship",
+      "relationshipId": "fahrenheit-celsius",
+      "kind": "historical-connection",
+      "note": "The Fahrenheit scale is now defined from the Celsius scale, which is\ndefined from the kelvin: t/\u00b0F = 1.8 \u00b7 t/\u00b0C + 32. Both are offset scales.\nA degree Fahrenheit is 5/9 of a degree Celsius, and their zeros differ:\n0 \u00b0F is about \u221217.8 \u00b0C. They cross at \u221240, where \u221240 \u00b0F = \u221240 \u00b0C. The\nRankine scale does for Fahrenheit what the kelvin does for Celsius: it\nkeeps the degree size and moves zero to absolute zero, at \u2212459.67 \u00b0F.\n",
+      "sourceRef": "NIST Handbook 44, Appendix C; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."
+    },
+    {
+      "source": "foot",
+      "target": "us-survey-foot",
+      "type": "relationship",
+      "relationshipId": "foot-survey-foot",
+      "kind": "historical-connection",
+      "note": "When the US adopted the international foot (0.3048 m) in 1959, it kept the\nold foot of 1200/3937 m for geodetic surveying, so as not to change decades\nof survey records. The two differ by 2 parts per million, about 3.2 mm in a\nmile. That is invisible on a building site but adds up across a State Plane\ncoordinate grid, and states disagreed over which foot their grids used.\nNIST, NOAA and the National Geodetic Survey deprecated the survey foot\nfrom 1 January 2023.\n",
+      "sourceRef": "Federal Register 24 FR 5348 (1959); Federal Register 85 FR 62698 (2020)."
+    },
+    {
+      "source": "gray",
+      "target": "sievert",
+      "type": "relationship",
+      "relationshipId": "gray-sievert",
+      "kind": "context-differentiated",
+      "note": "The gray and the sievert are both one joule per kilogram, but they measure\ndifferent things. The gray is absorbed dose: the physical energy that\nionizing radiation deposits in each kilogram of matter. The sievert is dose\nequivalent: that absorbed dose multiplied by dimensionless weighting\nfactors for how harmful the radiation type is (20 for alpha particles, 1\nfor gamma rays) and how sensitive the tissue is. So 1 Gy of alpha radiation\nto an organ is 20 Sv of equivalent dose. Since the factors are numbers, the\nunits stay the same, and only the name tells you which quantity you have.\nThe SI Brochure insists the name always be given rather than writing J/kg.\n",
+      "sourceRef": "CIPM (2002), Recommendation 2; BIPM SI Brochure, 9th ed. (2019), Table 4; ICRP Publication 103 (2007)."
+    },
+    {
+      "source": "hertz",
+      "target": "becquerel",
+      "type": "relationship",
+      "relationshipId": "hertz-becquerel",
+      "kind": "context-differentiated",
+      "note": "The hertz and the becquerel are both the reciprocal second (s\u207b\u00b9), but the\nSI never lets one stand in for the other. The hertz is for periodic\nphenomena: a wave or oscillation completing one cycle per second. The\nbecquerel is for radioactive activity: on average one random nuclear decay\nper second, with no period at all. The CGPM gave activity its own name in\n1975 because writing \"s\u207b\u00b9\" or \"Hz\" for a radiation source invites mistakes\nthat could endanger human health. Angular velocity (rad/s) is a third\nquantity with the same dimension, and the SI keeps it out of hertz too.\n",
+      "sourceRef": "15th CGPM (1975), Resolution 8; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."
+    },
+    {
       "source": "kelvin",
       "target": "celsius",
       "type": "relationship",
@@ -1342,6 +5661,42 @@
       "kind": "historical-connection",
       "note": "The kelvin and the degree Celsius are the same size \u2014 a change of 1 K equals\na change of 1 \u00b0C \u2014 they only differ in where zero sits: 0 K is absolute\nzero, while 0 \u00b0C is set at 273.15 K (the ice point of water). Historically,\ntemperature and heat were conflated for a long time, and Anders Celsius's\noriginal 1742 proposal even ran the scale backwards from today's (0 at the\nboiling point of water, 100 at freezing) before it was inverted shortly\nafter his death. The 2019 redefinition of the kelvin via the Boltzmann\nconstant left the Celsius scale's offset definition untouched, so Celsius\nis now formally defined as an offset SI-derived unit built directly on the\nkelvin rather than as its own independent base quantity.\n",
       "sourceRef": "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."
+    },
+    {
+      "source": "pound",
+      "target": "pound-force",
+      "type": "relationship",
+      "relationshipId": "pound-pound-force",
+      "kind": "commonly-confused",
+      "note": "\"Pound\" names both a mass (0.453 592 37 kg) and the force that mass weighs\nunder standard gravity (about 4.448 N), and both are routinely written\n\"lb\". Engineering formulas then need a conversion constant, g_c =\n32.174 lb\u00b7ft/(lbf\u00b7s\u00b2), to make F = ma work. Alternatives were invented to\navoid it: the slug, a mass unit that pairs with the pound-force, and the\npoundal, a force unit that pairs with the pound. In 1999 NASA lost the Mars\nClimate Orbiter after Lockheed Martin's ground software reported thruster\nimpulse in pound-force seconds and NASA's navigation software read the\nnumbers as newton-seconds, a factor of 4.45 off.\n",
+      "sourceRef": "Mars Climate Orbiter Mishap Investigation Board, Phase I Report (NASA, 1999); NIST Handbook 44, Appendix C."
+    },
+    {
+      "source": "long-ton",
+      "target": "tonne",
+      "type": "relationship",
+      "relationshipId": "tons",
+      "kind": "commonly-confused",
+      "note": "Three masses share the name \"ton\": the British long ton of 2240 lb\n(1016.05 kg), the metric tonne of 1000 kg, and the American short ton of\n2000 lb (907.18 kg). They come from the same root, the \"tun\" wine cask. The\nlong ton and the tonne are within 1.6 % of each other, close enough to be\nconfused in shipping contracts. In the US, the tonne is officially the\n\"metric ton\".\n",
+      "sourceRef": "NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+    },
+    {
+      "source": "tonne",
+      "target": "short-ton",
+      "type": "relationship",
+      "relationshipId": "tons",
+      "kind": "commonly-confused",
+      "note": "Three masses share the name \"ton\": the British long ton of 2240 lb\n(1016.05 kg), the metric tonne of 1000 kg, and the American short ton of\n2000 lb (907.18 kg). They come from the same root, the \"tun\" wine cask. The\nlong ton and the tonne are within 1.6 % of each other, close enough to be\nconfused in shipping contracts. In the US, the tonne is officially the\n\"metric ton\".\n",
+      "sourceRef": "NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+    },
+    {
+      "source": "us-gallon",
+      "target": "imperial-gallon",
+      "type": "relationship",
+      "relationshipId": "us-imperial-gallon",
+      "kind": "commonly-confused",
+      "note": "The US gallon (231 in\u00b3, about 3.785 L) is Queen Anne's wine gallon of\n1707, which the American colonies were using when they left. In 1824\nBritain replaced its wine, ale and corn gallons with one new imperial\ngallon, defined as 10 pounds of water (about 4.546 L). The two have been\ndifferent ever since: an imperial gallon is about 1.2 US gallons. Every\nsmaller unit inherits the gap differently, because the imperial pint holds\n20 fluid ounces and the US pint 16. The imperial fluid ounce is about 4 %\nsmaller than the US one, yet the imperial pint is about 20 % larger.\n",
+      "sourceRef": "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1; NIST Handbook 44, Appendix C."
     }
   ]
 }

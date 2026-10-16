@@ -1,0 +1,21 @@
+id: apothecaries-dram
+name: "Apothecaries' dram"
+symbols: ["dr ap", "ʒ"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: scruple, power: 1 }
+factor: 3
+equation: "dr ap = 3 ℈"
+definitions:
+  - era: "medieval–1971"
+    value: "Three scruples (60 grains, about 3.888 g): 1/8 of an apothecaries' ounce."
+    basis: exact-multiple
+    current: true
+    source: "British Pharmacopoeia (abandoned on metrication, 1971); NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Greek 'drachmē'."
+  cursedness: "More than twice the avoirdupois dram, under the same name. Prescriptions written with the ʒ symbol were a classic source of dosing errors."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

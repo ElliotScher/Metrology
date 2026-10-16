@@ -1,0 +1,21 @@
+id: long-ton
+name: "Long ton"
+symbols: ["long ton"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: long-hundredweight, power: 1 }
+factor: 20
+equation: "long ton = 20 long cwt"
+definitions:
+  - era: "1835–present"
+    value: "20 long hundredweight: 2240 pounds, about 1016.05 kg. Also called the imperial or gross ton."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "From the 'tun', a large wine cask; the same root as 'tonne'."
+  cursedness: "Three tons share one name: the long ton (2240 lb), the short ton (2000 lb) and the metric tonne (1000 kg ≈ 2205 lb). The long ton and the tonne differ by only 1.6 %, which made them easy to confuse in shipping. A ship's 'tonnage' is usually a volume, not a mass."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

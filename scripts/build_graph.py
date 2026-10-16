@@ -143,6 +143,7 @@ def build_json(units, relationships, levels):
                 "domain": unit.get("domain"),
                 "dimension": unit.get("dimension"),
                 "equation": unit.get("equation"),
+                "factor": unit.get("factor", 1),
                 "currentDefinition": cur.get("value"),
                 "currentSource": cur.get("source"),
                 "definitionCount": len(unit.get("definitions", [])),

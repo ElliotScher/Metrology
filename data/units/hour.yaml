@@ -1,0 +1,21 @@
+id: hour
+name: Hour
+symbols: [h]
+system: SI-accepted
+domain: time
+dimension: { length: 0, mass: 0, time: 1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: minute, power: 1 }
+factor: 60
+equation: "h = 60 min"
+definitions:
+  - era: "1969–present"
+    value: "A unit of time equal to 60 minutes (3600 seconds), accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From Greek 'hōra', a season or period of time, via Latin and Old French."
+  cursedness: "The symbol h is also the hecto prefix and the Planck constant. Ancient Egyptian 'temporal hours' split daylight into 12 parts whatever the season, so an hour was longer in summer than in winter; equal hours only became standard with mechanical clocks in the 14th century."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

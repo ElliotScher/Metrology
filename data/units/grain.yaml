@@ -1,0 +1,21 @@
+id: grain
+name: "Grain"
+symbols: ["gr"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound, power: 1 }
+factor: 0.00014285714285714287
+equation: "gr = 1/7000 lb"
+definitions:
+  - era: "1959–present"
+    value: "1/7000 of a pound: exactly 64.798 91 milligrams."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From a grain of barley (or wheat) as a unit of weight."
+  cursedness: "The one unit shared by the avoirdupois, troy and apothecaries' systems, which is how they connect: 7000 grains to the avoirdupois pound, 5760 to the troy pound. Still used for bullets, arrowheads and gunpowder."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

@@ -1,0 +1,21 @@
+id: pica
+name: "Pica"
+symbols: ["pc"]
+system: us-customary
+domain: typography
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: point, power: 1 }
+factor: 12
+equation: "pc = 12 pt"
+definitions:
+  - era: "1980s–present"
+    value: "12 points, exactly 1/6 inch in desktop publishing."
+    basis: exact-multiple
+    current: true
+    source: "Adobe PostScript Language Reference (1985)."
+notes:
+  etymology: "Possibly from the 'Pica', a medieval book of church rules printed in this size of type."
+  cursedness: "Like the point, the pica changed size when computers arrived: the 1886 American pica was 0.166 044 inch, slightly less than 1/6."
+status: verified
+sources: ["US Type Founders Association (1886)"]

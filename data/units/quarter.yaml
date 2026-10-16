@@ -1,0 +1,21 @@
+id: quarter
+name: "Quarter"
+symbols: ["qr"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: stone, power: 1 }
+factor: 2
+equation: "qr = 2 st"
+definitions:
+  - era: "1835–present"
+    value: "Two stones (28 lb), a quarter of a long hundredweight: about 12.7 kg."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1 (repealed for trade use)."
+notes:
+  etymology: "A quarter of a hundredweight."
+  cursedness: null
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

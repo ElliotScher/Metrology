@@ -1,0 +1,21 @@
+id: degree
+name: Degree
+symbols: ["°", deg]
+system: SI-accepted
+domain: angle
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: radian, power: 1 }
+factor: 0.017453292519943295
+equation: "° = (π/180) rad"
+definitions:
+  - era: "1969–present"
+    value: "A unit of plane angle equal to π/180 radian, so that a full turn is 360°. Accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From Latin 'gradus', a step. The 360-part circle comes from Babylonian astronomy, probably via the roughly 360-day year and base-60 counting."
+  cursedness: "With the arcminute and arcsecond, it is one of the only units accepted for use with the SI whose factor to its SI unit is irrational: 1° = π/180 rad, so no exact decimal exists. The symbol ° is also the one in °C, which is a different thing entirely."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

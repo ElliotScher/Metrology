@@ -1,0 +1,21 @@
+id: short-ton
+name: "Short ton"
+symbols: ["short ton"]
+system: us-customary
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: short-hundredweight, power: 1 }
+factor: 20
+equation: "short ton = 20 short cwt"
+definitions:
+  - era: "19th century–present"
+    value: "20 short hundredweight: exactly 2000 pounds, about 907.18 kg. The US 'ton'."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From the 'tun'."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

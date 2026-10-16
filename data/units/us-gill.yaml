@@ -1,0 +1,21 @@
+id: us-gill
+name: "US gill"
+symbols: ["US gi"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-cup, power: 1 }
+factor: 0.5
+equation: "US gi = ½ cup"
+definitions:
+  - era: "1707–present"
+    value: "Half a US cup: 4 US fluid ounces (118.294 118 25 mL)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Old French 'gille', a wine measure."
+  cursedness: "The US gill is a quarter of a US pint; the imperial gill is a quarter of an imperial pint, so it is 5 imperial fluid ounces, not 4."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

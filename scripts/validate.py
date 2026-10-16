@@ -19,7 +19,11 @@ SCHEMA_DIR = ROOT / "schema"
 # from other units — the only ones allowed an empty derived_from.
 CONSTANT_DEFINED_SYSTEMS = {"SI-base", "natural-planck"}
 
-DIM_KEYS = ["length", "mass", "time", "current", "temperature", "amount", "luminous_intensity"]
+# Systems whose units are coherent: each is exactly the product of its
+# components, with no numerical factor.
+COHERENT_SYSTEMS = {"SI-base", "SI-derived"}
+
+DIM_KEYS =["length", "mass", "time", "current", "temperature", "amount", "luminous_intensity"]
 
 
 def load_yaml_dir(directory):
@@ -67,6 +71,14 @@ def check_units(units, errors):
                 f"physical constants ({', '.join(sorted(CONSTANT_DEFINED_SYSTEMS))}) may have no "
                 f"component units"
             )
+
+        if "factor" in data and data.get("system") in COHERENT_SYSTEMS and data["factor"] != 1:
+            errors.append(
+                f"unit {path.name}: {data.get('system')} units are coherent, so they can't have a factor "
+                f"other than 1 (found {data['factor']})"
+            )
+        if "factor" in data and not derived_from:
+            errors.append(f"unit {path.name}: factor needs derived_from components to multiply")
 
         defined_via = data.get("defined_via", [])
         if defined_via and data.get("system") not in CONSTANT_DEFINED_SYSTEMS:

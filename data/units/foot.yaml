@@ -1,0 +1,26 @@
+id: foot
+name: "Foot"
+symbols: ["ft"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 1 }
+factor: 12
+equation: "ft = 12 in"
+definitions:
+  - era: "pre-1959"
+    value: "1/3 of the national standard yard. Its length depended on whose standard: the British, American (1893: 1200/3937 m) and others differed by a few parts per million."
+    basis: physical-artifact
+    current: false
+    source: "Weights and Measures Act 1878 (UK); Mendenhall Order (US, 1893)."
+  - era: "1959–present"
+    value: "Exactly 0.3048 metres (12 inches, 1/3 of the international yard)."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From the human foot; Old English 'fōt'."
+  cursedness: "Feet have ranged from about 25 cm to 34 cm across history and Europe; nearly every town once had its own. The Roman foot was about 29.6 cm. Even after 1959, the US kept a second foot for land surveying — see the US survey foot — and only retired it at the end of 2022."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

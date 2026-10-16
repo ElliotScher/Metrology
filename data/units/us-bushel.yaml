@@ -1,0 +1,21 @@
+id: us-bushel
+name: "US bushel"
+symbols: ["US bu"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 3 }
+factor: 2150.42
+equation: "US bu = 2150.42 in³"
+definitions:
+  - era: "1696–present"
+    value: "The Winchester bushel: a cylinder 18½ inches across and 8 inches deep, rounded to exactly 2150.42 cubic inches (about 35.239 L). Recognized by Congress in 1836."
+    basis: exact-multiple
+    current: true
+    source: "Act of 1696–97 (8 & 9 Will. 3); US joint resolution of 14 June 1836; NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Old French 'boissel', a small box."
+  cursedness: "Grain is traded by the bushel but weighed, not measured: a legal 'bushel' of wheat is 60 lb, of corn 56 lb and of oats 32 lb, whatever volume they fill. Britain replaced the Winchester bushel with the larger imperial bushel in 1824; the US kept it."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

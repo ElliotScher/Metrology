@@ -1,0 +1,21 @@
+id: township
+name: "Township"
+symbols: ["twp"]
+system: us-customary
+domain: area
+dimension: { length: 2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: section, power: 1 }
+factor: 36
+equation: "twp = 36 sections"
+definitions:
+  - era: "1785–present"
+    value: "36 sections: a square six miles on a side, in the US Public Land Survey System."
+    basis: exact-multiple
+    current: true
+    source: "Land Ordinance of 1785; NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From the settlements the survey grid was meant to hold."
+  cursedness: "Sections within a township are numbered back and forth, boustrophedon style: 1 to 6 right to left along the top row, then 7 to 12 left to right below it."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

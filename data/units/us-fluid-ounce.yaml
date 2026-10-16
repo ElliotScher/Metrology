@@ -1,0 +1,21 @@
+id: us-fluid-ounce
+name: "US fluid ounce"
+symbols: ["US fl oz"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-cup, power: 1 }
+factor: 0.125
+equation: "US fl oz = ⅛ cup"
+definitions:
+  - era: "1707–present"
+    value: "1/128 of a US gallon (1.804 687 5 in³, 29.573 529 562 5 mL)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "'Fluid' to distinguish it from the ounce of mass."
+  cursedness: "A US fluid ounce of water weighs about 1.04 ounces; an imperial fluid ounce of water weighs almost exactly one ounce, which was the point of its definition. US food labels use a rounded 30 mL fluid ounce."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,14 @@
+id: pound-pound-force
+units: [pound, pound-force]
+kind: commonly-confused
+note: |
+  "Pound" names both a mass (0.453 592 37 kg) and the force that mass weighs
+  under standard gravity (about 4.448 N), and both are routinely written
+  "lb". Engineering formulas then need a conversion constant, g_c =
+  32.174 lb·ft/(lbf·s²), to make F = ma work. Alternatives were invented to
+  avoid it: the slug, a mass unit that pairs with the pound-force, and the
+  poundal, a force unit that pairs with the pound. In 1999 NASA lost the Mars
+  Climate Orbiter after Lockheed Martin's ground software reported thruster
+  impulse in pound-force seconds and NASA's navigation software read the
+  numbers as newton-seconds, a factor of 4.45 off.
+source: "Mars Climate Orbiter Mishap Investigation Board, Phase I Report (NASA, 1999); NIST Handbook 44, Appendix C."

@@ -39,10 +39,12 @@
     [{ L: 3 }, "volume", "How much space something occupies."],
     [{ L: -1 }, "wavenumber", "How many cycles fit in a unit of length."],
     [{ T: -1 }, "frequency", "How many times something happens per unit time.",
-      "Angular velocity (rad/s) and radioactive activity share this dimension. That's why the SI keeps Hz for cycles per second and doesn't let it stand in for rad/s."],
+      "Angular velocity (rad/s) and radioactive activity (Bq) share this dimension. That's why the SI keeps Hz for cycles per second and doesn't let it stand in for rad/s or Bq."],
     [{ L: 1, T: -1 }, "velocity", "How fast position changes."],
     [{ L: 1, T: -2 }, "acceleration", "How fast velocity changes."],
     [{ L: 3, T: -1 }, "volumetric flow rate", "How much volume passes per unit time."],
+    [{ L: 2, T: -2 }, "absorbed dose / specific energy", "Energy per unit mass, such as the energy ionizing radiation deposits in each kilogram of matter.",
+      "The gray (absorbed dose) and the sievert (dose equivalent) are both J/kg, but a sievert has been weighted for how harmful the radiation is. The SI asks you to name which one you mean."],
     [{ L: 2, T: -1 }, "kinematic viscosity / diffusivity", "How fast momentum or particles spread out through a medium."],
     [{ M: 1, L: -3 }, "density", "How much mass is packed into a unit of volume."],
     [{ M: 1, T: -1 }, "mass flow rate", "How much mass passes per unit time."],
@@ -98,10 +100,46 @@
   // ---------------------------------------------------------------- data ---
 
   var units = {}, comps = {}, bySymbol = {}, byWord = {};
+
+  // Units that never take an SI prefix: the kilogram already has one (prefixes
+  // go on the gram), and the SI Brochure doesn't allow them on the others.
+  // Prefixes only go on SI and SI-accepted units, never on customary ones.
+  var NOT_PREFIXABLE = ["kilogram", "celsius", "minute", "hour", "day", "degree", "arcminute", "arcsecond", "hectare", "astronomical-unit"];
+  function prefixableId(id) { return /^SI-/.test(units[id].system) && NOT_PREFIXABLE.indexOf(id) === -1; }
+
+  // Offset temperature scales: a reading needs more than a factor.
+  var OFFSET_SCALES = ["celsius", "fahrenheit"];
+
+  // Symbols that mean different units on different sides of the Atlantic (or
+  // in different trades). Typing one asks which you mean. Keys are compacted
+  // as compact() does, so "fl oz" is "floz".
+  var AMBIGUOUS = {
+    gal: ["us-gallon", "imperial-gallon"], qt: ["us-quart", "us-dry-quart", "imperial-quart"],
+    pt: ["us-pint", "us-dry-pint", "imperial-pint", "point"], gi: ["us-gill", "imperial-gill"],
+    floz: ["us-fluid-ounce", "imperial-fluid-ounce"], fldr: ["us-fluid-dram", "imperial-fluid-drachm"],
+    dr: ["dram", "apothecaries-dram", "us-fluid-dram", "imperial-fluid-drachm"],
+    minim: ["us-minim", "imperial-minim"], bu: ["us-bushel", "imperial-bushel"], pk: ["us-peck", "imperial-peck"],
+    cwt: ["short-hundredweight", "long-hundredweight"], ton: ["short-ton", "long-ton", "tonne"], tons: ["short-ton", "long-ton", "tonne"],
+    gallon: ["us-gallon", "imperial-gallon"], gallons: ["us-gallon", "imperial-gallon"],
+    pint: ["us-pint", "us-dry-pint", "imperial-pint"], pints: ["us-pint", "us-dry-pint", "imperial-pint"],
+    quart: ["us-quart", "us-dry-quart", "imperial-quart"], quarts: ["us-quart", "us-dry-quart", "imperial-quart"]
+  };
+
+  var SPACED = { floz: "fl oz", fldr: "fl dr" };
+
+  // Multi-word symbols ("US gal", "ac-ft") are typed as one token: strip
+  // everything that isn't part of an identifier.
+  function compact(s) { return s.replace(/[^A-Za-zΩµ°′″℈ʒÀ-ɏ]/g, ""); }
+  var compactable = [];
+  // A unit's worth in its components: 60 for the minute, 1 for coherent units.
+  function factorOf(id) { return units[id].factor || 1; }
+  function isSI(id) { return /^SI-(base|derived)$/.test(units[id].system); }
   var ready = false;
 
   function lowerName(name) {
-    return name.toLowerCase().replace("celsius", "Celsius");
+    return name.toLowerCase().replace(/\b(celsius|fahrenheit|us|british)\b/g, function (w) {
+      return w === "us" ? "US" : w.charAt(0).toUpperCase() + w.slice(1);
+    });
   }
 
   function setup(data) {
@@ -116,8 +154,13 @@
       if (!(key in map)) map[key] = { id: id, exp: exp, sym: sym, name: name, prefixable: prefixable };
     }
     data.nodes.forEach(function (n) {
-      var prefixable = n.id !== "kilogram" && n.id !== "celsius";
-      n.symbols.forEach(function (s) { add(bySymbol, s, n.id, 0, s, lowerName(n.name), prefixable); });
+      var prefixable = prefixableId(n.id);
+      // Every symbol resolves to the unit's main symbol, so "l" shows as "L"
+      // and cancels against it.
+      n.symbols.forEach(function (s) {
+        add(bySymbol, compact(s), n.id, 0, n.symbols[0], lowerName(n.name), prefixable);
+        if (compact(s) !== s) compactable.push(s);
+      });
       [n.id, n.name.toLowerCase()].forEach(function (w) {
         add(byWord, w, n.id, 0, n.symbols[0], lowerName(n.name), prefixable);
         add(byWord, w + "s", n.id, 0, n.symbols[0], lowerName(n.name), prefixable);
@@ -129,14 +172,27 @@
       ["gram", "grams", "gramme", "grammes"].forEach(function (w) { add(byWord, w, "kilogram", -3, "g", "gram", true); });
     }
     var aliases = { meter: "metre", meters: "metre", amp: "ampere", amps: "ampere", ohm: "ohm",
-      degc: "celsius", celsius: "celsius", "°c": "celsius", sec: "second", secs: "second" };
+      degc: "celsius", celsius: "celsius", "°c": "celsius", sec: "second", secs: "second",
+      liter: "litre", liters: "litre", hr: "hour", hrs: "hour", mins: "minute", degrees: "degree",
+      tonnes: "tonne", ev: "electronvolt", au: "astronomical-unit",
+      feet: "foot", inches: "inch", lbs: "pound", degf: "fahrenheit", "°f": "fahrenheit", fahrenheit: "fahrenheit" };
     Object.keys(aliases).forEach(function (w) {
       var n = units[aliases[w]];
-      if (n) add(byWord, w, n.id, 0, n.symbols[0], lowerName(n.name), n.id !== "celsius");
+      if (n) add(byWord, w, n.id, 0, n.symbols[0], lowerName(n.name), prefixableId(n.id));
     });
+    ["fl oz", "fl dr"].forEach(function (s) { compactable.push(s); });
+    // Longest first, so "US fl oz" is compacted before "fl oz".
+    compactable.sort(function (a, b) { return b.length - a.length; });
     if (units.ohm) add(bySymbol, "Ohm", "ohm", 0, "Ω", "ohm", true);
 
     ready = true;
+  }
+
+  function typeable(id) {
+    var n = units[id];
+    var s = n.symbols.filter(function (x) { return !AMBIGUOUS[compact(x)]; })[0];
+    if (s) return s;
+    return n.name.indexOf(" ") === -1 ? n.name.toLowerCase() : n.symbols[0];
   }
 
   function resolve(word) {
@@ -196,7 +252,7 @@
 
   // -------------------------------------------------------------- parser ---
 
-  function ParseError(message, word) { this.message = message; this.word = word; }
+  function ParseError(message, word, ids) { this.message = message; this.word = word; this.ids = ids || null; }
 
   var SUPER_TO_ASCII = { "⁻": "-", "⁰": "0", "¹": "1", "²": "2", "³": "3", "⁴": "4", "⁵": "5", "⁶": "6", "⁷": "7", "⁸": "8", "⁹": "9" };
 
@@ -210,10 +266,20 @@
       .replace(/−/g, "-")
       .replace(/→/g, "->")
       .replace(/℃/g, "°C")
-      .replace(/° +C\b/g, "°C")
+      .replace(/℉/g, "°F")
+      .replace(/° +([CFR])\b/g, "°$1")
       .replace(/μ/g, "µ")
       .replace(/Ω/g, "Ω")
+      .replace(compactPattern(), function (m, pre, sym) { return pre + compact(sym); })
       .trim();
+  }
+  var compactRe = null;
+  function compactPattern() {
+    if (!compactRe) {
+      var alts = compactable.map(function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); });
+      compactRe = alts.length ? new RegExp("(^|[^A-Za-z])(" + alts.join("|") + ")(?![A-Za-z])", "g") : /$^/;
+    }
+    return compactRe;
   }
 
   function tokenize(s) {
@@ -225,7 +291,7 @@
     while (i < s.length) {
       var rest = s.slice(i), c = s[i];
       if (/\s/.test(c)) { space = true; i++; continue; }
-      if ((m = /^[A-Za-zΩµ°À-ɏ]+/.exec(rest))) {
+      if ((m = /^[A-Za-zΩµ°′″℈ʒÀ-ɏ]+/.exec(rest))) {
         toks.push({ type: "ident", value: m[0] });
       } else if ((m = /^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?/.exec(rest))) {
         var signed = c === "-" || c === "+";
@@ -302,6 +368,11 @@
       if (!t) throw new ParseError("The expression ends too early.");
       if (t.type === "num") return product(t.value, [], true);
       if (t.type === "ident") {
+        var amb = AMBIGUOUS[t.value] || AMBIGUOUS[t.value.toLowerCase()];
+        if (amb) {
+          throw new ParseError("“" + (SPACED[t.value] || t.value) + "” could mean " + amb.map(function (id) { return lowerName(units[id].name); }).join(", ").replace(/, ([^,]*)$/, " or $1") +
+            ". Pick one:", t.value, amb);
+        }
         var u = resolve(t.value);
         if (!u) throw new ParseError("“" + t.value + "” isn't a unit in this dataset.", t.value);
         return product(1, [Object.assign({ power: 1 }, u)]);
@@ -466,6 +537,7 @@
         via: {
           id: id,
           power: p,
+          factor: Math.pow(factorOf(id), p),
           dimensionless: net === 0,
           cancelled: before.filter(function (k) { return k !== id && !(k in map); })
         }
@@ -480,7 +552,7 @@
     if (dimKey(qdim) === NO_DIM) return [{}];
     var key = dimKey(qdim), negKey = dimKey(dimDiff({}, qdim)), out = [];
     Object.keys(units).forEach(function (id) {
-      if (id === "celsius") return;
+      if (OFFSET_SCALES.indexOf(id) !== -1) return;
       var k = dimKey(units[id].dimension);
       var c = {};
       if (k === key) { c[id] = 1; out.push(c); }
@@ -503,7 +575,8 @@
       S.states.forEach(function (s, i) {
         var j = tKeys.indexOf(mapKey(mulMap(s.map, c, 1)));
         if (j === -1) return;
-        var cost = (i + j) * 10 + Object.keys(c).length;
+        // Fewer steps first, then fewer extra units, then SI over non-SI.
+        var cost = (i + j) * 10 + Object.keys(c).length + (Object.keys(c).some(function (id) { return !isSI(id); }) ? 0.5 : 0);
         if (!best || cost < best.cost) best = { cost: cost, i: i, j: j, extra: c };
       });
     });
@@ -549,6 +622,7 @@
     var parts = [collapsing ? "these combine into the " + name : "definition of the " + name];
     if (via.dimensionless) parts.push("its metres cancel, so it drops out");
     if (via.id === "celsius") parts.push("as a temperature difference, 1 °C = 1 K");
+    if (via.id === "fahrenheit") parts.push("as a temperature difference, 1 °F = 1 °R");
     if (via.cancelled.length) {
       parts.push(via.cancelled.map(function (k) { return units[k].symbols[0]; }).join(" and ") +
         " cancel" + (via.cancelled.length === 1 ? "s" : ""));
@@ -567,7 +641,8 @@
     return swap ? { num: den, den: num, pow: pow } : { num: num, den: den, pow: pow };
   }
 
-  // u^p written out by its definition: (what it's built from) / u.
+  // u^p written out by its definition: (what it's built from) / u, with the
+  // unit's factor on top when it isn't coherent: (60 s) / (1 min).
   function defFraction(id, p, collapse) {
     var num = [], den = [{ sym: units[id].symbols[0], pow: 1 }];
     comps[id].forEach(function (c) {
@@ -576,7 +651,10 @@
         (pw > 0 ? num : den).push(t);
       });
     });
-    return fraction(side(null, num), side(null, den), Math.abs(p), (p < 0) !== collapse);
+    // A factor like 1/60 reads better as (1 ′) / (60 ″) than (0.0166… ′) / (1 ″).
+    var f = factorOf(id), inv = Math.round(1 / f), whole = f < 1 && Math.abs(inv * f - 1) < 1e-12;
+    var top = f === 1 ? null : whole ? "1" : formatNumber(f, 0), bottom = f === 1 ? null : whole ? String(inv) : "1";
+    return fraction(side(top, num), side(bottom, den), Math.abs(p), (p < 0) !== collapse);
   }
 
   // A prefixed unit written in its unprefixed unit: (10³ J) / (1 kJ).
@@ -614,6 +692,7 @@
     }
     for (var i = 1; i <= route.i; i++) {
       var via = S.states[i].via;
+      value *= via.factor;
       push({ op: units[via.id].equation || "", why: stepWhy(via, false),
         factors: [defFraction(via.id, via.power, false)] }, mapString(S.states[i].map));
     }
@@ -633,6 +712,7 @@
     }
     for (var j = route.j; j >= 1; j--) {
       var tv = T.states[j].via;
+      value /= tv.factor;
       push({ op: units[tv.id].equation || "", why: stepWhy(tv, true),
         factors: [defFraction(tv.id, tv.power, true)] }, mapString(T.states[j - 1].map));
     }
@@ -651,34 +731,53 @@
     return { nodes: nodes, steps: steps, value: value, exp: exp, start: startFraction(S.parsed) };
   }
 
-  // A temperature reading in °C ↔ K: the one conversion that adds an offset.
+  // A temperature reading on an offset scale (°C, °F): the one conversion
+  // that adds as well as multiplies. Each scale steps towards the kelvin:
+  // °F → °R → K and °C → K.
   function isPlain(parsed, id) {
     return parsed.factors.length === 1 && parsed.factors[0].id === id && parsed.factors[0].power === 1;
   }
-  function celsiusChain(src, tgt) {
-    var fromC = isPlain(src, "celsius"), toC = isPlain(tgt, "celsius");
-    var v = src.value * Math.pow(10, src.factors[0].exp);
-    var nodes = [amount(src.value, 0, src.factors[0].sym)], steps = [];
-    var out;
-    if (fromC && !toC) {
-      out = v + 273.15;
-      steps.push({ op: "+ 273.15", why: "same-sized degree, but 0 °C is 273.15 K" });
-      nodes.push(String(Number(out.toPrecision(12))) + " K");
-      if (tgt.factors[0].exp) {
-        out /= Math.pow(10, tgt.factors[0].exp);
-        steps.push({ op: scaleOp(-tgt.factors[0].exp), why: prefixReason(tgt.factors) });
-        nodes.push(String(Number(out.toPrecision(12))) + " " + tgt.factors[0].sym);
-      }
-    } else if (!fromC && toC) {
-      if (src.factors[0].exp) {
-        steps.push({ op: scaleOp(src.factors[0].exp), why: prefixReason(src.factors) });
-        nodes.push(String(Number(v.toPrecision(12))) + " K");
-      }
-      out = v - 273.15;
-      steps.push({ op: "− 273.15", why: "same-sized degree, but 0 °C is 273.15 K" });
-      nodes.push(String(Number(out.toPrecision(12))) + " °C");
-    } else {
-      out = v;
+  var TEMP_STEPS = {
+    celsius: { next: "kelvin", add: 273.15, why: "same-sized degree, but 0 °C is 273.15 K" },
+    fahrenheit: { next: "rankine", add: 459.67, why: "same-sized degree, but 0 °F is 459.67 °R" },
+    rankine: { next: "kelvin", mul: 5 / 9, op: "× 5/9", inv: "× 9/5", why: "a rankine is 5/9 of a kelvin; both start at absolute zero" }
+  };
+  function isTemperature(parsed) {
+    return parsed.factors.length === 1 && parsed.factors[0].power === 1 &&
+      (parsed.factors[0].id === "kelvin" || parsed.factors[0].id in TEMP_STEPS);
+  }
+  function tempPath(id) {
+    var path = [id];
+    while (TEMP_STEPS[id]) { id = TEMP_STEPS[id].next; path.push(id); }
+    return path;
+  }
+  function temperatureChain(src, tgt) {
+    var a = src.factors[0], b = tgt.factors[0];
+    var v = src.value * Math.pow(10, a.exp);
+    var nodes = [amount(src.value, 0, a.sym)], steps = [];
+    function reading(id) { return String(Number(v.toPrecision(12))) + " " + units[id].symbols[0]; }
+    if (a.exp) { steps.push({ op: scaleOp(a.exp), why: prefixReason([a]) }); nodes.push(reading(a.id)); }
+    // Walk up from the source and down to the target, meeting at the first
+    // scale they share (°F → °R needs no kelvins).
+    var up = tempPath(a.id), down = tempPath(b.id);
+    while (up.length > 1 && down.length > 1 && up[up.length - 2] === down[down.length - 2]) { up.pop(); down.pop(); }
+    var i, s;
+    for (i = 0; i < up.length - 1; i++) {
+      s = TEMP_STEPS[up[i]];
+      if (s.add) { v += s.add; steps.push({ op: "+ " + s.add, why: s.why }); }
+      else { v *= s.mul; steps.push({ op: s.op, why: s.why }); }
+      nodes.push(reading(up[i + 1]));
+    }
+    for (i = down.length - 2; i >= 0; i--) {
+      s = TEMP_STEPS[down[i]];
+      if (s.add) { v -= s.add; steps.push({ op: "− " + s.add, why: s.why }); }
+      else { v /= s.mul; steps.push({ op: s.inv, why: s.why }); }
+      nodes.push(reading(down[i]));
+    }
+    if (b.exp) {
+      v /= Math.pow(10, b.exp);
+      steps.push({ op: scaleOp(-b.exp), why: prefixReason([b]) });
+      nodes.push(String(Number(v.toPrecision(12))) + " " + b.sym);
     }
     return { nodes: nodes, steps: steps, celsius: true };
   }
@@ -774,10 +873,10 @@
   function errorMeta(err, which) {
     var html = '<div class="cv-error">' + esc(err.message) + "</div>";
     if (err.word) {
-      var sugg = suggestionsFor(err.word);
+      var sugg = err.ids || suggestionsFor(err.word);
       if (sugg.length) {
         html += '<div class="an-examples">' + sugg.map(function (id) {
-          return fillButton(which, units[id].symbols[0], units[id].symbols[0] + " · " + units[id].name);
+          return fillButton(which, typeable(id), units[id].symbols[0] + " · " + units[id].name);
         }).join("") + "</div>";
       }
     }
@@ -811,8 +910,8 @@
       addNote(T.dim); addIds(T.states[0].map);
     }
     notes.forEach(function (n) { html += '<p class="an-caveat">' + esc(n) + "</p>"; });
-    if (chainSteps.some(function (s) { return /°C = 1 K/.test(s.why); })) {
-      html += '<p class="an-caveat">Inside a compound unit, °C is read as a temperature difference, where 1 °C = 1 K. ' +
+    if (chainSteps.some(function (s) { return /as a temperature difference/.test(s.why); })) {
+      html += '<p class="an-caveat">Inside a compound unit, °C and °F are read as temperature differences, where 1 °C = 1 K and 1 °F = 1 °R = 5/9 K. ' +
         "The 273.15 offset applies only when converting a single temperature reading.</p>";
     }
     if (ids.length) {
@@ -845,7 +944,7 @@
   var examplesEl = document.getElementById("an-examples");
   var datalist = document.getElementById("cv-units");
 
-  var EXAMPLES = [["kJ", "N·m"], ["W", "J"], ["W/A", "V"], ["Ω·F", "s"], ["J", "N"], ["N", "Pa"], ["25 °C", "K"], ["T·m²", "Wb"], ["kg·m²/s²", ""]];
+  var EXAMPLES = [["kJ", "N·m"], ["W", "J"], ["W/A", "V"], ["Ω·F", "s"], ["J", "N"], ["N", "Pa"], ["25 °C", "K"], ["98.6 °F", "°C"], ["mi/h", "m/s"], ["imp gal", "US gal"], ["kg·m²/s²", ""]];
 
   function tryParse(text) {
     if (!text.trim()) return { empty: true };
@@ -875,11 +974,11 @@
     else if (T) toMeta.innerHTML = endMeta(b.parsed, T);
     else if (S) {
       var same = Object.keys(units).filter(function (id) {
-        return id !== "celsius" && dimKey(units[id].dimension) === dimKey(S.dim) && !isPlain(S.parsed, id);
+        return OFFSET_SCALES.indexOf(id) === -1 && dimKey(units[id].dimension) === dimKey(S.dim) && !isPlain(S.parsed, id);
       });
       toMeta.innerHTML = '<div class="cv-name">Empty: the steps break the unit down into SI base units.</div>' +
         (same.length && dimKey(S.dim) !== NO_DIM ? '<div class="cv-name">Same kind of quantity:</div><div class="an-examples">' +
-          same.map(function (id) { return fillButton("to", units[id].symbols[0], units[id].symbols[0] + " · " + units[id].name); }).join("") + "</div>" : "");
+          same.map(function (id) { return fillButton("to", typeable(id), units[id].symbols[0] + " · " + units[id].name); }).join("") + "</div>" : "");
     } else toMeta.innerHTML = "";
 
     if (!S) {
@@ -892,14 +991,19 @@
     }
 
     var src = S.parsed, chain, route = null, sentence, equation, emptyText;
-    var tempPair = T && (isPlain(src, "celsius") || isPlain(src, "kelvin")) && (isPlain(T.parsed, "celsius") || isPlain(T.parsed, "kelvin")) &&
-      (isPlain(src, "celsius") !== isPlain(T.parsed, "celsius")) && T.value === 1;
+    var onOffset = function (parsed) { return OFFSET_SCALES.some(function (id) { return isPlain(parsed, id); }); };
+    var tempPair = T && isTemperature(src) && isTemperature(T.parsed) && T.value === 1 &&
+      src.factors[0].id !== T.parsed.factors[0].id && (onOffset(src) || onOffset(T.parsed));
 
     if (tempPair) {
-      chain = celsiusChain(src, T.parsed);
+      chain = temperatureChain(src, T.parsed);
       equation = chain.nodes[0] + " = " + chain.nodes[chain.nodes.length - 1];
-      sentence = "The degree Celsius and the kelvin are the same size; only their zero points differ. " +
-        "For a temperature <em>difference</em> there's no offset: a change of 1 °C is a change of 1 K.";
+      var ids = [src.factors[0].id, T.parsed.factors[0].id].sort().join(" ");
+      sentence = ids === "celsius kelvin"
+        ? "The degree Celsius and the kelvin are the same size; only their zero points differ. " +
+          "For a temperature <em>difference</em> there's no offset: a change of 1 °C is a change of 1 K."
+        : "These scales put zero in different places, so a temperature reading needs an offset as well as a factor. " +
+          "For a temperature <em>difference</em> there's no offset: a change of 1 °F is a change of 1 °R, or 5/9 K.";
     } else if (!T) {
       // No target: break the source all the way down.
       var last = S.states.length - 1;
@@ -1008,7 +1112,7 @@
   M.data.then(function (data) {
     setup(data);
     datalist.innerHTML = Object.keys(units).map(function (id) {
-      return '<option value="' + esc(units[id].symbols[0]) + '">' + esc(units[id].name) + "</option>";
+      return '<option value="' + esc(typeable(id)) + '">' + esc(units[id].name) + "</option>";
     }).join("");
     var h = readHash();
     if (h) { fromInput.value = h.from; toInput.value = h.to; }

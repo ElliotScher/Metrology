@@ -1,0 +1,25 @@
+id: fahrenheit
+name: "Degree Fahrenheit"
+symbols: ["°F"]
+system: us-customary
+domain: thermodynamic-temperature
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 1, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: rankine, power: 1 }
+equation: "°F = °R − 459.67"
+definitions:
+  - era: "1724–1940s"
+    value: "A scale with 0 °F at the temperature of a brine of ice, water and ammonium chloride and 96 °F at human body temperature; water froze at 32 °F."
+    basis: phase-point
+    current: false
+    source: "D. G. Fahrenheit, Philosophical Transactions 33 (1724)."
+  - era: "1940s–present"
+    value: "Defined from the Celsius scale: t/°F = 1.8 · t/°C + 32, so water freezes at 32 °F and boils at 212 °F at standard pressure. A degree Fahrenheit is 5/9 of a kelvin, and 0 °F is 459.67 °R."
+    basis: offset-scale
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Named after Daniel Gabriel Fahrenheit, the German-Polish instrument maker who invented the mercury thermometer."
+  cursedness: "Fahrenheit's fixed points didn't survive: after recalibration, body temperature came out at about 98.6 °F, not 96. It is now defined from the Celsius scale, which is defined from the kelvin, so the US measures temperature in a scale that depends on two others. Like the degree Celsius, it is a degree size and an offset, so 20 °F is not 'twice as hot' as 10 °F."
+status: verified
+sources: ["D. G. Fahrenheit (1724)", "NIST Handbook 44, Appendix C"]

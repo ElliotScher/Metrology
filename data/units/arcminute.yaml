@@ -1,0 +1,21 @@
+id: arcminute
+name: Arcminute
+symbols: ["′", arcmin]
+system: SI-accepted
+domain: angle
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: degree, power: 1 }
+factor: 0.016666666666666666
+equation: "′ = (1/60)°"
+definitions:
+  - era: "1969–present"
+    value: "A unit of plane angle equal to 1/60 degree (π/10 800 radian). Accepted for use with the SI, where it is simply called the minute."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "The same 'first small part' (pars minuta prima) as the minute of time; 'arc' distinguishes it."
+  cursedness: "The SI Brochure calls it just the 'minute', the same name as the unit of time, which is why everyone else says arcminute. The nautical mile was originally one arcminute of latitude."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

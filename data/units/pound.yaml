@@ -1,0 +1,26 @@
+id: pound
+name: "Pound"
+symbols: ["lb"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: kilogram, power: 1 }
+factor: 0.45359237
+equation: "lb = 0.45359237 kg"
+definitions:
+  - era: "1855–1959"
+    value: "The mass of the Imperial Standard Pound, a platinum cylinder kept in London. In the US, from 1893, defined as 0.453 592 427 7 kg via the kilogram."
+    basis: physical-artifact
+    current: false
+    source: "Standards of Weights and Measures Act 1855 (UK); Mendenhall Order (US, 1893)."
+  - era: "1959–present"
+    value: "Exactly 0.453 592 37 kilograms (the avoirdupois pound)."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Latin 'libra pondo', a pound by weight: 'pound' from 'pondo', and the symbol lb from 'libra'."
+  cursedness: "'Pound' means a mass, but in everyday and engineering use it often means the force that mass weighs (the pound-force). Confusing them is how the Mars Climate Orbiter was lost in 1999: one team's software reported impulse in pound-force seconds and another read it as newton-seconds. There are also troy and apothecaries' pounds of 12 ounces, used for precious metals and drugs."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

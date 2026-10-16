@@ -1,0 +1,21 @@
+id: barleycorn
+name: "Barleycorn"
+symbols: ["barleycorn"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 1 }
+factor: 0.3333333333333333
+equation: "barleycorn = ⅓ in"
+definitions:
+  - era: "c. 1300–present"
+    value: "One third of an inch. Originally the length of a grain of barley; now exactly 1/3 in."
+    basis: exact-multiple
+    current: true
+    source: "Composition of Yards and Perches (c. 1300); defined from the inch since 1959."
+notes:
+  etymology: "From the grain of barley, the oldest English length standard."
+  cursedness: "The inch was originally defined as three barleycorns, so the barleycorn was the base of the whole English length system. It survives only in UK and US shoe sizes, where each full size is one barleycorn longer than the last."
+status: verified
+sources: ["Composition of Yards and Perches (c. 1300)"]

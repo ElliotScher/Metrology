@@ -118,7 +118,10 @@ sources: ["BIPM SI Brochure, 9th ed. (2019)"]
 ```
 
 - **`system`** — one of `SI-base`, `SI-derived`, `SI-accepted`, `CGS`,
-  `imperial`, `us-customary`, `natural-planck`, `domain-specific`.
+  `imperial`, `us-customary`, `natural-planck`, `domain-specific`. Units the
+  UK and US share since the 1959 international yard and pound (inch, foot,
+  mile, pound, ounce…) are `imperial`. `us-customary` is for the units only the
+  US uses, or that differ there (US gallon, short ton, slug…).
 - **`dimension`** — integer exponents over the seven SI base quantities.
 - **`derived_from`** — the component units and their powers. These become the
   graph's edges. A component may repeat, as in the radian's `metre^1` and
@@ -132,6 +135,12 @@ sources: ["BIPM SI Brochure, 9th ed. (2019)"]
   fixes *h* in J·s, but the joule is built from the kilogram, so the kilogram
   has `defined_via: [metre, second]`. These links aren't dimensional, so they
   aren't checked for dimensions, but they do count toward levels.
+- **`factor`** (optional, non-coherent units only) — what the unit is worth
+  in the product of its `derived_from` components. The hour has
+  `derived_from: [minute]` and `factor: 60`; the litre has `metre^3` and
+  `factor: 0.001`. Leaving it out means 1. SI base and derived units are
+  coherent, so they must leave it out. The dimensional analysis tab multiplies
+  by it at each step.
 - **`definitions`** — the unit's formal definitions in chronological order.
   Exactly one must have `current: true`.
 
@@ -164,6 +173,8 @@ source: "BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4 and Annex."
   exceptions are units defined directly from physical constants (`SI-base`,
   `natural-planck`). Dimensionless ratios like the radian still list their
   components, for example `metre^1` and `metre^-1`
+- SI base and derived units have no `factor` other than 1, and a `factor`
+  always has components to multiply
 - each unit has exactly one current definition, and every definition has a source
 - **dimensional arithmetic**: the sum of each component's dimension times its
   power equals the unit's stated `dimension`
@@ -194,7 +205,10 @@ below the joule. The SVG and the web viewer use the same levels.
 
 ## Web viewer
 
-`site/index.html` is an interactive D3 viewer for `graph.json`. Click a unit
+`site/index.html` is an interactive D3 viewer for `graph.json`. Hovering
+over or clicking a unit fades the rest of the graph and traces its lineage:
+everything it's built from in cyan, and everything built from it in magenta.
+Click a unit
 to see its equation, dimension, components, dependents and full definition
 history. The **Dimensional analysis** tab takes a source unit and a target unit and shows
 the chain of substitutions between them, including any extra quantity you have

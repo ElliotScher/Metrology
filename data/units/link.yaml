@@ -1,0 +1,21 @@
+id: link
+name: "Link"
+symbols: ["li"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: chain, power: 1 }
+factor: 0.01
+equation: "li = 0.01 ch"
+definitions:
+  - era: "1620–present"
+    value: "1/100 of a chain (7.92 inches), exactly 0.201168 m: one link of Gunter's chain."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "One physical link of Gunter's surveying chain."
+  cursedness: null
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

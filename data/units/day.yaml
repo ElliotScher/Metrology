@@ -1,0 +1,21 @@
+id: day
+name: Day
+symbols: [d]
+system: SI-accepted
+domain: time
+dimension: { length: 0, mass: 0, time: 1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: hour, power: 1 }
+factor: 24
+equation: "d = 24 h"
+definitions:
+  - era: "1969–present"
+    value: "A unit of time equal to 24 hours (86 400 seconds), accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From Old English 'dæg'."
+  cursedness: "The second was originally 1/86 400 of a mean solar day; now the day is defined as 86 400 seconds, and the Earth's actual rotation no longer matches. Tidal braking makes the solar day about 2 ms longer per century, which is why leap seconds were needed. The symbol d is also the deci prefix."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

@@ -1,0 +1,21 @@
+id: psi
+name: "Pound per square inch"
+symbols: ["psi"]
+system: imperial
+domain: mechanics
+dimension: { length: -1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound-force, power: 1 }
+  - { id: inch, power: -2 }
+equation: "psi = lbf/in²"
+definitions:
+  - era: "19th century–present"
+    value: "One pound-force per square inch: about 6894.757 Pa."
+    basis: coherent-derived
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "An initialism of 'pounds per square inch'."
+  cursedness: "Tyre gauges often read 'psig' (gauge, above atmospheric) while engineering tables may use 'psia' (absolute); the two differ by about 14.7 psi, a full atmosphere."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

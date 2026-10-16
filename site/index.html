@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Metrology Graph</title>
 <meta name="description" content="An interactive graph of units of measurement: what each is derived from, how its definition has changed, and how units relate.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap">
@@ -28,6 +29,8 @@
     --edge-rel:     #9aa8b6;
     --warn:         #d32f2f;
     --warn-soft:    rgba(211, 47, 47, 0.10);
+    --lineage-up:   #0891b2; /* units the selected unit is built from */
+    --lineage-down: #c026d3; /* units built from the selected unit */
 
     --slot-1: #2a78d6; /* SI-base */
     --slot-2: #eb6834; /* SI-derived */
@@ -55,6 +58,8 @@
       --edge-rel:     #5b7288;
       --warn:         #ff6b6b;
       --warn-soft:    rgba(255, 107, 107, 0.14);
+      --lineage-up:   #3fd0ea;
+      --lineage-down: #e879f9;
 
       --slot-1: #3987e5;
       --slot-2: #d95926;
@@ -82,6 +87,8 @@
     --edge-rel:     #5b7288;
     --warn:         #ff6b6b;
     --warn-soft:    rgba(255, 107, 107, 0.14);
+    --lineage-up:   #3fd0ea;
+    --lineage-down: #e879f9;
 
     --slot-1: #3987e5;
     --slot-2: #d95926;
@@ -191,6 +198,15 @@
   .edge-def { stroke: var(--slot-7); stroke-width: 1.5px; fill: none; stroke-dasharray: 1.5 3.5; stroke-linecap: round; opacity: 0.8; }
   .edge-def.dimmed { opacity: 0.08; }
 
+  /* Lineage of the selected or hovered unit: what it's built from (up) and
+     what's built from it (down). Everything else fades. */
+  .node.faded, .rel-group.faded { opacity: 0.15; }
+  .edge-deriv.faded, .edge-def.faded { opacity: 0.05; }
+  .node.up rect { stroke: var(--lineage-up); stroke-width: 4px; }
+  .node.down rect { stroke: var(--lineage-down); stroke-width: 4px; }
+  .edge-deriv.up, .edge-def.up { stroke: var(--lineage-up); stroke-width: 2.2px; opacity: 1; }
+  .edge-deriv.down, .edge-def.down { stroke: var(--lineage-down); stroke-width: 2.2px; opacity: 1; }
+
   .edge-rel { stroke: var(--edge-rel); stroke-width: 1.6px; fill: none; stroke-dasharray: 5 4; cursor: pointer; }
   .edge-rel:hover, .edge-rel.selected { stroke: var(--accent); }
   .edge-hit { stroke: transparent; stroke-width: 14px; fill: none; cursor: pointer; }
@@ -214,6 +230,8 @@
   #legend .line-swatch { width: 18px; height: 0; border-top: 2px solid var(--edge-deriv); flex: none; }
   #legend .line-swatch.dashed { border-top-style: dashed; border-color: var(--edge-rel); }
   #legend .line-swatch.dotted { border-top-style: dotted; border-color: var(--slot-7); }
+  #legend .line-swatch.up { border-color: var(--lineage-up); border-top-width: 3px; }
+  #legend .line-swatch.down { border-color: var(--lineage-down); border-top-width: 3px; }
   #legend hr { border: none; border-top: 1px solid var(--border); margin: 7px 0; }
 
   #tooltip {
@@ -807,6 +825,19 @@
     .append("path")
     .attr("d", "M0,0 L10,5 L0,10 z")
     .attr("fill", "var(--slot-7)");
+  ["up", "down"].forEach(function (dir) {
+    svg.select("defs").append("marker")
+      .attr("id", "arrow-" + dir)
+      .attr("viewBox", "0 0 10 10")
+      .attr("refX", 9)
+      .attr("refY", 5)
+      .attr("markerWidth", 6)
+      .attr("markerHeight", 6)
+      .attr("orient", "auto-start-reverse")
+      .append("path")
+      .attr("d", "M0,0 L10,5 L0,10 z")
+      .attr("fill", "var(--lineage-" + dir + ")");
+  });
   var zoomLayer = svg.append("g");
   var levelLayer = zoomLayer.append("g");
   var linkLayer = zoomLayer.append("g");
@@ -1011,9 +1042,15 @@
       .enter().append("g")
       .attr("class", "node")
       .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; })
-      .on("mouseenter", function (ev, d) { showTooltip(ev, d.name, d.symbols.join(", ") + " · level " + d.level); })
+      .on("mouseenter", function (ev, d) {
+        showTooltip(ev, d.name, d.symbols.join(", ") + " · level " + d.level);
+        if (!selected) highlightLineage(d);
+      })
       .on("mousemove", moveTooltip)
-      .on("mouseleave", hideTooltip)
+      .on("mouseleave", function () {
+        hideTooltip();
+        if (!selected) highlightLineage(null);
+      })
       .on("click", function (ev, d) {
         ev.stopPropagation();
         selectNode(d);
@@ -1079,7 +1116,49 @@
     }
     function hideTooltip() { tooltip.hidden = true; }
 
+    // Every unit reachable from id by following next (dependsOn upwards,
+    // dependentsOf downwards), not counting id itself.
+    function reachable(id, next) {
+      var seen = {}, stack = [id];
+      while (stack.length) {
+        next(stack.pop()).forEach(function (n) {
+          if (!seen[n]) { seen[n] = true; stack.push(n); }
+        });
+      }
+      return seen;
+    }
+
+    // Colour the units d is built from (and the links between them) in one
+    // colour, the units built from d in another, and fade the rest. null clears.
+    var selected = null;
+    function highlightLineage(d) {
+      var up = d ? reachable(d.id, function (id) { return dependsOn[id].map(function (c) { return c.id; }); }) : {};
+      var down = d ? reachable(d.id, function (id) { return dependentsOf[id]; }) : {};
+      function linkDir(l) {
+        if (!d) return null;
+        if (up[l.source.id] && (up[l.target.id] || l.target === d)) return "up";
+        if (down[l.target.id] && (down[l.source.id] || l.source === d)) return "down";
+        return null;
+      }
+      nodeSel
+        .classed("faded", function (n) { return !!d && n !== d && !up[n.id] && !down[n.id]; })
+        .classed("up", function (n) { return !!up[n.id]; })
+        .classed("down", function (n) { return !!down[n.id]; });
+      [[linkDeriv, "url(#arrow)"], [linkDef, "url(#arrow-def)"]].forEach(function (pair) {
+        pair[0]
+          .classed("faded", function (l) { return !!d && !linkDir(l); })
+          .classed("up", function (l) { return linkDir(l) === "up"; })
+          .classed("down", function (l) { return linkDir(l) === "down"; })
+          .attr("marker-end", function (l) { var dir = linkDir(l); return dir ? "url(#arrow-" + dir + ")" : pair[1]; });
+      });
+      linkRelGroup.classed("faded", !!d);
+      // Draw the lineage above the faded links.
+      [linkDeriv, linkDef].forEach(function (sel) { sel.filter(function (l) { return linkDir(l); }).raise(); });
+    }
+
     function selectNode(d) {
+      selected = d;
+      highlightLineage(d);
       nodeSel.classed("selected", function (n) { return n.id === d.id; });
       linkRelGroup.selectAll(".edge-rel").classed("selected", false);
       panelBody.innerHTML = renderUnitPanel(d);
@@ -1090,6 +1169,8 @@
     }
 
     function selectRelationship(d) {
+      selected = null;
+      highlightLineage(null);
       nodeSel.classed("selected", false);
       linkRelGroup.selectAll(".edge-rel").classed("selected", function (l) { return l === d; });
       panelBody.innerHTML = renderRelationshipPanel(d);
@@ -1098,6 +1179,8 @@
 
     function closePanel() {
       panel.hidden = true;
+      selected = null;
+      highlightLineage(null);
       nodeSel.classed("selected", false);
       linkRelGroup.selectAll(".edge-rel").classed("selected", false);
     }
@@ -1208,6 +1291,10 @@
     html += '<div class="legend-row"><span class="line-swatch"></span>derived from</div>';
     html += '<div class="legend-row"><span class="line-swatch dotted"></span>defined via constant</div>';
     html += '<div class="legend-row"><span class="line-swatch dashed"></span>related note</div>';
+    html += "<hr>";
+    html += '<div class="legend-title">Selected unit</div>';
+    html += '<div class="legend-row"><span class="line-swatch up"></span>what it\'s built from</div>';
+    html += '<div class="legend-row"><span class="line-swatch down"></span>what\'s built from it</div>';
     legendEl.innerHTML = html;
   }
 })();

@@ -1,0 +1,11 @@
+id: tons
+units: [long-ton, tonne, short-ton]
+kind: commonly-confused
+note: |
+  Three masses share the name "ton": the British long ton of 2240 lb
+  (1016.05 kg), the metric tonne of 1000 kg, and the American short ton of
+  2000 lb (907.18 kg). They come from the same root, the "tun" wine cask. The
+  long ton and the tonne are within 1.6 % of each other, close enough to be
+  confused in shipping contracts. In the US, the tonne is officially the
+  "metric ton".
+source: "NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."

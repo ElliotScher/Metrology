@@ -1,0 +1,21 @@
+id: gray
+name: Gray
+symbols: [Gy]
+system: SI-derived
+domain: ionizing-radiation
+dimension: { length: 2, mass: 0, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: joule, power: 1 }
+  - { id: kilogram, power: -1 }
+equation: "Gy = J/kg"
+definitions:
+  - era: "1975–present"
+    value: "The absorbed dose of ionizing radiation corresponding to one joule of energy imparted per kilogram of matter."
+    basis: coherent-derived
+    current: true
+    source: "15th CGPM (1975), Resolution 9; BIPM SI Brochure, 9th ed. (2019), Table 4."
+notes:
+  etymology: "Named after Louis Harold Gray, a British physicist who pioneered radiobiology and the measurement of absorbed dose."
+  cursedness: "Shares its unit, J/kg, with the sievert and with specific energy in general, but the three are never interchangeable. See the gray-sievert relationship. It replaced the rad (0.01 Gy), which collides with the symbol of the radian."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

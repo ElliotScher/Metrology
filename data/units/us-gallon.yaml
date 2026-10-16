@@ -1,0 +1,21 @@
+id: us-gallon
+name: "US gallon"
+symbols: ["US gal"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 3 }
+factor: 231
+equation: "US gal = 231 in³"
+definitions:
+  - era: "1707–present"
+    value: "Exactly 231 cubic inches (3.785 411 784 L): Queen Anne's wine gallon, adopted by the US as its liquid gallon."
+    basis: exact-multiple
+    current: true
+    source: "Act of 1706 (6 Ann. c. 27); NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Old Northern French 'galon', a liquid measure."
+  cursedness: "The US kept the old English wine gallon of 231 in³, while Britain replaced all its gallons with the imperial gallon in 1824. So a US gallon is about 83 % of an imperial one, and a US mpg figure looks worse than the same car's UK figure. England once had separate gallons for wine, ale and corn."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,21 @@
+id: short-hundredweight
+name: "Short hundredweight"
+symbols: ["short cwt"]
+system: us-customary
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound, power: 1 }
+factor: 100
+equation: "short cwt = 100 lb"
+definitions:
+  - era: "19th century–present"
+    value: "Exactly 100 pounds (about 45.36 kg): the US hundredweight."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From 'hundred' plus 'weight'."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

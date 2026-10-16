@@ -1,0 +1,21 @@
+id: chain
+name: "Chain"
+symbols: ["ch"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: rod, power: 1 }
+factor: 4
+equation: "ch = 4 rd"
+definitions:
+  - era: "1620–present"
+    value: "Four rods (22 yards, 66 feet), exactly 20.1168 m: the length of Gunter's surveying chain of 100 links."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From the physical chain, introduced by the English mathematician Edmund Gunter in 1620."
+  cursedness: "Gunter's chain made English land decimal: an acre is 10 square chains, and 100 links make a chain, so surveyors could do decimal arithmetic in a non-decimal system. A cricket pitch is still exactly one chain long."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

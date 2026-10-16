@@ -1,0 +1,21 @@
+id: troy-pound
+name: "Troy pound"
+symbols: ["lb t"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: troy-ounce, power: 1 }
+factor: 12
+equation: "lb t = 12 oz t"
+definitions:
+  - era: "1959–present"
+    value: "12 troy ounces (5760 grains): about 373.24 g."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Troyes, France."
+  cursedness: "The troy pound has only 12 ounces, so it is lighter than the 16-ounce avoirdupois pound even though each troy ounce is heavier. Britain abolished it in 1878, except for the troy ounce."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

@@ -1,0 +1,21 @@
+id: rankine
+name: "Rankine"
+symbols: ["°R"]
+system: us-customary
+domain: thermodynamic-temperature
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 1, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: kelvin, power: 1 }
+factor: 0.5555555555555556
+equation: "°R = (5/9) K"
+definitions:
+  - era: "1859–present"
+    value: "An absolute temperature scale with Fahrenheit-sized degrees: 0 °R is absolute zero, and 1 °R = 5/9 K."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Named after William John Macquorn Rankine, the Scottish engineer who proposed it in 1859."
+  cursedness: "It is to Fahrenheit what the kelvin is to Celsius, and US thermodynamics textbooks still use it. The symbol °R was also used for the long-dead Réaumur scale."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

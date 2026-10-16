@@ -1,0 +1,11 @@
+id: fahrenheit-celsius
+units: [fahrenheit, celsius]
+kind: historical-connection
+note: |
+  The Fahrenheit scale is now defined from the Celsius scale, which is
+  defined from the kelvin: t/°F = 1.8 · t/°C + 32. Both are offset scales.
+  A degree Fahrenheit is 5/9 of a degree Celsius, and their zeros differ:
+  0 °F is about −17.8 °C. They cross at −40, where −40 °F = −40 °C. The
+  Rankine scale does for Fahrenheit what the kelvin does for Celsius: it
+  keeps the degree size and moves zero to absolute zero, at −459.67 °F.
+source: "NIST Handbook 44, Appendix C; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.4."

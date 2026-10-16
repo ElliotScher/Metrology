@@ -1,0 +1,21 @@
+id: ounce
+name: "Ounce"
+symbols: ["oz"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound, power: 1 }
+factor: 0.0625
+equation: "oz = 1/16 lb"
+definitions:
+  - era: "1959–present"
+    value: "1/16 of an avoirdupois pound: exactly 28.349 523 125 grams."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Latin 'uncia', a twelfth — the same word as 'inch', though the avoirdupois ounce is a sixteenth."
+  cursedness: "There are three ounces: the avoirdupois ounce for groceries, the heavier troy ounce (about 31.1 g) for gold and silver, and the fluid ounce, which is a volume. A troy ounce is heavier than an avoirdupois ounce, but a troy pound is lighter than an avoirdupois pound."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

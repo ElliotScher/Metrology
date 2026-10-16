@@ -1,0 +1,13 @@
+id: us-imperial-gallon
+units: [us-gallon, imperial-gallon]
+kind: commonly-confused
+note: |
+  The US gallon (231 in³, about 3.785 L) is Queen Anne's wine gallon of
+  1707, which the American colonies were using when they left. In 1824
+  Britain replaced its wine, ale and corn gallons with one new imperial
+  gallon, defined as 10 pounds of water (about 4.546 L). The two have been
+  different ever since: an imperial gallon is about 1.2 US gallons. Every
+  smaller unit inherits the gap differently, because the imperial pint holds
+  20 fluid ounces and the US pint 16. The imperial fluid ounce is about 4 %
+  smaller than the US one, yet the imperial pint is about 20 % larger.
+source: "Weights and Measures Act 1824; Weights and Measures Act 1985 (UK), Schedule 1; NIST Handbook 44, Appendix C."

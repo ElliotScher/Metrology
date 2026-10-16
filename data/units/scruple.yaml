@@ -1,0 +1,21 @@
+id: scruple
+name: "Scruple"
+symbols: ["℈", "s ap"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: grain, power: 1 }
+factor: 20
+equation: "℈ = 20 gr"
+definitions:
+  - era: "medieval–1971"
+    value: "20 grains (about 1.296 g), an apothecaries' weight for drugs."
+    basis: exact-multiple
+    current: true
+    source: "British Pharmacopoeia (abandoned on metrication, 1971); NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Latin 'scrupulus', a small sharp stone — the same origin as 'scruples', small doubts."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,21 @@
+id: us-cup
+name: "US cup"
+symbols: ["cup"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-pint, power: 1 }
+factor: 0.5
+equation: "cup = ½ US pt"
+definitions:
+  - era: "19th century–present"
+    value: "Half a US pint: 8 US fluid ounces (236.588 236 5 mL)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From the drinking cup."
+  cursedness: "Nutrition labels in the US use a different 'legal cup' of exactly 240 mL, and the Commonwealth metric cup is 250 mL. A recipe written in cups can be off by 6 % depending on which one the author meant."
+status: verified
+sources: ["NIST Handbook 44, Appendix C", "21 CFR 101.9(b)(5)(viii)"]

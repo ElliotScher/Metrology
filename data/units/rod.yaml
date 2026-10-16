@@ -1,0 +1,21 @@
+id: rod
+name: "Rod"
+symbols: ["rd"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: yard, power: 1 }
+factor: 5.5
+equation: "rd = 5½ yd"
+definitions:
+  - era: "1959–present"
+    value: "5½ yards (16½ feet), exactly 5.0292 m. Also called the pole or perch."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From the surveyor's or ploughman's rod; 'pole' and 'perch' (Latin 'pertica', a pole) are other names for it."
+  cursedness: "The odd 16½ feet is a compromise between older rods of 15, 18 and 20 feet, fixed so that a furlong would be 40 rods. Its three names are interchangeable, and 'perch' is also a unit of area (a square rod)."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

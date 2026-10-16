@@ -1,0 +1,21 @@
+id: tonne
+name: Tonne
+symbols: [t]
+system: SI-accepted
+domain: mechanics
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: kilogram, power: 1 }
+factor: 1000
+equation: "t = 10³ kg"
+definitions:
+  - era: "1879–present"
+    value: "A unit of mass equal to 1000 kilograms (one megagram), accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1879); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From French 'tonne', from the 'tun', a large wine cask; the same root as the imperial ton."
+  cursedness: "Three different 'tons' share the name: the metric tonne (1000 kg), the long ton (2240 lb, about 1016 kg) and the short ton (2000 lb, about 907 kg). In the US the tonne is officially called the 'metric ton'. A tonne of TNT, as used for explosive yield, is defined as 4.184 GJ and isn't a mass at all."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

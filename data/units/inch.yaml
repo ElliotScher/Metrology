@@ -1,0 +1,26 @@
+id: inch
+name: "Inch"
+symbols: ["in"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: metre, power: 1 }
+factor: 0.0254
+equation: "in = 2.54 cm"
+definitions:
+  - era: "1324–1959"
+    value: "Three grains of barley, dry and round, placed end to end. By the 19th century it was 1/36 of the national standard yard, which made the British inch about 25.399 98 mm and the American inch (from 1893) 25.400 05 mm."
+    basis: physical-artifact
+    current: false
+    source: "Composition of Yards and Perches (c. 1300); Mendenhall Order (US, 1893)."
+  - era: "1959–present"
+    value: "Exactly 2.54 centimetres (1/36 of the international yard)."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old English 'ynce', from Latin 'uncia', a twelfth part — the same word as 'ounce'."
+  cursedness: "Before 1959 the British, American and Canadian inches were all slightly different, by a few parts per million. Industry had already standardized on 25.4 mm in the 1930s, so the 1959 agreement mostly made official what machinists were doing anyway. The inch is now defined by the metre, so every customary length is a metric length in disguise."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

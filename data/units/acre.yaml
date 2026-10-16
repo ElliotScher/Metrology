@@ -1,0 +1,21 @@
+id: acre
+name: "Acre"
+symbols: ["ac"]
+system: imperial
+domain: area
+dimension: { length: 2, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: furlong, power: 1 }
+  - { id: chain, power: 1 }
+equation: "ac = 1 fur × 1 ch"
+definitions:
+  - era: "c. 1300–present"
+    value: "One furlong by one chain: 4840 square yards (43 560 square feet), exactly 4046.856 422 4 m²."
+    basis: exact-multiple
+    current: true
+    source: "Statute for Measuring Land (c. 1305); International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Old English 'æcer', a field: the land a yoke of oxen could plough in a day."
+  cursedness: "An acre is a furlong long and a chain wide, the shape of a ploughed strip. It has no simple relation to the square mile except that 640 acres make one. The US kept a slightly larger 'survey acre' (based on the survey foot) for land records until 2022."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

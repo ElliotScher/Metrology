@@ -1,0 +1,20 @@
+id: becquerel
+name: Becquerel
+symbols: [Bq]
+system: SI-derived
+domain: ionizing-radiation
+dimension: { length: 0, mass: 0, time: -1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: second, power: -1 }
+equation: "Bq = 1/s"
+definitions:
+  - era: "1975–present"
+    value: "The activity of a radionuclide decaying at a rate of one spontaneous nuclear transition per second."
+    basis: coherent-derived
+    current: true
+    source: "15th CGPM (1975), Resolution 8; BIPM SI Brochure, 9th ed. (2019), Table 4."
+notes:
+  etymology: "Named after Henri Becquerel, who discovered radioactivity in uranium salts in 1896."
+  cursedness: "Dimensionally identical to the hertz, but the SI forbids using one for the other: the becquerel counts random decay events, while the hertz counts cycles of a periodic phenomenon. The SI Brochure restricts the hertz to periodic phenomena and the becquerel to radioactive decay, and the CGPM gave activity its own name in 1975 so that mistakes in radiation measurements couldn't endanger human health. See the hertz-becquerel relationship. It replaced the curie (3.7 × 10¹⁰ Bq, roughly the activity of one gram of radium-226), which is still widely used in the US."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

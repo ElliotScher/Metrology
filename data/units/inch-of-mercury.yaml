@@ -1,0 +1,21 @@
+id: inch-of-mercury
+name: "Inch of mercury"
+symbols: ["inHg"]
+system: imperial
+domain: mechanics
+dimension: { length: -1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pascal, power: 1 }
+factor: 3386.38864
+equation: "inHg ≈ 3386.389 Pa"
+definitions:
+  - era: "conventional"
+    value: "The pressure of a column of mercury one inch high at standard density (13.5951 g/cm³) and standard gravity: about 3386.389 Pa."
+    basis: exact-multiple
+    current: true
+    source: "NIST SP 811 (2008), Appendix B."
+notes:
+  etymology: "From the mercury barometer, which measures pressure by the height of a column of mercury."
+  cursedness: "US weather reports give air pressure in inches of mercury, and aircraft altimeters are set in it, even though barometers stopped using mercury long ago. The value depends on the mercury's temperature, so the conventional value assumes 0 °C."
+status: verified
+sources: ["NIST SP 811 (2008)"]

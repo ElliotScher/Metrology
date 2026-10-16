@@ -1,0 +1,23 @@
+id: horsepower
+name: "Horsepower"
+symbols: ["hp"]
+system: imperial
+domain: mechanics
+dimension: { length: 2, mass: 1, time: -3, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: foot, power: 1 }
+  - { id: pound-force, power: 1 }
+  - { id: second, power: -1 }
+factor: 550
+equation: "hp = 550 ft·lbf/s"
+definitions:
+  - era: "1782–present"
+    value: "Mechanical horsepower: 550 foot-pounds-force per second, about 745.7 W."
+    basis: exact-multiple
+    current: true
+    source: "James Watt (c. 1782); NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Coined by James Watt to sell steam engines to mine owners who were replacing horses."
+  cursedness: "Watt's figure was a sales estimate of what a mill horse could sustain. There are now many horsepowers: mechanical (745.7 W), metric (PS, 735.5 W), electrical (746 W) and boiler (about 9.8 kW). Car makers quote whichever looks best."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

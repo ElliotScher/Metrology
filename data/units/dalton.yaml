@@ -1,0 +1,21 @@
+id: dalton
+name: Dalton
+symbols: [Da, u]
+system: SI-accepted
+domain: atomic-physics
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: kilogram, power: 1 }
+factor: 1.66053906892e-27
+equation: "Da ≈ 1.66053906892 × 10⁻²⁷ kg"
+definitions:
+  - era: "1961–present"
+    value: "1/12 of the mass of a free carbon-12 atom, at rest and in its ground state. Its value in kilograms is measured, not fixed: 1.660 539 068 92(52) × 10⁻²⁷ kg (CODATA 2022). Accepted for use with the SI."
+    basis: physical-constant
+    current: true
+    source: "IUPAP and IUPAC (1960–1961); BIPM SI Brochure, 9th ed. (2019), Table 8; CODATA 2022."
+notes:
+  etymology: "Named after John Dalton, who proposed the atomic theory of matter. The symbol u comes from its older name, the 'unified atomic mass unit'."
+  cursedness: "Before 2019, the mole was defined from carbon-12 too, so a mole of daltons was exactly one gram. The 2019 redefinition fixed the Avogadro constant instead, and that link is now only approximate, though still good to better than a part in a billion. Before 1961, physicists based their atomic mass unit on oxygen-16 and chemists on natural oxygen, so there were two units differing by about 0.03 %; the carbon-12 unit was the compromise."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)", "CODATA 2022 recommended values"]

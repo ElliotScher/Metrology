@@ -1,0 +1,21 @@
+id: kip
+name: "Kip"
+symbols: ["kip"]
+system: us-customary
+domain: mechanics
+dimension: { length: 1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound-force, power: 1 }
+factor: 1000
+equation: "kip = 1000 lbf"
+definitions:
+  - era: "20th century–present"
+    value: "1000 pounds-force (about 4.448 kN). Used in US structural engineering."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From 'kilo-pound'."
+  cursedness: "A metric prefix applied to an imperial unit, then shortened into a word. Stress in kips per square inch is written ksi."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

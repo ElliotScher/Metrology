@@ -1,0 +1,21 @@
+id: imperial-minim
+name: "Imperial minim"
+symbols: ["imp minim"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-fluid-drachm, power: 1 }
+factor: 0.016666666666666666
+equation: "imp minim = 1/60 imp fl dr"
+definitions:
+  - era: "1824–present"
+    value: "1/60 of an imperial fluid drachm (about 59.2 µL)."
+    basis: exact-multiple
+    current: true
+    source: "British Pharmacopoeia usage."
+notes:
+  etymology: "From Latin 'minimus', smallest."
+  cursedness: null
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

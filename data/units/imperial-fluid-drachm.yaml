@@ -1,0 +1,21 @@
+id: imperial-fluid-drachm
+name: "Imperial fluid drachm"
+symbols: ["imp fl dr"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-fluid-ounce, power: 1 }
+factor: 0.125
+equation: "imp fl dr = ⅛ imp fl oz"
+definitions:
+  - era: "1824–present"
+    value: "1/8 of an imperial fluid ounce (about 3.552 mL). An apothecaries' measure."
+    basis: exact-multiple
+    current: true
+    source: "Medicines Act and British Pharmacopoeia usage; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Greek 'drachmē'; 'drachm' is the British spelling of 'dram'."
+  cursedness: null
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]

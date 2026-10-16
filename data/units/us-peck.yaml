@@ -1,0 +1,21 @@
+id: us-peck
+name: "US peck"
+symbols: ["US pk"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-bushel, power: 1 }
+factor: 0.25
+equation: "US pk = ¼ US bu"
+definitions:
+  - era: "1696–present"
+    value: "A quarter of a US bushel (537.605 in³, about 8.81 L)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "Of uncertain origin; Middle English 'pek'."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

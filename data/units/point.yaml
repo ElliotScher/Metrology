@@ -1,0 +1,26 @@
+id: point
+name: "Point"
+symbols: ["pt"]
+system: us-customary
+domain: typography
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 1 }
+factor: 0.013888888888888888
+equation: "pt = 1/72 in"
+definitions:
+  - era: "1886–1980s"
+    value: "The American printer's point: 0.013 837 inch, so that 72 points are about 0.996 inch. Set by the US Type Founders Association from the pica of the L. Johnson & Co. foundry."
+    basis: physical-artifact
+    current: false
+    source: "US Type Founders Association (1886)."
+  - era: "1980s–present"
+    value: "The desktop-publishing (PostScript) point: exactly 1/72 inch, 0.352 7 mm."
+    basis: exact-multiple
+    current: true
+    source: "Adobe PostScript Language Reference (1985)."
+notes:
+  etymology: "From the French 'point', the smallest typographic unit."
+  cursedness: "There have been many points: the Fournier and Didot points in France, the 1886 American point, TeX's 1/72.27 inch, and the PostScript 1/72 inch that every computer uses today. A 12-point font isn't 12 points of anything visible: it's the height of the metal block the letters were cast on."
+status: verified
+sources: ["US Type Founders Association (1886)", "NIST Handbook 44, Appendix C"]

@@ -1,0 +1,22 @@
+id: poundal
+name: "Poundal"
+symbols: ["pdl"]
+system: imperial
+domain: mechanics
+dimension: { length: 1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound, power: 1 }
+  - { id: foot, power: 1 }
+  - { id: second, power: -2 }
+equation: "pdl = lb·ft/s²"
+definitions:
+  - era: "1879–present"
+    value: "The force that accelerates one pound at 1 ft/s²: about 0.138 255 N."
+    basis: coherent-derived
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "'Pound' plus '-al', by analogy with the quintal; coined by James Thomson in 1879."
+  cursedness: "The coherent force unit of the foot–pound–second system, so F = ma works with pounds of mass. Almost nobody used it: engineers preferred the pound-force, which is 32.174 times larger."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

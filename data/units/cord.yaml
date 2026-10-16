@@ -1,0 +1,21 @@
+id: cord
+name: "Cord"
+symbols: ["cord"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: foot, power: 3 }
+factor: 128
+equation: "cord = 128 ft³"
+definitions:
+  - era: "17th century–present"
+    value: "128 cubic feet of stacked firewood: a pile 8 ft long, 4 ft high and 4 ft deep, gaps included."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From the cord or string once used to measure the stack."
+  cursedness: "Firewood sellers often sell a 'face cord' or 'rick', a single row that can be any depth, so it is a third or less of a real cord."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

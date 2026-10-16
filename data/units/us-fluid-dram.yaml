@@ -1,0 +1,21 @@
+id: us-fluid-dram
+name: "US fluid dram"
+symbols: ["US fl dr"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-fluid-ounce, power: 1 }
+factor: 0.125
+equation: "US fl dr = ⅛ US fl oz"
+definitions:
+  - era: "1707–present"
+    value: "1/8 of a US fluid ounce (about 3.697 mL). An apothecaries' measure."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Greek 'drachmē', a coin and weight."
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

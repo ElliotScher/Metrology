@@ -1,0 +1,26 @@
+id: litre
+name: Litre
+symbols: [L, l]
+system: SI-accepted
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: metre, power: 3 }
+factor: 0.001
+equation: "L = 10⁻³ m³"
+definitions:
+  - era: "1901–1964"
+    value: "The volume occupied by a mass of 1 kilogram of pure water at its maximum density and at standard atmospheric pressure — about 1.000028 dm³."
+    basis: reference-sample
+    current: false
+    source: "3rd CGPM (1901)."
+  - era: "1964–present"
+    value: "A special name for the cubic decimetre (10⁻³ m³), accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "12th CGPM (1964), Resolution 6; BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From the French 'litron', an older unit of dry volume, via Medieval Latin and Greek 'litra', a unit of weight."
+  cursedness: "From 1901 to 1964 the litre was defined from a kilogram of water, which made it 28 parts per million bigger than a cubic decimetre. High-precision volumes measured in that era have to be corrected. It has two official symbols, because a lowercase l is hard to tell from the digit 1; the CGPM added the capital L in 1979 as a deliberate exception to the rule that only units named after people get a capital."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)", "16th CGPM (1979), Resolution 6"]

@@ -1,0 +1,21 @@
+id: therm
+name: "Therm"
+symbols: ["thm"]
+system: imperial
+domain: thermodynamics
+dimension: { length: 2, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: btu, power: 1 }
+factor: 100000
+equation: "thm = 10⁵ Btu"
+definitions:
+  - era: "20th century–present"
+    value: "100 000 British thermal units (about 105.5 MJ). Used for natural gas billing."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C; EU Directive 80/181/EEC."
+notes:
+  etymology: "From Greek 'thermē', heat."
+  cursedness: "The US therm is defined with the 59 °F Btu (105.4804 MJ) and the EU therm with the International Table Btu (105.506 MJ), so the same gas bill unit differs by 0.02 % across the Atlantic."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

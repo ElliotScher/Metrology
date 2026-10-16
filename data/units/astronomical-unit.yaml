@@ -1,0 +1,26 @@
+id: astronomical-unit
+name: Astronomical unit
+symbols: [au]
+system: SI-accepted
+domain: astronomy
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: metre, power: 1 }
+factor: 149597870700
+equation: "au = 149 597 870 700 m"
+definitions:
+  - era: "1976–2012"
+    value: "The radius of an unperturbed circular orbit around the Sun of a body of negligible mass moving at a mean angular speed of 0.017 202 098 95 radian per day (the Gaussian gravitational constant), measured at about 149 597 870 700 m."
+    basis: physical-constant
+    current: false
+    source: "IAU (1976), Resolution 10."
+  - era: "2012–present"
+    value: "Exactly 149 597 870 700 metres. Accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "IAU (2012), Resolution B2; BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "Originally the mean distance between the Earth and the Sun, the natural yardstick of the solar system."
+  cursedness: "For centuries it was the Earth–Sun distance, then a dynamical length tied to the Gaussian gravitational constant, which made its value in metres depend on which relativistic time scale you used. In 2012 the IAU gave up and set it to a fixed number of metres. Its symbol was variously AU, ua and a.u.; the IAU and BIPM settled on 'au' only in 2012–2014."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)", "IAU 2012 Resolution B2"]

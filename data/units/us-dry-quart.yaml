@@ -1,0 +1,21 @@
+id: us-dry-quart
+name: "US dry quart"
+symbols: ["US dry qt"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-peck, power: 1 }
+factor: 0.125
+equation: "US dry qt = ⅛ US pk"
+definitions:
+  - era: "1696–present"
+    value: "1/32 of a US bushel (67.200 625 in³, about 1.101 L)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Latin 'quartus', a fourth (of a dry gallon)."
+  cursedness: "About 16 % larger than the US liquid quart, because the two descend from different English gallons. Berries are sold in dry pints and dry quarts."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

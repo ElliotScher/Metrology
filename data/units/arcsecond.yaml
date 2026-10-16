@@ -1,0 +1,21 @@
+id: arcsecond
+name: Arcsecond
+symbols: ["″", arcsec]
+system: SI-accepted
+domain: angle
+dimension: { length: 0, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: arcminute, power: 1 }
+factor: 0.016666666666666666
+equation: "″ = (1/60)′"
+definitions:
+  - era: "1969–present"
+    value: "A unit of plane angle equal to 1/60 arcminute (π/648 000 radian). Accepted for use with the SI, where it is simply called the second."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From 'pars minuta secunda', the 'second small part' of a degree — the same root as the second of time."
+  cursedness: "The SI Brochure names it the 'second', the same as the SI base unit of time. Astronomers put prefixes on it (mas, µas) even though the symbol ″ is not a letter. The parsec is defined from it: the distance at which 1 au subtends one arcsecond."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

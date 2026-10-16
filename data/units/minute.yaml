@@ -1,0 +1,21 @@
+id: minute
+name: Minute
+symbols: [min]
+system: SI-accepted
+domain: time
+dimension: { length: 0, mass: 0, time: 1, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: second, power: 1 }
+factor: 60
+equation: "min = 60 s"
+definitions:
+  - era: "1969–present"
+    value: "A unit of time equal to 60 seconds, accepted for use with the SI."
+    basis: exact-multiple
+    current: true
+    source: "CIPM (1969); BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "From Medieval Latin 'pars minuta prima', the 'first small part' of an hour in Babylonian-derived sexagesimal division."
+  cursedness: "Not every minute has 60 seconds. When a leap second is inserted into UTC, that minute has 61 — and the 2022 decision to stop inserting leap seconds by 2035 means this is being phased out rather than fixed. The base-60 split itself comes from Babylonian astronomy."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)", "27th CGPM (2022), Resolution 4"]

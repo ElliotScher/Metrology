@@ -1,0 +1,14 @@
+id: gray-sievert
+units: [gray, sievert]
+kind: context-differentiated
+note: |
+  The gray and the sievert are both one joule per kilogram, but they measure
+  different things. The gray is absorbed dose: the physical energy that
+  ionizing radiation deposits in each kilogram of matter. The sievert is dose
+  equivalent: that absorbed dose multiplied by dimensionless weighting
+  factors for how harmful the radiation type is (20 for alpha particles, 1
+  for gamma rays) and how sensitive the tissue is. So 1 Gy of alpha radiation
+  to an organ is 20 Sv of equivalent dose. Since the factors are numbers, the
+  units stay the same, and only the name tells you which quantity you have.
+  The SI Brochure insists the name always be given rather than writing J/kg.
+source: "CIPM (2002), Recommendation 2; BIPM SI Brochure, 9th ed. (2019), Table 4; ICRP Publication 103 (2007)."

@@ -15,6 +15,6 @@ definitions:
     source: "11th CGPM (1960), Resolution 12; BIPM SI Brochure, 9th ed. (2019)."
 notes:
   etymology: "Named after Heinrich Hertz, who first conclusively demonstrated the existence of electromagnetic waves."
-  cursedness: "Dimensionally identical to the becquerel (also inverse seconds), but the two are never interchanged — see the kelvin-celsius relationship note for the pattern; a hertz-becquerel relationship entry covering this is queued in PROGRESS.md."
+  cursedness: "Dimensionally identical to the becquerel (also inverse seconds), but the two are never interchanged. See the hertz-becquerel relationship."
 status: verified
 sources: ["BIPM SI Brochure, 9th ed. (2019)"]

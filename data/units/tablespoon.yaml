@@ -1,0 +1,21 @@
+id: tablespoon
+name: "Tablespoon"
+symbols: ["tbsp", "Tbsp"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-fluid-ounce, power: 1 }
+factor: 0.5
+equation: "tbsp = ½ US fl oz"
+definitions:
+  - era: "19th century–present"
+    value: "Half a US fluid ounce (about 14.79 mL). US nutrition labels use exactly 15 mL."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C; 21 CFR 101.9(b)(5)(viii)."
+notes:
+  etymology: "From the serving spoon used at the table."
+  cursedness: "The Australian tablespoon is 20 mL (four teaspoons), not 15 mL, so Australian recipes need a third more of everything measured by the spoon."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

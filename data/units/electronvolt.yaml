@@ -1,0 +1,26 @@
+id: electronvolt
+name: Electronvolt
+symbols: [eV]
+system: SI-accepted
+domain: atomic-physics
+dimension: { length: 2, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: joule, power: 1 }
+factor: 1.602176634e-19
+equation: "eV = 1.602176634 × 10⁻¹⁹ J"
+definitions:
+  - era: "pre-2019"
+    value: "The kinetic energy gained by an electron passing through a potential difference of one volt in vacuum; its value in joules was measured."
+    basis: physical-constant
+    current: false
+    source: "BIPM SI Brochure, 8th ed. (2006), Table 7."
+  - era: "2019–present"
+    value: "The kinetic energy gained by an electron passing through a potential difference of one volt in vacuum: exactly 1.602 176 634 × 10⁻¹⁹ J, since the 2019 redefinition fixed the elementary charge. Accepted for use with the SI."
+    basis: physical-constant
+    current: true
+    source: "BIPM SI Brochure, 9th ed. (2019), Table 8."
+notes:
+  etymology: "'Electron' plus 'volt': the energy one electron's charge gains across one volt."
+  cursedness: "Particle physicists quote masses in eV/c² and then drop the c², so the 'mass of the proton is 938 MeV'. In natural units, where c = 1, energy, mass, momentum and inverse length all end up in eV. Before 2019 its value in joules was measured; now it is exact, because the elementary charge is fixed."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)"]

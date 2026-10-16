@@ -1,0 +1,26 @@
+id: us-survey-foot
+name: "US survey foot"
+symbols: ["survey ft"]
+system: us-customary
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: metre, power: 1 }
+factor: 0.3048006096012192
+equation: "survey ft = 1200/3937 m"
+definitions:
+  - era: "1893–2022"
+    value: "Exactly 1200/3937 metre: the foot of the Mendenhall Order, kept for geodetic surveys when the international foot was adopted in 1959."
+    basis: exact-multiple
+    current: false
+    source: "Mendenhall Order (1893); Federal Register 24 FR 5348 (1959)."
+  - era: "2023–present"
+    value: "Deprecated: the 'foot' in US surveying is now the international foot (0.3048 m). The survey foot remains only for converting historical records."
+    basis: exact-multiple
+    current: true
+    source: "Federal Register 85 FR 62698 (2020), effective 31 December 2022."
+notes:
+  etymology: "The foot used by the US Coast and Geodetic Survey and the State Plane Coordinate System."
+  cursedness: "It differs from the international foot by just 2 parts per million, but over the 6 000 km width of the US that adds up to about 12 m, and state coordinate grids use survey feet in some states and international feet in others. Mixing them up put buildings and property lines in the wrong place for decades. NIST and NOAA retired it at the end of 2022."
+status: verified
+sources: ["Federal Register 85 FR 62698 (2020)", "NIST Handbook 44, Appendix C"]

@@ -1,0 +1,21 @@
+id: thou
+name: "Thou"
+symbols: ["thou", "mil"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: inch, power: 1 }
+factor: 0.001
+equation: "thou = 0.001 in"
+definitions:
+  - era: "1959–present"
+    value: "One thousandth of an inch, exactly 25.4 µm."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "'Thou' is short for thousandth; 'mil' is from Latin 'mille', a thousand."
+  cursedness: "Americans call it a mil and the British a thou. Outside engineering, a 'mil' usually means a millimetre, or (in 'mil-spec') military, so a 'ten-mil' plastic sheet and a ten-millimetre sheet differ by a factor of 39."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

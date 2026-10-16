@@ -1,0 +1,21 @@
+id: troy-ounce
+name: "Troy ounce"
+symbols: ["oz t"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pennyweight, power: 1 }
+factor: 20
+equation: "oz t = 20 dwt"
+definitions:
+  - era: "1959–present"
+    value: "480 grains: exactly 31.103 476 8 grams. The unit gold, silver and platinum are priced in."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "Probably from the market town of Troyes in Champagne, France."
+  cursedness: "About 10 % heavier than an avoirdupois ounce. The apothecaries' ounce is the same mass. When gold is quoted 'per ounce', it is always the troy ounce."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

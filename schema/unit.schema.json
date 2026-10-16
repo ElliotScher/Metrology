@@ -56,6 +56,11 @@
       "items": { "type": "string" },
       "uniqueItems": true
     },
+    "factor": {
+      "description": "For non-coherent units: the number this unit is worth in the product of its derived_from components, e.g. the hour is 60 minutes, so factor: 60 with derived_from: [minute]. Omitted means 1. Coherent SI units must leave it out.",
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
     "equation": { "type": ["string", "null"] },
     "definitions": {
       "description": "Chronological list of this unit's formal definitions. Exactly one entry must have current: true.",

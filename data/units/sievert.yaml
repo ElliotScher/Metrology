@@ -1,0 +1,21 @@
+id: sievert
+name: Sievert
+symbols: [Sv]
+system: SI-derived
+domain: ionizing-radiation
+dimension: { length: 2, mass: 0, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: joule, power: 1 }
+  - { id: kilogram, power: -1 }
+equation: "Sv = J/kg"
+definitions:
+  - era: "1979–present"
+    value: "The dose equivalent (and, in radiological protection, the equivalent and effective dose) of one joule per kilogram, after the absorbed dose is weighted by dimensionless factors for the type of radiation and the tissue exposed."
+    basis: coherent-derived
+    current: true
+    source: "16th CGPM (1979), Resolution 5; CIPM (2002), Recommendation 2; BIPM SI Brochure, 9th ed. (2019), Table 4."
+notes:
+  etymology: "Named after Rolf Sievert, a Swedish medical physicist who worked on measuring radiation doses and their biological effects."
+  cursedness: "A sievert is a joule per kilogram, exactly like a gray, but the number in front has been multiplied by weighting factors that the International Commission on Radiological Protection revises from time to time. The same exposure can therefore be a different number of sieverts depending on which year's recommendations you use. See the gray-sievert relationship. It replaced the rem (0.01 Sv)."
+status: verified
+sources: ["BIPM SI Brochure, 9th ed. (2019)", "ICRP Publication 103 (2007)"]

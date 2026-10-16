@@ -1,0 +1,21 @@
+id: us-dry-pint
+name: "US dry pint"
+symbols: ["US dry pt"]
+system: us-customary
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: us-dry-quart, power: 1 }
+factor: 0.5
+equation: "US dry pt = ½ US dry qt"
+definitions:
+  - era: "1696–present"
+    value: "Half a US dry quart (33.600 312 5 in³, about 0.551 L)."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: null
+  cursedness: null
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,21 @@
+id: league
+name: "League"
+symbols: ["lea"]
+system: imperial
+domain: length
+dimension: { length: 1, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: mile, power: 1 }
+factor: 3
+equation: "lea = 3 mi"
+definitions:
+  - era: "medieval–present"
+    value: "Three miles in English usage, though it never had a statutory definition and varied widely by country."
+    basis: exact-multiple
+    current: true
+    source: "NIST Handbook 44, Appendix C."
+notes:
+  etymology: "From Late Latin 'leuga', a Gaulish unit of distance."
+  cursedness: "Roughly the distance a person could walk in an hour, so its length varied from about 3 to 7 km depending on country and era. 'Twenty Thousand Leagues Under the Seas' is a distance travelled, not a depth."
+status: verified
+sources: ["NIST Handbook 44, Appendix C"]

@@ -1,0 +1,21 @@
+id: dram
+name: "Dram (avoirdupois)"
+symbols: ["dr avdp"]
+system: imperial
+domain: mass
+dimension: { length: 0, mass: 1, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: ounce, power: 1 }
+factor: 0.0625
+equation: "dr avdp = 1/16 oz"
+definitions:
+  - era: "1959–present"
+    value: "1/16 of an avoirdupois ounce: about 1.771 845 g."
+    basis: exact-multiple
+    current: true
+    source: "International Yard and Pound Agreement (1959); NIST Handbook 44, Appendix C; Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "From Greek 'drachmē', a coin and weight."
+  cursedness: "The avoirdupois dram (1/16 oz) and the apothecaries' dram (1/8 apothecaries' ounce) differ by more than a factor of two, and there's a fluid dram too. 'A wee dram' of whisky is none of them."
+status: verified
+sources: ["International Yard and Pound Agreement (1959)", "NIST Handbook 44, Appendix C", "Weights and Measures Act 1985 (UK), Schedule 1"]

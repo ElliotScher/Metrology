@@ -1,0 +1,23 @@
+id: pound-force
+name: "Pound-force"
+symbols: ["lbf"]
+system: imperial
+domain: mechanics
+dimension: { length: 1, mass: 1, time: -2, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: pound, power: 1 }
+  - { id: metre, power: 1 }
+  - { id: second, power: -2 }
+factor: 9.80665
+equation: "lbf = lb × 9.80665 m/s²"
+definitions:
+  - era: "1901–present"
+    value: "The weight of one pound under standard gravity (9.806 65 m/s²): exactly 4.448 221 615 260 5 newtons."
+    basis: exact-multiple
+    current: true
+    source: "3rd CGPM (1901) (standard gravity); NIST Handbook 44, Appendix C."
+notes:
+  etymology: "The force with which a pound mass is pulled by standard gravity."
+  cursedness: "A pound weighs slightly different amounts in different places, so engineers use a conventional standard gravity that matches nowhere in particular (roughly 45° latitude at sea level). Pounds and pounds-force are routinely written the same, as 'lb', and the Mars Climate Orbiter was lost because of a pound-force second read as a newton-second."
+status: verified
+sources: ["NIST Handbook 44, Appendix C", "3rd CGPM (1901)"]

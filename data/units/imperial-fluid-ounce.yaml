@@ -1,0 +1,21 @@
+id: imperial-fluid-ounce
+name: "Imperial fluid ounce"
+symbols: ["imp fl oz"]
+system: imperial
+domain: volume
+dimension: { length: 3, mass: 0, time: 0, current: 0, temperature: 0, amount: 0, luminous_intensity: 0 }
+derived_from:
+  - { id: imperial-pint, power: 1 }
+factor: 0.05
+equation: "imp fl oz = 1/20 imp pt"
+definitions:
+  - era: "1824–present"
+    value: "1/20 of an imperial pint (28.413 062 5 mL): about the volume of one avoirdupois ounce of water."
+    basis: exact-multiple
+    current: true
+    source: "Weights and Measures Act 1985 (UK), Schedule 1."
+notes:
+  etymology: "'Fluid' to distinguish it from the ounce of mass."
+  cursedness: "About 4 % smaller than a US fluid ounce, yet the imperial pint is bigger than the US pint, because it holds 20 of them instead of 16."
+status: verified
+sources: ["Weights and Measures Act 1985 (UK), Schedule 1"]
