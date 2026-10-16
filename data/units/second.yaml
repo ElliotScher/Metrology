@@ -17,13 +17,18 @@ definitions:
     basis: earth-measurement
     current: false
     source: "11th CGPM (1960), Resolution 9."
-  - era: "1967–present"
+  - era: "1967–2019"
     value: "Duration of 9,192,631,770 periods of the radiation corresponding to the transition between the two hyperfine levels of the ground state of the caesium-133 atom."
     basis: atomic-spectral-line
+    current: false
+    source: "13th CGPM (1967/68), Resolution 1."
+  - era: "2019–present"
+    value: "Defined by fixing the numerical value of the caesium frequency Δν_Cs, the unperturbed ground-state hyperfine transition frequency of the caesium-133 atom, to 9,192,631,770 hertz, where the hertz is s⁻¹."
+    basis: physical-constant
     current: true
-    source: "13th CGPM (1967/68), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
+    source: "26th CGPM (2018), Resolution 1; BIPM SI Brochure, 9th ed. (2019), sec. 2.3.1."
 notes:
   etymology: "From Latin 'secunda pars minuta', 'second small part' (of an hour), following 'prima pars minuta', the minute."
-  cursedness: null
+  cursedness: "Since 2019 the definition fixes the caesium frequency in hertz, 'which is equal to s⁻¹', so the second is defined through a unit built from the second. The IEC's terminology committee used the second as its main example of how the 2019 definitions read circularly: the caesium frequency is stated in a unit made of seconds, and the second is defined by that frequency. They concluded the definition is still sound, since fixing the number pins the second to the caesium atom, but that its wording can't be copied verbatim into a terminology standard (Mari et al., 2019). The rewording didn't change the size of the second; it only restated the 1967 definition as a fixed constant, like the other six base units."
 status: verified
-sources: ["BIPM SI Brochure, 9th ed. (2019)"]
+sources: ["BIPM SI Brochure, 9th ed. (2019)", "Mari, Goodwin, Jacobson & Pendrill (IEC TC 1), 'A terminological analysis of the definitions of the base units in the revised SI', Measurement (2019)"]

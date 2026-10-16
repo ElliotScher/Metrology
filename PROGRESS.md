@@ -107,3 +107,64 @@ the field, the data format, validation, levels, the site and the workflow.
 Each future batch: ~10–20 units. Run `validate.py` and `build_graph.py` at
 the end, preview with `build_site.py`, update this file, then push to `main`
 to deploy.
+
+## 2026-10-16
+
+No new units. Added a **Dimensional analysis** tab and removed circular
+definitions from the graph.
+
+**Dimensional analysis tab**
+- Tabs in the header switch between Graph and Dimensional analysis. The tab
+  lives at `#analysis`, and `#analysis?from=…&to=…` links straight to a
+  conversion.
+- Three columns: a **From** unit on the left, a **To** unit on the right, and
+  the chain of steps between them in the middle. Each arrow is labelled with
+  what it does: a prefix (`× 1000`, "k = 10³"), a substitution by a unit's
+  `equation` ("definition of the joule", noting any units that cancel), or a
+  fold back up into the target ("these combine into the volt").
+- When the two units measure different things, the route includes one
+  **extra quantity**, drawn in red: W → J goes `W = J/s`, then `× s`; J → N
+  goes `J = N·m`, then `÷ m`. The route search expands both sides and picks
+  the shortest chain. It prefers writing the extra quantity as a named unit
+  (s, m, A), and falls back to base units (s²) when none fits.
+- Below the chain: the conversion as one equation (`1 W × 1 s = 1 J`), a
+  sentence saying what it means ("power × time = energy"), and what each unit
+  measures, with its current definition and a link to it in the graph.
+  Caveats are included: torque vs. energy, Hz vs. rad/s, rad and sr being
+  dimensionless, and lm vs. cd.
+- The multiplication is rendered as in the factor-label method. Each arrow's
+  label is the conversion factor it multiplies by, as a stacked fraction
+  (`10³ J / 1 kJ`, `N·m / J`). Under the chain, the whole product is written
+  out, `1 kJ × (10³ J / 1 kJ) × (N·m / J) = 1000 N·m`, with every unit that
+  cancels struck through, so only the target's units are left. Powers apply
+  to whole fractions, as in `(1000 m / 1 km)²`, and partial cancellation
+  (s² ÷ s) leaves the remainder unstruck.
+- Leave To empty to break a unit down into SI base units. The To card then
+  suggests named units of the same kind.
+- Inputs accept `*`/`·`, `/`, `^n` or superscripts, parentheses, a leading
+  number, SI prefixes (on the gram, not the kilogram) and full names like
+  `kilojoules`. Unknown units get "did you mean" suggestions.
+- °C ↔ K applies the 273.15 offset when both sides are plain temperatures.
+  Inside compound units, °C is a temperature difference.
+- The code is in `site/analysis.js`. `index.html` exposes its helpers and the
+  `graph.json` promise on `window.Metrology`.
+
+**Circular definitions removed**
+- Searched for sources on the loops the graph drew (ampere ↔ coulomb,
+  kilogram → newton → joule, candela ↔ lumen, and the second ↔ hertz loop
+  added briefly today). No source discusses them. The closest is Mari,
+  Goodwin, Jacobson & Pendrill (IEC TC 1), "A terminological analysis of the
+  definitions of the base units in the revised SI" (*Measurement*, 2019; also
+  the IEC report to the CCU, 2019). It argues that all seven 2019 definitions
+  read circularly as worded, because each unit is defined by a constant
+  stated in that unit. It also says the definitions are still sound.
+- Removed `circular_via` from the data, the schema, `validate.py`,
+  `build_graph.py` (DOT and JSON) and the site: the red loop edges, the
+  "Circular definitions" button, the ring diagrams and the legend row. The
+  intro no longer mentions red loops. The red colour tokens are renamed
+  `--warn` and now only mark the extra-quantity step and errors.
+- The wording quirk is now a sentence in the cursedness notes of the second,
+  ampere, kilogram and candela, citing Mari et al. That paper is also added
+  to their `sources`.
+- The second got its 2019 constant-fixing definition as current; the 1967
+  wording is now history (1967–2019). Levels are unchanged.
